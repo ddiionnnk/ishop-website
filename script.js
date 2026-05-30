@@ -1,126 +1,150 @@
 const WHATSAPP_NUMBER = "355690000000";
 
+function makeProduct(brand, name, badge, imageName) {
+    return {
+        brand: brand,
+        name: name,
+        price: "Pyet për çmim",
+        badge: badge,
+        desc: name + ".",
+        image: "images/products/" + imageName + ".png"
+    };
+}
+
 const PRODUCTS = {
     telefonat: [
-        {
-            brand: "Apple",
-            name: "iPhone 11 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 11 Pro me ekran Super Retina XDR dhe kamerë triple.",
-            image: "images/products/iphone11pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 11 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 11 Pro Max me ekran të madh dhe bateri shumë të mirë.",
-            image: "images/products/iphone11promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 12 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 12 Pro me dizajn modern, 5G dhe kamera Pro.",
-            image: "images/products/iphone12pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 12 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 12 Pro Max me ekran të madh dhe performancë të fortë.",
-            image: "images/products/iphone12promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 13 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 13 Pro me ekran 120Hz dhe kamera Pro.",
-            image: "images/products/iphone13pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 13 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 13 Pro Max me bateri shumë të mirë dhe ekran ProMotion.",
-            image: "images/products/iphone13promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 14 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 14 Pro me Dynamic Island dhe kamera të avancuara.",
-            image: "images/products/iphone14pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 14 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 14 Pro Max me ekran të madh, Dynamic Island dhe performancë premium.",
-            image: "images/products/iphone14promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 15 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 15 Pro me trup titanium dhe USB-C.",
-            image: "images/products/iphone15pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 15 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 15 Pro Max me kamera Pro dhe performancë shumë të lartë.",
-            image: "images/products/iphone15promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 16 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 16 Pro me performancë të lartë dhe kamera premium.",
-            image: "images/products/iphone16pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 16 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 16 Pro Max me ekran të madh dhe eksperiencë flagship.",
-            image: "images/products/iphone16promax.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 17 Pro",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 17 Pro, model premium Apple.",
-            image: "images/products/iphone17pro.png"
-        },
-        {
-            brand: "Apple",
-            name: "iPhone 17 Pro Max",
-            price: "Pyet për çmim",
-            badge: "Apple",
-            desc: "iPhone 17 Pro Max, modeli më i lartë i serisë Pro Max.",
-            image: "images/products/iphone17promax.png"
-        }
+        // IPHONE PRO SERIES
+        makeProduct("Apple", "iPhone 11 Pro", "Apple", "iphone11pro"),
+        makeProduct("Apple", "iPhone 11 Pro Max", "Apple", "iphone11promax"),
+        makeProduct("Apple", "iPhone 12 Pro", "Apple", "iphone12pro"),
+        makeProduct("Apple", "iPhone 12 Pro Max", "Apple", "iphone12promax"),
+        makeProduct("Apple", "iPhone 13 Pro", "Apple", "iphone13pro"),
+        makeProduct("Apple", "iPhone 13 Pro Max", "Apple", "iphone13promax"),
+        makeProduct("Apple", "iPhone 14 Pro", "Apple", "iphone14pro"),
+        makeProduct("Apple", "iPhone 14 Pro Max", "Apple", "iphone14promax"),
+        makeProduct("Apple", "iPhone 15 Pro", "Apple", "iphone15pro"),
+        makeProduct("Apple", "iPhone 15 Pro Max", "Apple", "iphone15promax"),
+        makeProduct("Apple", "iPhone 16 Pro", "Apple", "iphone16pro"),
+        makeProduct("Apple", "iPhone 16 Pro Max", "Apple", "iphone16promax"),
+        makeProduct("Apple", "iPhone 17 Pro", "Apple", "iphone17pro"),
+        makeProduct("Apple", "iPhone 17 Pro Max", "Apple", "iphone17promax"),
+
+        // IPHONE USED
+        makeProduct("Apple", "iPhone XR 64GB", "USED", "iphonexr"),
+        makeProduct("Apple", "iPhone 12 Mini 64GB", "USED", "iphone12mini"),
+        makeProduct("Apple", "iPhone 12 Pro 128GB", "USED", "iphone12pro"),
+        makeProduct("Apple", "iPhone 12 Pro 256GB", "USED", "iphone12pro"),
+        makeProduct("Apple", "iPhone 12 Pro Max 128GB", "USED", "iphone12promax"),
+        makeProduct("Apple", "iPhone 12 Pro Max 256GB", "USED", "iphone12promax"),
+        makeProduct("Apple", "iPhone 13 128GB", "USED", "iphone13"),
+        makeProduct("Apple", "iPhone 13 Pro 128GB", "USED", "iphone13pro"),
+        makeProduct("Apple", "iPhone 13 Pro Max 128GB", "USED", "iphone13promax"),
+        makeProduct("Apple", "iPhone 13 Pro Max 256GB", "USED", "iphone13promax"),
+        makeProduct("Apple", "iPhone 14 128GB", "USED", "iphone14"),
+        makeProduct("Apple", "iPhone 14 Pro 256GB", "USED", "iphone14pro"),
+        makeProduct("Apple", "iPhone 14 Pro Max 128GB", "USED", "iphone14promax"),
+        makeProduct("Apple", "iPhone 14 Pro Max 256GB", "USED", "iphone14promax"),
+        makeProduct("Apple", "iPhone 15 128GB", "USED", "iphone15"),
+        makeProduct("Apple", "iPhone 15 Pro 128GB", "USED", "iphone15pro"),
+        makeProduct("Apple", "iPhone 15 Pro 256GB", "USED", "iphone15pro"),
+        makeProduct("Apple", "iPhone 15 Pro Max 256GB", "USED", "iphone15promax"),
+
+        // IPHONE NEW / E-SIM
+        makeProduct("Apple", "iPhone 15 128GB New", "NEW", "iphone15"),
+        makeProduct("Apple", "iPhone 16 128GB New", "NEW", "iphone16"),
+        makeProduct("Apple", "iPhone 17 256GB New", "NEW", "iphone17"),
+        makeProduct("Apple", "iPhone 17 Air 256GB", "E-SIM", "iphone17air"),
+        makeProduct("Apple", "iPhone 17 Pro 256GB", "E-SIM", "iphone17pro"),
+        makeProduct("Apple", "iPhone 17 Pro 512GB", "E-SIM", "iphone17pro"),
+        makeProduct("Apple", "iPhone 17 Pro Max 256GB", "E-SIM", "iphone17promax"),
+        makeProduct("Apple", "iPhone 17 Pro Max 512GB", "E-SIM", "iphone17promax"),
+        makeProduct("Apple", "iPhone 17 Pro Max 1TB", "E-SIM", "iphone17promax"),
+
+        // SAMSUNG NEW
+        makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16"),
+        makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16"),
+        makeProduct("Samsung", "Samsung Galaxy A17 4/64GB", "A Series", "samsunggalaxya17"),
+        makeProduct("Samsung", "Samsung Galaxy A17 4/128GB", "A Series", "samsunggalaxya17"),
+        makeProduct("Samsung", "Samsung Galaxy A17 8/256GB", "A Series", "samsunggalaxya17"),
+        makeProduct("Samsung", "Samsung Galaxy F07 4/64GB", "F Series", "samsunggalaxyf07"),
+        makeProduct("Samsung", "Samsung Galaxy F70e 5G 4/128GB", "F Series", "samsunggalaxyf70e5g"),
+        makeProduct("Samsung", "Samsung Galaxy M17e 5G 4/128GB", "M Series", "samsunggalaxym17e5g"),
+        makeProduct("Samsung", "Samsung Galaxy M07 4/64GB", "M Series", "samsunggalaxym07"),
+        makeProduct("Samsung", "Samsung Galaxy M17 5G 4/128GB", "M Series", "samsunggalaxym175g"),
+        makeProduct("Samsung", "Samsung Galaxy A26 6/128GB", "A Series", "samsunggalaxya26"),
+        makeProduct("Samsung", "Samsung Galaxy A26 8/256GB", "A Series", "samsunggalaxya26"),
+        makeProduct("Samsung", "Samsung Galaxy M36 5G 6/128GB", "M Series", "samsunggalaxym365g"),
+        makeProduct("Samsung", "Samsung Galaxy A36 8/128GB", "A Series", "samsunggalaxya36"),
+        makeProduct("Samsung", "Samsung Galaxy A36 8/256GB", "A Series", "samsunggalaxya36"),
+        makeProduct("Samsung", "Samsung Galaxy A56 8/128GB", "A Series", "samsunggalaxya56"),
+        makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "A Series", "samsunggalaxya56"),
+        makeProduct("Samsung", "Samsung Galaxy A56 12/256GB", "A Series", "samsunggalaxya56"),
+        makeProduct("Samsung", "Samsung Galaxy A37 6/128GB", "A Series", "samsunggalaxya37"),
+        makeProduct("Samsung", "Samsung Galaxy A37 8/128GB", "A Series", "samsunggalaxya37"),
+        makeProduct("Samsung", "Samsung Galaxy A37 8/256GB", "A Series", "samsunggalaxya37"),
+        makeProduct("Samsung", "Samsung Galaxy A57 8/128GB", "A Series", "samsunggalaxya57"),
+        makeProduct("Samsung", "Samsung Galaxy A57 8/256GB", "A Series", "samsunggalaxya57"),
+        makeProduct("Samsung", "Samsung Galaxy A57 12/256GB", "A Series", "samsunggalaxya57"),
+        makeProduct("Samsung", "Samsung Galaxy S24 8/128GB", "S Series", "samsunggalaxys24"),
+        makeProduct("Samsung", "Samsung Galaxy S24 8/256GB", "S Series", "samsunggalaxys24"),
+        makeProduct("Samsung", "Samsung Galaxy S24 FE 8/128GB", "FE", "samsunggalaxys24fe"),
+        makeProduct("Samsung", "Samsung Galaxy S25 FE 8/256GB", "FE", "samsunggalaxys25fe"),
+        makeProduct("Samsung", "Samsung Galaxy S25 Plus 12/256GB", "S Series", "samsunggalaxys25plus"),
+        makeProduct("Samsung", "Samsung Galaxy S25 Ultra 12/256GB", "Ultra", "samsunggalaxys25ultra"),
+        makeProduct("Samsung", "Samsung Galaxy S26 Plus 12/256GB", "S Series", "samsunggalaxys26plus"),
+        makeProduct("Samsung", "Samsung Galaxy S26 Ultra 12/256GB", "Ultra", "samsunggalaxys26ultra"),
+        makeProduct("Samsung", "Samsung Galaxy S26 Ultra 12/512GB", "Ultra", "samsunggalaxys26ultra"),
+        makeProduct("Samsung", "Samsung Galaxy Flip 7 FE 12/256GB", "Flip", "samsunggalaxyflip7fe"),
+
+        // REDMI / XIAOMI / POCO / PIXEL / NOKIA
+        makeProduct("Poco", "Poco C71 3/64GB", "Poco", "pococ71"),
+        makeProduct("Poco", "Poco M8 8/256GB", "Poco", "pocom8"),
+        makeProduct("Poco", "Poco M8 Pro 12/512GB", "Poco", "pocom8pro"),
+        makeProduct("OnePlus", "OnePlus 15 16/512GB", "OnePlus", "oneplus15"),
+        makeProduct("Xiaomi", "Xiaomi 17 Pro Max 16/512GB", "Xiaomi", "xiaomi17promax"),
+        makeProduct("Redmi", "Redmi Note 14 8/256GB", "Redmi", "redminote14"),
+        makeProduct("Redmi", "Redmi Note 14 Pro Plus 5G 12/512GB", "Redmi", "redminote14proplus5g"),
+        makeProduct("Redmi", "Redmi 15 8/256GB", "Redmi", "redmi15"),
+        makeProduct("Redmi", "Redmi Note 15 Pro 8/256GB", "Redmi", "redminote15pro"),
+        makeProduct("Redmi", "Redmi A7 4/64GB", "Redmi", "redmia7"),
+        makeProduct("Redmi", "Redmi A7 4/128GB", "Redmi", "redmia7"),
+        makeProduct("Google", "Pixel 10A 128GB", "Pixel", "pixel10a"),
+        makeProduct("Google", "Pixel 10 Pro XL 256GB", "Pixel", "pixel10proxl"),
+        makeProduct("Nokia", "Nokia 110 2023", "Nokia", "nokia1102023"),
+        makeProduct("Nokia", "Nokia 130 2023", "Nokia", "nokia1302023"),
+        makeProduct("Nokia", "Nokia 106 2023", "Nokia", "nokia1062023"),
+        makeProduct("Nokia", "Nokia 105 2023", "Nokia", "nokia1052023")
     ],
 
     skuterat: [],
 
     bicikletat: [],
 
-    aksesoret: []
+    aksesoret: [
+        makeProduct("Apple", "AirPods Pro 2 Type-C", "AirPods", "airpodspro2typec"),
+        makeProduct("Apple", "AirPods 4 No ANC", "AirPods", "airpods4noanc"),
+        makeProduct("Apple", "AirPods 4 ANC", "AirPods", "airpods4anc"),
+        makeProduct("Apple", "AirPods Pro 3 Type-C", "AirPods", "airpodspro3typec"),
+        makeProduct("Apple", "AirPods Max 2", "AirPods", "airpodsmax2"),
+        makeProduct("Apple", "Apple Watch Series 11 46mm", "Watch", "applewatchseries1146mm"),
+        makeProduct("Apple", "Apple Watch Series 11 Ultra 49mm", "Watch", "applewatchseries11ultra49mm"),
+
+        makeProduct("Samsung", "Galaxy Smart Watch Ultra", "Watch", "galaxysmartwatchultra"),
+        makeProduct("Samsung", "Galaxy Smart Watch 8 L20", "Watch", "galaxysmartwatch8l20"),
+        makeProduct("Samsung", "Galaxy Smart Watch 8 L30", "Watch", "galaxysmartwatch8l30"),
+        makeProduct("Samsung", "Samsung Buds 3", "Buds", "samsungbuds3"),
+        makeProduct("Samsung", "Samsung Buds 3 Pro", "Buds", "samsungbuds3pro"),
+        makeProduct("Samsung", "Samsung Buds 4 Pro", "Buds", "samsungbuds4pro")
+    ],
+
+    tableta: [
+        makeProduct("Apple", "iPad 11 A16 128GB WiFi", "iPad", "ipad11a16128gbwifi"),
+        makeProduct("Apple", "iPad Air 11 M4 128GB WiFi", "iPad", "ipadair11m4128gbwifi"),
+        makeProduct("Samsung", "Galaxy Tab S8 Ultra 256GB", "Tablet", "galaxytabs8ultra"),
+        makeProduct("Samsung", "Galaxy Tab S9 Ultra 256GB", "Tablet", "galaxytabs9ultra"),
+        makeProduct("Apple", "iPad Pro 13 M4 256GB", "iPad", "ipadpro13m4"),
+        makeProduct("Apple", "iPad 12.9 Gen 3 64GB", "iPad", "ipad129gen3")
+    ]
 };
 
 function normalizeText(value) {
@@ -134,7 +158,7 @@ function createProductCard(product) {
     const imageUrl = product.image || "images/logo.svg";
 
     return `
-        <article class="product-card" data-brand="${product.brand}">
+        <article class="product-card reveal-on-scroll" data-brand="${product.brand}">
             <span class="product-badge">${product.badge}</span>
 
             <div class="product-image-wrapper">
@@ -159,7 +183,7 @@ function createProductCard(product) {
 
 function createEmptyState() {
     return `
-        <div class="empty-state">
+        <div class="empty-state reveal-on-scroll">
             <h3>Nuk ka produkte për momentin</h3>
             <p>Kjo kategori do të përditësohet sapo të shtohen produktet në gjendje.</p>
         </div>
@@ -185,7 +209,7 @@ function renderBrandFilter(products) {
         return;
     }
 
-    const brands = [...new Set(products.map(product => product.brand))];
+    const brands = [...new Set(products.map(product => product.brand))].sort();
 
     filter.innerHTML = `<option value="all">Të gjitha markat</option>`;
 
@@ -220,12 +244,14 @@ function renderCatalog(productsToRender = null) {
     if (allProducts.length === 0) {
         grid.innerHTML = createEmptyState();
         updateCatalogSummary(0, 0);
+        setupScrollAnimations();
         return;
     }
 
     if (products.length === 0) {
         grid.innerHTML = createEmptyState();
         updateCatalogSummary(0, allProducts.length);
+        setupScrollAnimations();
         return;
     }
 
@@ -233,6 +259,7 @@ function renderCatalog(productsToRender = null) {
 
     updateCatalogSummary(products.length, allProducts.length);
     setupWhatsAppButtons();
+    setupScrollAnimations();
 }
 
 function applyCatalogFilters() {
@@ -303,12 +330,7 @@ function setupMenu() {
 
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("open");
-
-        if (nav.classList.contains("open")) {
-            menuToggle.textContent = "×";
-        } else {
-            menuToggle.textContent = "☰";
-        }
+        menuToggle.textContent = nav.classList.contains("open") ? "×" : "☰";
     });
 
     nav.querySelectorAll("a").forEach(link => {
@@ -319,7 +341,56 @@ function setupMenu() {
     });
 }
 
+/* ANIMACION SCROLL - FIX PER IPHONE DHE PC */
+let scrollObserver = null;
+
+function setupScrollAnimations() {
+    const animatedElements = document.querySelectorAll(
+        ".section, .page-hero, .catalog-summary, .category-card, .product-card, .contact-grid, .map-box, .empty-state"
+    );
+
+    if (scrollObserver) {
+        scrollObserver.disconnect();
+    }
+
+    animatedElements.forEach((element, index) => {
+        element.classList.add("reveal-on-scroll");
+
+        if (!element.classList.contains("is-visible")) {
+            element.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
+        }
+    });
+
+    if (!("IntersectionObserver" in window)) {
+        animatedElements.forEach(element => {
+            element.classList.add("is-visible");
+        });
+        return;
+    }
+
+    scrollObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.08,
+            rootMargin: "0px 0px -25px 0px"
+        }
+    );
+
+    animatedElements.forEach(element => {
+        scrollObserver.observe(element);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
     setupCatalog();
+    setupScrollAnimations();
 });
