@@ -31,20 +31,50 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="hero-content">
-                <p class="eyebrow">Tech Store • Electric Mobility</p>
-                <h1>iSHOP MOBILE</h1>
-                <p>
-                    Telefona Apple, Samsung, Xiaomi, Redmi, Pixel, aksesorë, tableta,
-                    skutera elektrikë dhe biçikleta elektrike.
-                </p>
+        <section class="cinematic-section">
+            <div class="cinematic-sticky">
+                <div class="cinematic-bg" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop');"></div>
+                <div class="cinematic-overlay"></div>
 
-                <div class="hero-buttons">
-                    <a href="telefonat.html" class="primary-btn">Shiko Telefonat</a>
-                    <a href="#categories" class="secondary-btn">Kategoritë</a>
+                <div class="cinematic-content">
+                    <span class="cinematic-kicker">Tech Store • Electric Mobility</span>
+                    <h1>iSHOP MOBILE</h1>
+                    <p>
+                        Telefona, skutera elektrikë, biçikleta elektrike, tableta dhe aksesorë.
+                        Katalog modern me animacion cinematic në scroll.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="telefonat.html" class="primary-btn">Shiko Telefonat</a>
+                        <a href="#categories" class="secondary-btn">Kategoritë</a>
+                    </div>
                 </div>
+
+                <div class="gta-fade-mask"></div>
+            </div>
+        </section>
+
+        <section class="cinematic-section">
+            <div class="cinematic-sticky">
+                <div class="cinematic-bg" style="background-image: url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1920&auto=format&fit=crop');"></div>
+                <div class="cinematic-overlay"></div>
+
+                <div class="cinematic-split">
+                    <div class="cinematic-split-text">
+                        <span class="cinematic-kicker">Apple • Samsung • Xiaomi</span>
+                        <h2>Telefona Premium</h2>
+                        <p>
+                            iPhone, Samsung Galaxy, Redmi, Poco, Pixel dhe pajisje të tjera.
+                            Fotot i vendos manualisht në folderin images/products.
+                        </p>
+                    </div>
+
+                    <div class="cinematic-split-image">
+                        <img src="images/products/iphone15promax.png" onerror="this.src='images/logo.svg'" alt="iPhone">
+                    </div>
+                </div>
+
+                <div class="gta-fade-mask"></div>
             </div>
         </section>
 
@@ -61,24 +91,24 @@
                 </a>
 
                 <a href="skuterat.html" class="category-card">
-                    <img src="images/logo.svg" alt="Skuterat">
-                    <span>Electric</span>
+                    <img src="images/products/kukiring2pro.png" onerror="this.src='images/logo.svg'" alt="Skuterat">
+                    <span>KuKirin • Kugoo • Segway</span>
                     <h3>Skuterat</h3>
-                    <p>Skutera elektrikë që do shtohen sapo të dërgosh listën.</p>
+                    <p>KuKirin, Kugoo dhe Segway Ninebot.</p>
                 </a>
 
                 <a href="bicikletat.html" class="category-card">
-                    <img src="images/logo.svg" alt="Biçikletat">
-                    <span>E-Bike</span>
+                    <img src="images/products/ouxiv8.png" onerror="this.src='images/logo.svg'" alt="Biçikletat">
+                    <span>OUXI • Mangosteen</span>
                     <h3>Biçikletat</h3>
-                    <p>Biçikleta dhe motorrë elektrikë.</p>
+                    <p>OUXI V8, V8 Pro, V8 Ultra, V8 Max, V10 dhe Mangosteen FT08.</p>
                 </a>
 
                 <a href="aksesoret.html" class="category-card">
                     <img src="images/products/airpodspro2typec.png" onerror="this.src='images/logo.svg'" alt="Aksesorët">
                     <span>Accessories</span>
                     <h3>Aksesorët</h3>
-                    <p>AirPods, Apple Watch, Samsung Buds dhe aksesorë të tjerë.</p>
+                    <p>Kufje, kasa, xhama, karikues dhe aksesorë për skuter/biçikletë.</p>
                 </a>
 
                 <a href="tableta.html" class="category-card">
@@ -91,44 +121,13 @@
         </section>
 
         <section class="section info-section">
-            <p class="eyebrow">Si funksionon</p>
-            <h2>Fotot i vendos manualisht në folder</h2>
+            <p class="eyebrow">Manual Images</p>
+            <h2>Fotot vendosen në folder</h2>
             <p>
-                Çdo produkt ka rrugën e vet te <strong>script.js</strong>. Ti vendos fotot reale në
-                <strong>images/products/</strong> me emra pa vija, p.sh.
-                <strong>iphone13promax.png</strong> ose <strong>samsunggalaxya16.png</strong>.
+                Çdo produkt përdor foton nga <strong>images/products/</strong>.
+                Emrat e fotove janë pa vija, p.sh. <strong>iphone15promax.png</strong>,
+                <strong>kukiring2pro.png</strong>, <strong>ouxiv8.png</strong>.
             </p>
-        </section>
-
-        <section class="section map-section">
-            <p class="eyebrow">Na vizito</p>
-            <h2>Lokacioni</h2>
-
-            <div class="contact-grid">
-                <div>
-                    <strong>Adresa</strong>
-                    <span>Rruga Myslym Shyri, Tiranë</span>
-                </div>
-                <div>
-                    <strong>WhatsApp</strong>
-                    <span>+355 69 000 0000</span>
-                </div>
-                <div>
-                    <strong>Orari</strong>
-                    <span>Hënë - Shtunë</span>
-                </div>
-            </div>
-
-            <div class="map-box">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.011535743065!2d19.810436!3d41.326291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503102462e0787%3A0x5da864e4023247bb!2sRruga%20Myslym%20Shyri%2C%20Tirana!5e0!3m2!1sen!2sal!4v1716393600000!5m2!1sen!2sal"
-                    width="100%"
-                    height="380"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
-            </div>
         </section>
     </main>
 

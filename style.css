@@ -665,6 +665,225 @@ img {
         background-attachment: scroll;
     }
 }
+/* GTA VI / ROCKSTAR STYLE SCROLL ANIMATION */
+
+.cinematic-section {
+    position: relative;
+    min-height: 140vh;
+    overflow: hidden;
+}
+
+.cinematic-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.cinematic-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.12);
+    opacity: 0.45;
+    filter: contrast(1.08) saturate(1.1);
+    will-change: transform, opacity, filter;
+}
+
+.cinematic-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85)),
+        radial-gradient(circle at center, rgba(255, 0, 60, 0.18), transparent 55%);
+    z-index: 1;
+}
+
+.cinematic-content {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 90%);
+    text-align: center;
+    transform: translateY(80px) scale(0.95);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.cinematic-content h2,
+.cinematic-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(45deg, var(--red), #fff 68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 28px rgba(255, 0, 60, 0.45));
+}
+
+.cinematic-content p {
+    max-width: 720px;
+    margin: 24px auto 0;
+    color: var(--muted);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.55;
+}
+
+.cinematic-kicker {
+    display: inline-block;
+    color: var(--blue);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 18px;
+}
+
+.cinematic-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 46px;
+    align-items: center;
+    width: min(1200px, 90%);
+    position: relative;
+    z-index: 2;
+}
+
+.cinematic-split-text {
+    transform: translateX(-90px);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.cinematic-split-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.cinematic-split-text p {
+    color: var(--muted);
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 1.25rem;
+}
+
+.cinematic-split-image {
+    transform: translateX(90px) scale(0.92);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.cinematic-split-image img {
+    width: 100%;
+    max-height: 620px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 45px rgba(255, 0, 60, 0.35));
+}
+
+.rockstar-reveal {
+    opacity: 0;
+    transform: translateY(70px) scale(0.94);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.rockstar-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.product-card.rockstar-reveal {
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card.rockstar-reveal:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.gta-fade-mask {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 22vh;
+    background: linear-gradient(to bottom, transparent, var(--black));
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Mobile / iPhone fix */
+@media (max-width: 768px) {
+    .cinematic-section {
+        min-height: 115vh;
+    }
+
+    .cinematic-sticky {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 0 80px;
+    }
+
+    .cinematic-content {
+        transform: translateY(45px) scale(0.97);
+    }
+
+    .cinematic-content h1,
+    .cinematic-content h2 {
+        letter-spacing: 2px;
+    }
+
+    .cinematic-split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .cinematic-split-text,
+    .cinematic-split-image {
+        transform: translateY(45px) scale(0.97);
+    }
+
+    .cinematic-split-image img {
+        max-height: 420px;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .cinematic-sticky {
+        transform: translateZ(0);
+    }
+
+    .cinematic-bg,
+    .cinematic-content,
+    .cinematic-split-text,
+    .cinematic-split-image {
+        transform: translateZ(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cinematic-bg,
+    .cinematic-content,
+    .cinematic-split-text,
+    .cinematic-split-image,
+    .rockstar-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
 
 /* per persona qe kane reduced motion */
 @media (prefers-reduced-motion: reduce) {

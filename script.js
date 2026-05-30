@@ -60,7 +60,7 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 17 Pro Max 512GB", "E-SIM", "iphone17promax"),
         makeProduct("Apple", "iPhone 17 Pro Max 1TB", "E-SIM", "iphone17promax"),
 
-        // SAMSUNG NEW
+        // SAMSUNG
         makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A17 4/64GB", "A Series", "samsunggalaxya17"),
@@ -158,7 +158,7 @@ function createProductCard(product) {
     const imageUrl = product.image || "images/logo.svg";
 
     return `
-        <article class="product-card reveal-on-scroll" data-brand="${product.brand}">
+        <article class="product-card rockstar-reveal" data-brand="${product.brand}">
             <span class="product-badge">${product.badge}</span>
 
             <div class="product-image-wrapper">
@@ -183,7 +183,7 @@ function createProductCard(product) {
 
 function createEmptyState() {
     return `
-        <div class="empty-state reveal-on-scroll">
+        <div class="empty-state rockstar-reveal">
             <h3>Nuk ka produkte për momentin</h3>
             <p>Kjo kategori do të përditësohet sapo të shtohen produktet në gjendje.</p>
         </div>
@@ -341,8 +341,107 @@ function setupMenu() {
     });
 }
 
-/* ANIMACION SCROLL - FIX PER IPHONE DHE PC */
+/* GTA VI / ROCKSTAR STYLE SCROLL */
+
 let scrollObserver = null;
+let cinematicStarted = false;
+
+function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+}
+
+function getScrollProgress(section) {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const total = rect.height - windowHeight;
+
+    if (total <= 0) {
+        return clamp(1 - rect.top / windowHeight, 0, 1);
+    }
+
+    return clamp(-rect.top / total, 0, 1);
+}
+
+function setupCinematicScroll() {
+    if (cinematicStarted) {
+        return;
+    }
+
+    cinematicStarted = true;
+
+    const sections = document.querySelectorAll(".cinematic-section");
+
+    function animate() {
+        sections.forEach(section => {
+            const progress = getScrollProgress(section);
+
+            const bg = section.querySelector(".cinematic-bg");
+            const content = section.querySelector(".cinematic-content");
+            const splitText = section.querySelector(".cinematic-split-text");
+            const splitImage = section.querySelector(".cinematic-split-image");
+
+            if (bg) {
+                const scale = 1.12 + progress * 0.18;
+                const opacity = progress < 0.85
+                    ? 0.45 + progress * 0.35
+                    : 0.8 - (progress - 0.85) * 2.8;
+
+                const blur = progress > 0.82 ? (progress - 0.82) * 10 : 0;
+
+                bg.style.transform = `scale(${scale}) translateY(${progress * -35}px)`;
+                bg.style.opacity = clamp(opacity, 0, 0.9);
+                bg.style.filter = `contrast(1.08) saturate(1.15) blur(${blur}px)`;
+            }
+
+            if (content) {
+                let opacity;
+                let y;
+                let scale;
+
+                if (progress < 0.18) {
+                    opacity = progress / 0.18;
+                    y = 80 - progress * 420;
+                    scale = 0.94 + progress * 0.28;
+                } else if (progress > 0.78) {
+                    opacity = 1 - (progress - 0.78) / 0.22;
+                    y = -(progress - 0.78) * 240;
+                    scale = 1 - (progress - 0.78) * 0.18;
+                } else {
+                    opacity = 1;
+                    y = 0;
+                    scale = 1;
+                }
+
+                content.style.opacity = clamp(opacity, 0, 1);
+                content.style.transform = `translateY(${y}px) scale(${scale})`;
+            }
+
+            if (splitText) {
+                const enter = clamp(progress / 0.35, 0, 1);
+                const exit = progress > 0.82 ? clamp((1 - progress) / 0.18, 0, 1) : 1;
+                const finalOpacity = enter * exit;
+
+                splitText.style.opacity = finalOpacity;
+                splitText.style.transform =
+                    `translateX(${(1 - enter) * -90}px) translateY(${progress > 0.82 ? -60 * (progress - 0.82) : 0}px)`;
+            }
+
+            if (splitImage) {
+                const enter = clamp((progress - 0.08) / 0.35, 0, 1);
+                const exit = progress > 0.84 ? clamp((1 - progress) / 0.16, 0, 1) : 1;
+                const finalOpacity = enter * exit;
+
+                splitImage.style.opacity = finalOpacity;
+                splitImage.style.transform =
+                    `translateX(${(1 - enter) * 90}px) scale(${0.92 + enter * 0.08})`;
+            }
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+}
 
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(
@@ -354,7 +453,7 @@ function setupScrollAnimations() {
     }
 
     animatedElements.forEach((element, index) => {
-        element.classList.add("reveal-on-scroll");
+        element.classList.add("rockstar-reveal");
 
         if (!element.classList.contains("is-visible")) {
             element.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
@@ -393,4 +492,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
     setupCatalog();
     setupScrollAnimations();
+    setupCinematicScroll();
 });
