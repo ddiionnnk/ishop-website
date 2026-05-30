@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kreu | iShop Mobile</title>
-    <meta name="description" content="iShop Mobile - katalog produktesh.">
+    <meta name="description" content="iShop Mobile - telefona, skutera, biçikleta, tableta dhe aksesorë.">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,6 +25,8 @@
             <a href="bicikletat.html">Biçikletat</a>
             <a href="aksesoret.html">Aksesorët</a>
             <a href="tableta.html">Tableta</a>
+            <a href="#location">Lokacioni</a>
+            <a href="#follow-us">Na Ndiqni</a>
         </nav>
 
         <a href="https://wa.me/355696666601" target="_blank" class="header-cta">WhatsApp</a>
@@ -55,7 +57,7 @@
         </section>
 
         <section class="why-section section" id="why-us">
-            <div class="why-panel rockstar-reveal">
+            <div class="why-panel always-visible">
                 <p class="eyebrow">Pse ne jemi më të mirët</p>
                 <h2>iShop Mobile sjell cilësi, zgjedhje dhe shërbim të shpejtë</h2>
                 <p>
@@ -83,7 +85,7 @@
         </section>
 
         <section class="section" id="categories">
-            <div class="category-intro rockstar-reveal">
+            <div class="category-intro always-visible">
                 <p class="eyebrow">Pse ne jemi të duhurit</p>
                 <h2>Zgjedhja e duhur për teknologji dhe electric mobility</h2>
                 <p>
@@ -98,35 +100,35 @@
             <h2>Kategoritë e Produkteve</h2>
 
             <div class="category-grid">
-                <a href="telefonat.html" class="category-card">
+                <a href="telefonat.html" class="category-card reveal">
                     <img src="images/products/iphone15promax.png" onerror="this.src='images/logo.svg'" alt="Telefonat">
                     <span>Apple • Samsung • Xiaomi</span>
                     <h3>Telefonat</h3>
                     <p>iPhone, Samsung Galaxy, Redmi, Poco, Pixel dhe modele të tjera.</p>
                 </a>
 
-                <a href="skuterat.html" class="category-card">
+                <a href="skuterat.html" class="category-card reveal">
                     <img src="images/products/kukiring2pro.png" onerror="this.src='images/logo.svg'" alt="Skuterat">
                     <span>KuKirin • Kugoo • Segway</span>
                     <h3>Skuterat</h3>
                     <p>KuKirin, Kugoo dhe Segway Ninebot.</p>
                 </a>
 
-                <a href="bicikletat.html" class="category-card">
+                <a href="bicikletat.html" class="category-card reveal">
                     <img src="images/products/ouxiv8.png" onerror="this.src='images/logo.svg'" alt="Biçikletat">
                     <span>OUXI • Mangosteen</span>
                     <h3>Biçikletat</h3>
                     <p>OUXI V8, V8 Pro, V8 Ultra, V8 Max, V10 dhe Mangosteen FT08.</p>
                 </a>
 
-                <a href="aksesoret.html" class="category-card">
+                <a href="aksesoret.html" class="category-card reveal">
                     <img src="images/products/airpodspro2typec.png" onerror="this.src='images/logo.svg'" alt="Aksesorët">
                     <span>Accessories</span>
                     <h3>Aksesorët</h3>
                     <p>Kufje, kasa, xhama, karikues dhe aksesorë për skuter/biçikletë.</p>
                 </a>
 
-                <a href="tableta.html" class="category-card">
+                <a href="tableta.html" class="category-card reveal">
                     <img src="images/products/ipad11a16128gbwifi.png" onerror="this.src='images/logo.svg'" alt="Tableta">
                     <span>iPad • Galaxy Tab</span>
                     <h3>Tableta</h3>
@@ -134,11 +136,19 @@
                 </a>
             </div>
         </section>
-        <section class="section map-section">
-            <p class="eyebrow">Lokacioni</p>
-            <h2>Na gjej në hartë</h2>
 
-            <div class="contact-grid">
+        <section class="section map-section" id="location">
+            <div class="section-top">
+                <p class="eyebrow">Lokacioni</p>
+                <h2>Na gjej në hartë</h2>
+                <p class="section-lead">
+                    Na vizito te iShop Mobile, Myslym Shyri, Tiranë. Nëse do të pyesësh për
+                    produkte, disponueshmëri ose çmime, mund të na kontaktosh direkt ose
+                    të na ndjekësh në rrjetet sociale.
+                </p>
+            </div>
+
+            <div class="contact-grid social-contact-grid">
                 <div>
                     <strong>Adresa</strong>
                     <span>iShop Mobile, Myslym Shyri, Tiranë</span>
@@ -153,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="map-box">
+            <div class="map-box reveal">
                 <iframe
                     src="https://www.google.com/maps?q=iShop%20Mobile%20Myslym%20Shyri%20Tirana&output=embed"
                     width="100%"
@@ -163,6 +173,52 @@
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+
+                <div class="map-actions">
+                    <a href="https://www.google.com/maps/search/?api=1&query=iShop+Mobile+Myslym+Shyri+Tirana" target="_blank" class="primary-btn">Hape në Hartë</a>
+                    <a href="https://wa.me/355696666601" target="_blank" class="secondary-btn">Na shkruaj</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section follow-section" id="follow-us">
+            <div class="section-top">
+                <p class="eyebrow">Na ndiqni</p>
+                <h2>Qëndro afër me iShop Mobile</h2>
+                <p class="section-lead">
+                    Për modele të reja, postime të përditshme, produkte në gjendje dhe oferta,
+                    na ndiq në TikTok, Instagram dhe Facebook. Mund të na shkruash edhe direkt në WhatsApp.
+                </p>
+            </div>
+
+            <div class="social-grid">
+                <a href="https://wa.me/355696666601" target="_blank" class="social-card reveal whatsapp-card">
+                    <span class="social-icon">☏</span>
+                    <h3>WhatsApp</h3>
+                    <p>Na shkruaj direkt për çmime, gjendje dhe porosi.</p>
+                    <span class="social-cta">Na shkruaj</span>
+                </a>
+
+                <a href="#" target="_blank" class="social-card reveal tiktok-card">
+                    <span class="social-icon">♪</span>
+                    <h3>TikTok</h3>
+                    <p>Na ndiq për video të produkteve, unboxing dhe risi.</p>
+                    <span class="social-cta">Na ndiq në TikTok</span>
+                </a>
+
+                <a href="#" target="_blank" class="social-card reveal instagram-card">
+                    <span class="social-icon">◎</span>
+                    <h3>Instagram</h3>
+                    <p>Shiko postime, story dhe produkte të reja çdo ditë.</p>
+                    <span class="social-cta">Na ndiq në Instagram</span>
+                </a>
+
+                <a href="#" target="_blank" class="social-card reveal facebook-card">
+                    <span class="social-icon">f</span>
+                    <h3>Facebook</h3>
+                    <p>Qëndro i informuar me njoftime, oferta dhe përditësime.</p>
+                    <span class="social-cta">Na ndiq në Facebook</span>
+                </a>
             </div>
         </section>
     </main>
@@ -170,9 +226,10 @@
     <footer class="site-footer">
         <p>© iShop Mobile. Të gjitha të drejtat e rezervuara.</p>
         <div>
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">Facebook</a>
+            <a href="https://wa.me/355696666601" target="_blank">WhatsApp</a>
+            <a href="#" target="_blank">TikTok</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Facebook</a>
         </div>
     </footer>
 

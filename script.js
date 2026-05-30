@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "355690000000";
+const WHATSAPP_NUMBER = "355696666601";
 
 function makeProduct(brand, name, badge, imageName) {
     return {
@@ -28,87 +28,25 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 17 Pro", "Apple", "iphone17pro"),
         makeProduct("Apple", "iPhone 17 Pro Max", "Apple", "iphone17promax"),
 
-        makeProduct("Apple", "iPhone XR 64GB", "USED", "iphonexr"),
-        makeProduct("Apple", "iPhone 12 Mini 64GB", "USED", "iphone12mini"),
-        makeProduct("Apple", "iPhone 12 Pro 128GB", "USED", "iphone12pro"),
-        makeProduct("Apple", "iPhone 12 Pro 256GB", "USED", "iphone12pro"),
-        makeProduct("Apple", "iPhone 12 Pro Max 128GB", "USED", "iphone12promax"),
-        makeProduct("Apple", "iPhone 12 Pro Max 256GB", "USED", "iphone12promax"),
-        makeProduct("Apple", "iPhone 13 128GB", "USED", "iphone13"),
-        makeProduct("Apple", "iPhone 13 Pro 128GB", "USED", "iphone13pro"),
-        makeProduct("Apple", "iPhone 13 Pro Max 128GB", "USED", "iphone13promax"),
-        makeProduct("Apple", "iPhone 13 Pro Max 256GB", "USED", "iphone13promax"),
-        makeProduct("Apple", "iPhone 14 128GB", "USED", "iphone14"),
-        makeProduct("Apple", "iPhone 14 Pro 256GB", "USED", "iphone14pro"),
-        makeProduct("Apple", "iPhone 14 Pro Max 128GB", "USED", "iphone14promax"),
-        makeProduct("Apple", "iPhone 14 Pro Max 256GB", "USED", "iphone14promax"),
-        makeProduct("Apple", "iPhone 15 128GB", "USED", "iphone15"),
-        makeProduct("Apple", "iPhone 15 Pro 128GB", "USED", "iphone15pro"),
-        makeProduct("Apple", "iPhone 15 Pro 256GB", "USED", "iphone15pro"),
-        makeProduct("Apple", "iPhone 15 Pro Max 256GB", "USED", "iphone15promax"),
-
-        makeProduct("Apple", "iPhone 15 128GB New", "NEW", "iphone15"),
-        makeProduct("Apple", "iPhone 16 128GB New", "NEW", "iphone16"),
-        makeProduct("Apple", "iPhone 17 256GB New", "NEW", "iphone17"),
-        makeProduct("Apple", "iPhone 17 Air 256GB", "E-SIM", "iphone17air"),
-        makeProduct("Apple", "iPhone 17 Pro 256GB", "E-SIM", "iphone17pro"),
-        makeProduct("Apple", "iPhone 17 Pro 512GB", "E-SIM", "iphone17pro"),
-        makeProduct("Apple", "iPhone 17 Pro Max 256GB", "E-SIM", "iphone17promax"),
-        makeProduct("Apple", "iPhone 17 Pro Max 512GB", "E-SIM", "iphone17promax"),
-        makeProduct("Apple", "iPhone 17 Pro Max 1TB", "E-SIM", "iphone17promax"),
-
         makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A17 4/64GB", "A Series", "samsunggalaxya17"),
         makeProduct("Samsung", "Samsung Galaxy A17 4/128GB", "A Series", "samsunggalaxya17"),
-        makeProduct("Samsung", "Samsung Galaxy A17 8/256GB", "A Series", "samsunggalaxya17"),
-        makeProduct("Samsung", "Samsung Galaxy F07 4/64GB", "F Series", "samsunggalaxyf07"),
-        makeProduct("Samsung", "Samsung Galaxy F70e 5G 4/128GB", "F Series", "samsunggalaxyf70e5g"),
-        makeProduct("Samsung", "Samsung Galaxy M17e 5G 4/128GB", "M Series", "samsunggalaxym17e5g"),
-        makeProduct("Samsung", "Samsung Galaxy M07 4/64GB", "M Series", "samsunggalaxym07"),
-        makeProduct("Samsung", "Samsung Galaxy M17 5G 4/128GB", "M Series", "samsunggalaxym175g"),
         makeProduct("Samsung", "Samsung Galaxy A26 6/128GB", "A Series", "samsunggalaxya26"),
-        makeProduct("Samsung", "Samsung Galaxy A26 8/256GB", "A Series", "samsunggalaxya26"),
-        makeProduct("Samsung", "Samsung Galaxy M36 5G 6/128GB", "M Series", "samsunggalaxym365g"),
         makeProduct("Samsung", "Samsung Galaxy A36 8/128GB", "A Series", "samsunggalaxya36"),
-        makeProduct("Samsung", "Samsung Galaxy A36 8/256GB", "A Series", "samsunggalaxya36"),
-        makeProduct("Samsung", "Samsung Galaxy A56 8/128GB", "A Series", "samsunggalaxya56"),
         makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "A Series", "samsunggalaxya56"),
-        makeProduct("Samsung", "Samsung Galaxy A56 12/256GB", "A Series", "samsunggalaxya56"),
-        makeProduct("Samsung", "Samsung Galaxy A37 6/128GB", "A Series", "samsunggalaxya37"),
-        makeProduct("Samsung", "Samsung Galaxy A37 8/128GB", "A Series", "samsunggalaxya37"),
-        makeProduct("Samsung", "Samsung Galaxy A37 8/256GB", "A Series", "samsunggalaxya37"),
-        makeProduct("Samsung", "Samsung Galaxy A57 8/128GB", "A Series", "samsunggalaxya57"),
-        makeProduct("Samsung", "Samsung Galaxy A57 8/256GB", "A Series", "samsunggalaxya57"),
-        makeProduct("Samsung", "Samsung Galaxy A57 12/256GB", "A Series", "samsunggalaxya57"),
-        makeProduct("Samsung", "Samsung Galaxy S24 8/128GB", "S Series", "samsunggalaxys24"),
         makeProduct("Samsung", "Samsung Galaxy S24 8/256GB", "S Series", "samsunggalaxys24"),
         makeProduct("Samsung", "Samsung Galaxy S24 FE 8/128GB", "FE", "samsunggalaxys24fe"),
         makeProduct("Samsung", "Samsung Galaxy S25 FE 8/256GB", "FE", "samsunggalaxys25fe"),
         makeProduct("Samsung", "Samsung Galaxy S25 Plus 12/256GB", "S Series", "samsunggalaxys25plus"),
         makeProduct("Samsung", "Samsung Galaxy S25 Ultra 12/256GB", "Ultra", "samsunggalaxys25ultra"),
-        makeProduct("Samsung", "Samsung Galaxy S26 Plus 12/256GB", "S Series", "samsunggalaxys26plus"),
-        makeProduct("Samsung", "Samsung Galaxy S26 Ultra 12/256GB", "Ultra", "samsunggalaxys26ultra"),
-        makeProduct("Samsung", "Samsung Galaxy S26 Ultra 12/512GB", "Ultra", "samsunggalaxys26ultra"),
-        makeProduct("Samsung", "Samsung Galaxy Flip 7 FE 12/256GB", "Flip", "samsunggalaxyflip7fe"),
 
-        makeProduct("Poco", "Poco C71 3/64GB", "Poco", "pococ71"),
-        makeProduct("Poco", "Poco M8 8/256GB", "Poco", "pocom8"),
-        makeProduct("Poco", "Poco M8 Pro 12/512GB", "Poco", "pocom8pro"),
-        makeProduct("OnePlus", "OnePlus 15 16/512GB", "OnePlus", "oneplus15"),
-        makeProduct("Xiaomi", "Xiaomi 17 Pro Max 16/512GB", "Xiaomi", "xiaomi17promax"),
         makeProduct("Redmi", "Redmi Note 14 8/256GB", "Redmi", "redminote14"),
         makeProduct("Redmi", "Redmi Note 14 Pro Plus 5G 12/512GB", "Redmi", "redminote14proplus5g"),
-        makeProduct("Redmi", "Redmi 15 8/256GB", "Redmi", "redmi15"),
-        makeProduct("Redmi", "Redmi Note 15 Pro 8/256GB", "Redmi", "redminote15pro"),
-        makeProduct("Redmi", "Redmi A7 4/64GB", "Redmi", "redmia7"),
-        makeProduct("Redmi", "Redmi A7 4/128GB", "Redmi", "redmia7"),
+        makeProduct("Poco", "Poco C71 3/64GB", "Poco", "pococ71"),
+        makeProduct("Poco", "Poco M8 8/256GB", "Poco", "pocom8"),
         makeProduct("Google", "Pixel 10A 128GB", "Pixel", "pixel10a"),
-        makeProduct("Google", "Pixel 10 Pro XL 256GB", "Pixel", "pixel10proxl"),
-        makeProduct("Nokia", "Nokia 110 2023", "Nokia", "nokia1102023"),
-        makeProduct("Nokia", "Nokia 130 2023", "Nokia", "nokia1302023"),
-        makeProduct("Nokia", "Nokia 106 2023", "Nokia", "nokia1062023"),
-        makeProduct("Nokia", "Nokia 105 2023", "Nokia", "nokia1052023")
+        makeProduct("Google", "Pixel 10 Pro XL 256GB", "Pixel", "pixel10proxl")
     ],
 
     skuterat: [
@@ -259,15 +197,13 @@ function normalizeText(value) {
 }
 
 function createProductCard(product) {
-    const imageUrl = product.image || "images/logo.svg";
-
     return `
-        <article class="product-card rockstar-reveal" data-brand="${product.brand}">
+        <article class="product-card reveal" data-brand="${product.brand}">
             <span class="product-badge">${product.badge}</span>
 
             <div class="product-image-wrapper">
                 <img
-                    src="${imageUrl}"
+                    src="${product.image}"
                     alt="${product.name}"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='images/logo.svg'; this.classList.add('fallback-logo');"
@@ -287,9 +223,9 @@ function createProductCard(product) {
 
 function createEmptyState() {
     return `
-        <div class="empty-state rockstar-reveal">
+        <div class="empty-state reveal">
             <h3>Nuk ka produkte për momentin</h3>
-            <p>Kjo kategori do të përditësohet sapo të shtohen produktet në gjendje.</p>
+            <p>Kjo kategori do të përditësohet së shpejti.</p>
         </div>
     `;
 }
@@ -301,9 +237,7 @@ function getCurrentProducts() {
         return [];
     }
 
-    const category = grid.dataset.category;
-
-    return PRODUCTS[category] || [];
+    return PRODUCTS[grid.dataset.category] || [];
 }
 
 function renderBrandFilter(products) {
@@ -349,6 +283,7 @@ function renderCatalog(productsToRender = null) {
         grid.innerHTML = createEmptyState();
         updateCatalogSummary(0, 0);
         setupScrollAnimations();
+        setupInteractiveCards();
         return;
     }
 
@@ -356,6 +291,7 @@ function renderCatalog(productsToRender = null) {
         grid.innerHTML = createEmptyState();
         updateCatalogSummary(0, allProducts.length);
         setupScrollAnimations();
+        setupInteractiveCards();
         return;
     }
 
@@ -364,6 +300,7 @@ function renderCatalog(productsToRender = null) {
     updateCatalogSummary(products.length, allProducts.length);
     setupWhatsAppButtons();
     setupScrollAnimations();
+    setupInteractiveCards();
 }
 
 function applyCatalogFilters() {
@@ -375,15 +312,8 @@ function applyCatalogFilters() {
     const selectedBrand = filter ? filter.value : "all";
 
     const filteredProducts = products.filter(product => {
-        const searchableText = normalizeText(`
-            ${product.brand}
-            ${product.name}
-            ${product.badge}
-            ${product.desc}
-            ${product.price}
-        `);
-
-        const matchesSearch = !query || searchableText.includes(query);
+        const text = normalizeText(`${product.brand} ${product.name} ${product.badge}`);
+        const matchesSearch = !query || text.includes(query);
         const matchesBrand = selectedBrand === "all" || product.brand === selectedBrand;
 
         return matchesSearch && matchesBrand;
@@ -445,109 +375,57 @@ function setupMenu() {
     });
 }
 
-let scrollObserver = null;
-let cinematicStarted = false;
-
-function clamp(value, min, max) {
-    return Math.min(Math.max(value, min), max);
-}
-
-function getScrollProgress(section) {
-    const rect = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const total = rect.height - windowHeight;
-
-    if (total <= 0) {
-        return clamp(1 - rect.top / windowHeight, 0, 1);
-    }
-
-    return clamp(-rect.top / total, 0, 1);
-}
-
 function setupCinematicScroll() {
-    if (cinematicStarted) {
+    const sections = document.querySelectorAll(".cinematic-section");
+
+    if (!sections.length) {
         return;
     }
 
-    cinematicStarted = true;
-
-    const sections = document.querySelectorAll(".cinematic-section");
-
-    function animate() {
-        sections.forEach(section => {
-            const progress = getScrollProgress(section);
-
-            const bg = section.querySelector(".cinematic-bg");
-            const content = section.querySelector(".cinematic-content");
-            const splitText = section.querySelector(".cinematic-split-text");
-            const splitImage = section.querySelector(".cinematic-split-image");
-
-            if (bg) {
-                const scale = 1.12 + progress * 0.18;
-                const opacity = progress < 0.85
-                    ? 0.45 + progress * 0.35
-                    : 0.8 - (progress - 0.85) * 2.8;
-
-                const blur = progress > 0.82 ? (progress - 0.82) * 10 : 0;
-
-                bg.style.transform = `scale(${scale}) translateY(${progress * -35}px)`;
-                bg.style.opacity = clamp(opacity, 0, 0.9);
-                bg.style.filter = `contrast(1.08) saturate(1.15) blur(${blur}px)`;
-            }
-
-            if (content) {
-                let opacity;
-                let y;
-                let scale;
-
-                if (progress < 0.18) {
-                    opacity = progress / 0.18;
-                    y = 80 - progress * 420;
-                    scale = 0.94 + progress * 0.28;
-                } else if (progress > 0.78) {
-                    opacity = 1 - (progress - 0.78) / 0.22;
-                    y = -(progress - 0.78) * 240;
-                    scale = 1 - (progress - 0.78) * 0.18;
-                } else {
-                    opacity = 1;
-                    y = 0;
-                    scale = 1;
-                }
-
-                content.style.opacity = clamp(opacity, 0, 1);
-                content.style.transform = `translateY(${y}px) scale(${scale})`;
-            }
-
-            if (splitText) {
-                const enter = clamp(progress / 0.35, 0, 1);
-                const exit = progress > 0.82 ? clamp((1 - progress) / 0.18, 0, 1) : 1;
-                const finalOpacity = enter * exit;
-
-                splitText.style.opacity = finalOpacity;
-                splitText.style.transform =
-                    `translateX(${(1 - enter) * -90}px) translateY(${progress > 0.82 ? -60 * (progress - 0.82) : 0}px)`;
-            }
-
-            if (splitImage) {
-                const enter = clamp((progress - 0.08) / 0.35, 0, 1);
-                const exit = progress > 0.84 ? clamp((1 - progress) / 0.16, 0, 1) : 1;
-                const finalOpacity = enter * exit;
-
-                splitImage.style.opacity = finalOpacity;
-                splitImage.style.transform =
-                    `translateX(${(1 - enter) * 90}px) scale(${0.92 + enter * 0.08})`;
-            }
-        });
-
-        requestAnimationFrame(animate);
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
     }
 
-    requestAnimationFrame(animate);
+    function update() {
+        sections.forEach(section => {
+            const sticky = section.querySelector(".cinematic-sticky");
+            const bg = section.querySelector(".cinematic-bg");
+            const content = section.querySelector(".cinematic-content");
+
+            if (!sticky || !bg || !content) {
+                return;
+            }
+
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const total = rect.height - windowHeight;
+            const progress = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
+
+            const bgScale = 1.12 + progress * 0.18;
+            const bgMove = progress * -65;
+            const contentMove = progress * -80;
+            const contentScale = 1 - progress * 0.08;
+
+            bg.style.transform = `scale(${bgScale}) translateY(${bgMove}px)`;
+            bg.style.opacity = 0.68 + progress * 0.12;
+            bg.style.filter = `contrast(${1.08 + progress * 0.08}) saturate(${1.1 + progress * 0.2})`;
+
+            content.style.opacity = 1;
+            content.style.visibility = "visible";
+            content.style.transform = `translateY(${contentMove}px) scale(${contentScale})`;
+        });
+
+        requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
 }
+
+let scrollObserver = null;
 
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".section, .page-hero, .catalog-summary, .category-card, .product-card, .contact-grid, .map-box, .empty-state"
+        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card"
     );
 
     if (scrollObserver) {
@@ -555,8 +433,6 @@ function setupScrollAnimations() {
     }
 
     animatedElements.forEach((element, index) => {
-        element.classList.add("rockstar-reveal");
-
         if (!element.classList.contains("is-visible")) {
             element.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
         }
@@ -590,17 +466,8 @@ function setupScrollAnimations() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    setupMenu();
-    setupCatalog();
-    setupScrollAnimations();
-    setupCinematicScroll();
-});
-
-
-/* ANIMACION INTERAKTIV 3D PER KARTAT */
 function setupInteractiveCards() {
-    const cards = document.querySelectorAll(".category-card, .product-card");
+    const cards = document.querySelectorAll(".category-card, .product-card, .social-card");
 
     cards.forEach(card => {
         card.addEventListener("mousemove", event => {
@@ -627,3 +494,11 @@ function setupInteractiveCards() {
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    setupMenu();
+    setupCatalog();
+    setupScrollAnimations();
+    setupCinematicScroll();
+    setupInteractiveCards();
+});
