@@ -144,15 +144,13 @@ function normalizeText(value) {
 }
 
 function createProductCard(product) {
-    const imageUrl = product.image || "images/logo.svg";
-
     return `
         <article class="product-card reveal" data-brand="${product.brand}">
             <span class="product-badge">${product.badge}</span>
 
             <div class="product-image-wrapper">
                 <img
-                    src="${imageUrl}"
+                    src="${product.image}"
                     alt="${product.name}"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='images/logo.svg'; this.classList.add('fallback-logo');"
@@ -174,7 +172,7 @@ function createEmptyState() {
     return `
         <div class="empty-state reveal">
             <h3>Nuk ka produkte për momentin</h3>
-            <p>Kjo kategori do të përditësohet sapo të shtohen produktet në gjendje.</p>
+            <p>Kjo kategori do të përditësohet së shpejti.</p>
         </div>
     `;
 }
@@ -186,9 +184,7 @@ function getCurrentProducts() {
         return [];
     }
 
-    const category = grid.dataset.category;
-
-    return PRODUCTS[category] || [];
+    return PRODUCTS[grid.dataset.category] || [];
 }
 
 function renderBrandFilter(products) {
@@ -230,13 +226,6 @@ function renderCatalog(productsToRender = null) {
     const allProducts = getCurrentProducts();
     const products = productsToRender || allProducts;
 
-    if (allProducts.length === 0) {
-        grid.innerHTML = createEmptyState();
-        updateCatalogSummary(0, 0);
-        setupRevealAnimations();
-        return;
-    }
-
     if (products.length === 0) {
         grid.innerHTML = createEmptyState();
         updateCatalogSummary(0, allProducts.length);
@@ -260,15 +249,8 @@ function applyCatalogFilters() {
     const selectedBrand = filter ? filter.value : "all";
 
     const filteredProducts = products.filter(product => {
-        const searchableText = normalizeText(`
-            ${product.brand}
-            ${product.name}
-            ${product.badge}
-            ${product.desc}
-            ${product.price}
-        `);
-
-        const matchesSearch = !query || searchableText.includes(query);
+        const text = normalizeText(`${product.brand} ${product.name} ${product.badge}`);
+        const matchesSearch = !query || text.includes(query);
         const matchesBrand = selectedBrand === "all" || product.brand === selectedBrand;
 
         return matchesSearch && matchesBrand;
@@ -330,7 +312,8 @@ function setupMenu() {
     });
 }
 
-/* SCROLL DRIVEN ANIMATION PER INDEX */
+/* SCROLL DRIVEN HERO */
+
 function setupScrollHero() {
     const hero = document.querySelector(".scroll-hero");
     const bg = document.querySelector(".scroll-bg");
@@ -350,16 +333,17 @@ function setupScrollHero() {
         const total = rect.height - windowHeight;
         const progress = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
 
-        const bgScale = 1.05 + progress * 0.18;
-        const bgMove = progress * -45;
-        const contentMove = progress * -55;
-        const contentScale = 1 - progress * 0.04;
+        const bgScale = 1.05 + progress * 0.22;
+        const bgMove = progress * -55;
+        const titleMove = progress * -70;
+        const titleScale = 1 - progress * 0.06;
 
         bg.style.transform = `scale(${bgScale}) translateY(${bgMove}px)`;
-        bg.style.opacity = 0.75 + progress * 0.1;
+        bg.style.opacity = 0.8 + progress * 0.08;
 
         content.style.opacity = 1;
-        content.style.transform = `translateY(${contentMove}px) scale(${contentScale})`;
+        content.style.visibility = "visible";
+        content.style.transform = `translateY(${titleMove}px) scale(${titleScale})`;
 
         requestAnimationFrame(animate);
     }
@@ -368,6 +352,7 @@ function setupScrollHero() {
 }
 
 /* REVEAL ANIMATION */
+
 let revealObserver = null;
 
 function setupRevealAnimations() {

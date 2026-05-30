@@ -41,6 +41,8 @@ img {
     display: block;
 }
 
+/* HEADER */
+
 .site-header {
     position: fixed;
     top: 0;
@@ -116,10 +118,12 @@ img {
     cursor: pointer;
 }
 
-/* SCROLL DRIVEN HERO */
+/* KREU I MADH ME SCROLL DRIVEN ANIMATION */
+
 .scroll-hero {
     position: relative;
-    min-height: 145vh;
+    min-height: 155vh;
+    background: var(--black);
 }
 
 .scroll-scene {
@@ -135,28 +139,29 @@ img {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.88)),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.9)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
     transform: scale(1.05);
-    opacity: 0.75;
+    opacity: 0.8;
     will-change: transform, opacity;
 }
 
 .scroll-overlay {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at center, rgba(255, 0, 60, 0.18), transparent 55%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.88));
     z-index: 1;
+    background:
+        radial-gradient(circle at center, rgba(255, 0, 60, 0.22), transparent 55%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.95));
 }
 
 .scroll-content {
     position: relative;
     z-index: 2;
-    width: min(1050px, 90%);
+    width: min(1100px, 92%);
     text-align: center;
-    opacity: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
     transform: translateY(0) scale(1);
     will-change: transform, opacity;
 }
@@ -173,37 +178,40 @@ img {
 
 .scroll-content h1 {
     font-family: var(--font-heading);
-    font-size: clamp(3.2rem, 9vw, 7.8rem);
-    line-height: 0.95;
-    letter-spacing: 6px;
-    background: linear-gradient(45deg, var(--red), #fff 72%);
+    font-size: clamp(4rem, 13vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--red), #ffffff 65%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 24px rgba(255, 0, 60, 0.5));
+    filter: drop-shadow(0 0 35px rgba(255, 0, 60, 0.6));
 }
 
 .scroll-content p {
+    max-width: 760px;
+    margin: 28px auto 0;
     color: var(--muted);
-    max-width: 720px;
-    margin: 24px auto 0;
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
     line-height: 1.55;
 }
 
 .fade-bottom {
     position: absolute;
     inset: auto 0 0 0;
-    height: 25vh;
+    height: 28vh;
     z-index: 3;
     background: linear-gradient(to bottom, transparent, var(--black));
     pointer-events: none;
 }
 
+/* BUTTONS */
+
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 34px;
     flex-wrap: wrap;
 }
 
@@ -212,8 +220,8 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 170px;
-    padding: 14px 22px;
+    min-width: 180px;
+    padding: 15px 24px;
     border-radius: 14px;
     font-family: var(--font-heading);
     font-size: 0.78rem;
@@ -224,13 +232,14 @@ img {
 
 .primary-btn {
     background: linear-gradient(135deg, var(--red), #ff6b85);
-    color: white;
-    box-shadow: 0 0 28px rgba(255, 0, 60, 0.32);
+    color: #fff;
+    box-shadow: 0 0 32px rgba(255, 0, 60, 0.38);
 }
 
 .secondary-btn {
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
 }
 
 .primary-btn:hover,
@@ -239,6 +248,7 @@ img {
 }
 
 /* SECTIONS */
+
 .section {
     position: relative;
     z-index: 5;
@@ -252,6 +262,8 @@ img {
     text-transform: uppercase;
     margin-bottom: 28px;
 }
+
+/* PSE NE */
 
 .why-panel,
 .category-intro {
@@ -313,7 +325,28 @@ img {
     margin-bottom: 55px;
 }
 
-/* CATEGORIES */
+/* FIX QE PSE NE TE DALE GJITHMONE */
+
+.always-visible,
+.why-panel,
+.category-intro {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+.why-section,
+#categories {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 10;
+    background: var(--black);
+}
+
+/* KATEGORITE */
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -366,6 +399,7 @@ img {
 }
 
 /* CONTACT */
+
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -387,7 +421,63 @@ img {
     margin-bottom: 6px;
 }
 
+/* HARTA INTERAKTIVE NE FUND */
+
+.map-section {
+    padding-top: 70px;
+}
+
+.map-content {
+    max-width: 900px;
+    margin-bottom: 28px;
+}
+
+.map-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.map-content p {
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.map-content strong {
+    color: #fff;
+    font-family: var(--font-heading);
+}
+
+.map-wrapper {
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(255, 0, 60, 0.12), rgba(255, 255, 255, 0.04)),
+        #07070b;
+    box-shadow: 0 0 45px rgba(255, 0, 60, 0.12);
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 430px;
+    filter: grayscale(0.15) contrast(1.05);
+}
+
+.map-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-top: 1px solid var(--line);
+    background: rgba(0, 0, 0, 0.35);
+}
+
 /* CATEGORY PAGES SUPPORT */
+
 .page-container {
     padding: 125px 7% 70px;
     min-height: 100vh;
@@ -553,16 +643,8 @@ img {
     border-color: var(--red);
 }
 
-.empty-state {
-    grid-column: 1 / -1;
-    border: 1px dashed var(--line);
-    border-radius: 24px;
-    padding: 45px;
-    text-align: center;
-    color: var(--muted);
-}
-
 /* REVEAL ANIMATION */
+
 .reveal {
     opacity: 0;
     transform: translateY(65px) scale(0.96);
@@ -576,6 +658,8 @@ img {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+
+/* FOOTER */
 
 .site-footer {
     border-top: 1px solid var(--line);
@@ -613,6 +697,8 @@ img {
 .floating-whatsapp:hover {
     transform: scale(1.08);
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 980px) {
     .brand span {
@@ -652,23 +738,24 @@ img {
 
 @media (max-width: 768px) {
     .scroll-hero {
-        min-height: 110vh;
+        min-height: 120vh;
     }
 
     .scroll-scene {
         position: relative;
-        height: auto;
         min-height: 100vh;
-        padding: 120px 0 80px;
+        height: auto;
+        padding: 130px 0 90px;
+    }
+
+    .scroll-content h1 {
+        font-size: clamp(3.2rem, 16vw, 6.2rem);
+        letter-spacing: 3px;
     }
 
     .why-stats,
     .contact-grid {
         grid-template-columns: 1fr;
-    }
-
-    .scroll-content h1 {
-        letter-spacing: 2px;
     }
 }
 
@@ -690,6 +777,14 @@ img {
         padding: 110px 5% 50px;
     }
 
+    .map-wrapper iframe {
+        height: 330px;
+    }
+
+    .map-actions a {
+        width: 100%;
+    }
+
     .floating-whatsapp {
         width: 54px;
         height: 54px;
@@ -699,15 +794,5 @@ img {
 
     .site-footer {
         flex-direction: column;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .scroll-bg,
-    .scroll-content,
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
     }
 }
