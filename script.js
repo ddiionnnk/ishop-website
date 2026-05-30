@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "355690000000";
+const WHATSAPP_NUMBER = "355696666601";
 
 function makeProduct(brand, name, badge, imageName) {
     return {
@@ -13,7 +13,6 @@ function makeProduct(brand, name, badge, imageName) {
 
 const PRODUCTS = {
     telefonat: [
-        // IPHONE PRO SERIES
         makeProduct("Apple", "iPhone 11 Pro", "Apple", "iphone11pro"),
         makeProduct("Apple", "iPhone 11 Pro Max", "Apple", "iphone11promax"),
         makeProduct("Apple", "iPhone 12 Pro", "Apple", "iphone12pro"),
@@ -29,7 +28,6 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 17 Pro", "Apple", "iphone17pro"),
         makeProduct("Apple", "iPhone 17 Pro Max", "Apple", "iphone17promax"),
 
-        // IPHONE USED
         makeProduct("Apple", "iPhone XR 64GB", "USED", "iphonexr"),
         makeProduct("Apple", "iPhone 12 Mini 64GB", "USED", "iphone12mini"),
         makeProduct("Apple", "iPhone 12 Pro 128GB", "USED", "iphone12pro"),
@@ -49,7 +47,6 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 15 Pro 256GB", "USED", "iphone15pro"),
         makeProduct("Apple", "iPhone 15 Pro Max 256GB", "USED", "iphone15promax"),
 
-        // IPHONE NEW / E-SIM
         makeProduct("Apple", "iPhone 15 128GB New", "NEW", "iphone15"),
         makeProduct("Apple", "iPhone 16 128GB New", "NEW", "iphone16"),
         makeProduct("Apple", "iPhone 17 256GB New", "NEW", "iphone17"),
@@ -60,7 +57,6 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 17 Pro Max 512GB", "E-SIM", "iphone17promax"),
         makeProduct("Apple", "iPhone 17 Pro Max 1TB", "E-SIM", "iphone17promax"),
 
-        // SAMSUNG
         makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16"),
         makeProduct("Samsung", "Samsung Galaxy A17 4/64GB", "A Series", "samsunggalaxya17"),
@@ -96,7 +92,6 @@ const PRODUCTS = {
         makeProduct("Samsung", "Samsung Galaxy S26 Ultra 12/512GB", "Ultra", "samsunggalaxys26ultra"),
         makeProduct("Samsung", "Samsung Galaxy Flip 7 FE 12/256GB", "Flip", "samsunggalaxyflip7fe"),
 
-        // REDMI / XIAOMI / POCO / PIXEL / NOKIA
         makeProduct("Poco", "Poco C71 3/64GB", "Poco", "pococ71"),
         makeProduct("Poco", "Poco M8 8/256GB", "Poco", "pocom8"),
         makeProduct("Poco", "Poco M8 Pro 12/512GB", "Poco", "pocom8pro"),
@@ -116,25 +111,134 @@ const PRODUCTS = {
         makeProduct("Nokia", "Nokia 105 2023", "Nokia", "nokia1052023")
     ],
 
-    skuterat: [],
+    skuterat: [
+        makeProduct("KuKirin", "KuKirin S1 Max", "KuKirin", "kukirins1max"),
+        makeProduct("KuKirin", "KuKirin S3 Pro", "KuKirin", "kukirins3pro"),
+        makeProduct("KuKirin", "KuKirin M4", "KuKirin", "kukirinm4"),
+        makeProduct("KuKirin", "KuKirin M4 Pro", "KuKirin", "kukirinm4pro"),
+        makeProduct("KuKirin", "KuKirin M4 Max", "KuKirin", "kukirinm4max"),
+        makeProduct("KuKirin", "KuKirin G2", "KuKirin", "kukiring2"),
+        makeProduct("KuKirin", "KuKirin G2 Pro", "KuKirin", "kukiring2pro"),
+        makeProduct("KuKirin", "KuKirin G2 Max", "KuKirin", "kukiring2max"),
+        makeProduct("KuKirin", "KuKirin G2 Master", "KuKirin", "kukiring2master"),
+        makeProduct("KuKirin", "KuKirin G2 Ultra", "KuKirin", "kukiring2ultra"),
+        makeProduct("KuKirin", "KuKirin G3", "KuKirin", "kukiring3"),
+        makeProduct("KuKirin", "KuKirin G3 Pro", "KuKirin", "kukiring3pro"),
+        makeProduct("KuKirin", "KuKirin G4", "KuKirin", "kukiring4"),
+        makeProduct("KuKirin", "KuKirin G4 Max", "KuKirin", "kukiring4max"),
+        makeProduct("KuKirin", "KuKirin T3", "KuKirin", "kukirint3"),
 
-    bicikletat: [],
+        makeProduct("Kugoo", "Kugoo Kirin S1 Pro", "Kugoo", "kugookirins1pro"),
+        makeProduct("Kugoo", "Kugoo Kirin S2 Pro", "Kugoo", "kugookirins2pro"),
+        makeProduct("Kugoo", "Kugoo Kirin M2 Pro", "Kugoo", "kugookirinm2pro"),
+        makeProduct("Kugoo", "Kugoo Kirin M3", "Kugoo", "kugookirinm3"),
+        makeProduct("Kugoo", "Kugoo Kirin M4", "Kugoo", "kugookirinm4"),
+        makeProduct("Kugoo", "Kugoo M4 Pro", "Kugoo", "kugoom4pro"),
+        makeProduct("Kugoo", "Kugoo G2 Pro", "Kugoo", "kugoog2pro"),
+        makeProduct("Kugoo", "Kugoo G-Booster", "Kugoo", "kugoogbooster"),
+        makeProduct("Kugoo", "Kugoo Kirin G1", "Kugoo", "kugookiring1"),
+        makeProduct("Kugoo", "Kugoo Kirin G2 Max", "Kugoo", "kugookiring2max"),
+        makeProduct("Kugoo", "Kugoo Kirin G3", "Kugoo", "kugookiring3"),
+        makeProduct("Kugoo", "Kugoo Kirin G3 Pro", "Kugoo", "kugookiring3pro"),
+
+        makeProduct("Segway", "Segway Ninebot ZT3 Pro", "Segway", "segwayninebotzt3pro"),
+        makeProduct("Segway", "Segway Ninebot Max G2", "Segway", "segwayninebotmaxg2"),
+        makeProduct("Segway", "Segway Ninebot E3 Pro", "Segway", "segwayninebote3pro"),
+        makeProduct("Segway", "Segway Ninebot E3", "Segway", "segwayninebote3"),
+        makeProduct("Segway", "Segway Ninebot F3", "Segway", "segwayninebotf3"),
+        makeProduct("Segway", "Segway Ninebot F3 Pro", "Segway", "segwayninebotf3pro")
+    ],
+
+    bicikletat: [
+        makeProduct("OUXI", "OUXI V8", "E-Bike", "ouxiv8"),
+        makeProduct("OUXI", "OUXI V8 Pro", "E-Bike", "ouxiv8pro"),
+        makeProduct("OUXI", "OUXI V8 Ultra", "E-Bike", "ouxiv8ultra"),
+        makeProduct("OUXI", "OUXI V8 Max", "E-Bike", "ouxiv8max"),
+        makeProduct("OUXI", "OUXI V10", "E-Bike", "ouxiv10"),
+        makeProduct("Mangosteen", "Mangosteen FT08", "E-Bike", "mangosteenft08")
+    ],
 
     aksesoret: [
-        makeProduct("Apple", "AirPods Pro 2 Type-C", "AirPods", "airpodspro2typec"),
-        makeProduct("Apple", "AirPods 4 No ANC", "AirPods", "airpods4noanc"),
-        makeProduct("Apple", "AirPods 4 ANC", "AirPods", "airpods4anc"),
-        makeProduct("Apple", "AirPods Pro 3 Type-C", "AirPods", "airpodspro3typec"),
-        makeProduct("Apple", "AirPods Max 2", "AirPods", "airpodsmax2"),
-        makeProduct("Apple", "Apple Watch Series 11 46mm", "Watch", "applewatchseries1146mm"),
-        makeProduct("Apple", "Apple Watch Series 11 Ultra 49mm", "Watch", "applewatchseries11ultra49mm"),
+        makeProduct("Apple", "AirPods Pro 2 Type-C", "Kufje", "airpodspro2typec"),
+        makeProduct("Apple", "AirPods 4 No ANC", "Kufje", "airpods4noanc"),
+        makeProduct("Apple", "AirPods 4 ANC", "Kufje", "airpods4anc"),
+        makeProduct("Apple", "AirPods Pro 3 Type-C", "Kufje", "airpodspro3typec"),
+        makeProduct("Apple", "AirPods Max 2", "Kufje", "airpodsmax2"),
+        makeProduct("Samsung", "Samsung Buds 3", "Kufje", "samsungbuds3"),
+        makeProduct("Samsung", "Samsung Buds 3 Pro", "Kufje", "samsungbuds3pro"),
+        makeProduct("Samsung", "Samsung Buds 4 Pro", "Kufje", "samsungbuds4pro"),
+        makeProduct("Generic", "Kufje Bluetooth", "Kufje", "kufjebluetooth"),
+        makeProduct("Generic", "Kufje Type-C", "Kufje", "kufjetypec"),
+        makeProduct("Generic", "Kufje Lightning", "Kufje", "kufjelightning"),
 
-        makeProduct("Samsung", "Galaxy Smart Watch Ultra", "Watch", "galaxysmartwatchultra"),
-        makeProduct("Samsung", "Galaxy Smart Watch 8 L20", "Watch", "galaxysmartwatch8l20"),
-        makeProduct("Samsung", "Galaxy Smart Watch 8 L30", "Watch", "galaxysmartwatch8l30"),
-        makeProduct("Samsung", "Samsung Buds 3", "Buds", "samsungbuds3"),
-        makeProduct("Samsung", "Samsung Buds 3 Pro", "Buds", "samsungbuds3pro"),
-        makeProduct("Samsung", "Samsung Buds 4 Pro", "Buds", "samsungbuds4pro")
+        makeProduct("Apple", "Kasa iPhone 11 Pro", "Kasa", "kasaiphone11pro"),
+        makeProduct("Apple", "Kasa iPhone 11 Pro Max", "Kasa", "kasaiphone11promax"),
+        makeProduct("Apple", "Kasa iPhone 12 Pro", "Kasa", "kasaiphone12pro"),
+        makeProduct("Apple", "Kasa iPhone 12 Pro Max", "Kasa", "kasaiphone12promax"),
+        makeProduct("Apple", "Kasa iPhone 13 Pro", "Kasa", "kasaiphone13pro"),
+        makeProduct("Apple", "Kasa iPhone 13 Pro Max", "Kasa", "kasaiphone13promax"),
+        makeProduct("Apple", "Kasa iPhone 14 Pro", "Kasa", "kasaiphone14pro"),
+        makeProduct("Apple", "Kasa iPhone 14 Pro Max", "Kasa", "kasaiphone14promax"),
+        makeProduct("Apple", "Kasa iPhone 15 Pro", "Kasa", "kasaiphone15pro"),
+        makeProduct("Apple", "Kasa iPhone 15 Pro Max", "Kasa", "kasaiphone15promax"),
+        makeProduct("Apple", "Kasa iPhone 16 Pro", "Kasa", "kasaiphone16pro"),
+        makeProduct("Apple", "Kasa iPhone 16 Pro Max", "Kasa", "kasaiphone16promax"),
+        makeProduct("Apple", "Kasa iPhone 17 Pro", "Kasa", "kasaiphone17pro"),
+        makeProduct("Apple", "Kasa iPhone 17 Pro Max", "Kasa", "kasaiphone17promax"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A16", "Kasa", "kasasamsunggalaxya16"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A17", "Kasa", "kasasamsunggalaxya17"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A26", "Kasa", "kasasamsunggalaxya26"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A36", "Kasa", "kasasamsunggalaxya36"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A56", "Kasa", "kasasamsunggalaxya56"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy S24", "Kasa", "kasasamsunggalaxys24"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy S25 Ultra", "Kasa", "kasasamsunggalaxys25ultra"),
+
+        makeProduct("Apple", "Xham Mbrojtës iPhone", "Xham", "xhammbrojtesiphone"),
+        makeProduct("Samsung", "Xham Mbrojtës Samsung", "Xham", "xhammbrojtessamsung"),
+        makeProduct("Generic", "Xham Privacy", "Xham", "xhamprivacy"),
+        makeProduct("Generic", "Xham Ceramic", "Xham", "xhamceramic"),
+        makeProduct("Generic", "Xham Kamera iPhone", "Xham", "xhamkameraiphone"),
+        makeProduct("Generic", "Xham Kamera Samsung", "Xham", "xhamkamerasamsung"),
+
+        makeProduct("Apple", "Karikues iPhone USB-C 20W", "Karikues", "karikuesiphoneusbc20w"),
+        makeProduct("Samsung", "Karikues Samsung Type-C 25W", "Karikues", "karikuessamsungtypec25w"),
+        makeProduct("Generic", "Karikues Fast Charger 30W", "Karikues", "karikuesfastcharger30w"),
+        makeProduct("Generic", "Karikues Makine", "Karikues", "karikuesmakine"),
+        makeProduct("Generic", "Kabllo Type-C", "Kabllo", "kabllotypec"),
+        makeProduct("Generic", "Kabllo Lightning", "Kabllo", "kabllolightning"),
+        makeProduct("Generic", "Kabllo USB-C to USB-C", "Kabllo", "kabllousbctousbc"),
+        makeProduct("Generic", "Wireless Charger", "Karikues", "wirelesscharger"),
+        makeProduct("Generic", "Power Bank", "Power Bank", "powerbank"),
+
+        makeProduct("Generic", "Mbajtëse Telefoni Makine", "Aksesor", "mbajtesetelefonimakine"),
+        makeProduct("Generic", "Mbajtëse Telefoni Tavoline", "Aksesor", "mbajtesetelefonitavoline"),
+        makeProduct("Generic", "Pop Socket", "Aksesor", "popsocket"),
+        makeProduct("Generic", "Adapter Type-C to AUX", "Adapter", "adaptertypectoaux"),
+        makeProduct("Generic", "Adapter Lightning to AUX", "Adapter", "adapterlightningtoaux"),
+        makeProduct("Generic", "Adapter Type-C to Lightning", "Adapter", "adaptertypectolightning"),
+
+        makeProduct("Skuter", "Kaskë për Skuter", "Skuter", "kaskepperskuter"),
+        makeProduct("Skuter", "Drita për Skuter", "Skuter", "dritaperskuter"),
+        makeProduct("Skuter", "Mbajtëse Telefoni për Skuter", "Skuter", "mbajtesetelefoniperskuter"),
+        makeProduct("Skuter", "Çantë për Skuter", "Skuter", "canteperskuter"),
+        makeProduct("Skuter", "Dry për Skuter", "Skuter", "dryperskuter"),
+        makeProduct("Skuter", "Gomë për Skuter", "Skuter", "gomeperskuter"),
+        makeProduct("Skuter", "Frena për Skuter", "Skuter", "frenaperskuter"),
+        makeProduct("Skuter", "Disk Frene për Skuter", "Skuter", "diskfreneperskuter"),
+        makeProduct("Skuter", "Kavo Frene për Skuter", "Skuter", "kavofreneperskuter"),
+        makeProduct("Skuter", "Zile për Skuter", "Skuter", "zileperskuter"),
+        makeProduct("Skuter", "Pasqyrë për Skuter", "Skuter", "pasqyreperskuter"),
+        makeProduct("Skuter", "Karikues për Skuter", "Skuter", "karikuesperskuter"),
+
+        makeProduct("Biçikletë", "Kaskë për Biçikletë", "Biçikletë", "kaskeperbiciklete"),
+        makeProduct("Biçikletë", "Drita për Biçikletë", "Biçikletë", "dritaperbiciklete"),
+        makeProduct("Biçikletë", "Dry për Biçikletë", "Biçikletë", "dryperbiciklete"),
+        makeProduct("Biçikletë", "Mbajtëse Telefoni për Biçikletë", "Biçikletë", "mbajtesetelefoniperbiciklete"),
+        makeProduct("Biçikletë", "Çantë për Biçikletë", "Biçikletë", "canteperbiciklete"),
+        makeProduct("Biçikletë", "Gomë për Biçikletë", "Biçikletë", "gomeperbiciklete"),
+        makeProduct("Biçikletë", "Frena për Biçikletë", "Biçikletë", "frenaperbiciklete"),
+        makeProduct("Biçikletë", "Kavo Frene për Biçikletë", "Biçikletë", "kavofreneperbiciklete"),
+        makeProduct("Biçikletë", "Pedale për Biçikletë", "Biçikletë", "pedaleperbiciklete")
     ],
 
     tableta: [
@@ -340,8 +444,6 @@ function setupMenu() {
         });
     });
 }
-
-/* GTA VI / ROCKSTAR STYLE SCROLL */
 
 let scrollObserver = null;
 let cinematicStarted = false;
