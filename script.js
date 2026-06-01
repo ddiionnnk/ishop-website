@@ -46,8 +46,6 @@ const PRODUCTS = {
     ],
 
     skuterat: [
-        makeProduct("KuKirin", "KuKirin S1 Max", "KuKirin", "kukirins1max", "Në gjendje"),
-        makeProduct("KuKirin", "KuKirin M4", "KuKirin", "kukirinm4", "Pyet për gjendjen"),
         makeProduct("KuKirin", "KuKirin M4 Max", "KuKirin", "kukirinm4max", "Me porosi"),
         makeProduct("KuKirin", "KuKirin G2", "KuKirin", "kukiring2", "Në gjendje"),
         makeProduct("KuKirin", "KuKirin G2 Pro", "KuKirin", "kukiring2pro", "Në gjendje"),
