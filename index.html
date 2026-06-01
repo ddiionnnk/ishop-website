@@ -13,6 +13,8 @@
 </head>
 
 <body id="top">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <div class="rockstar-vignette"></div>
     <div class="scan-lines"></div>
     <div class="diagonal-noise"></div>
@@ -62,63 +64,64 @@
 
                     <div class="hero-buttons">
                         <a href="telefonat.html" class="primary-btn">Shiko Produktet</a>
-                        <a href="#best-sellers" class="secondary-btn">Më të kërkuarat</a>
+                        <a href="#showroom" class="secondary-btn">Spotlight</a>
                     </div>
                 </div>
 
                 <div class="gta-fade-mask"></div>
             </div>
         </section>
+
         <section class="showroom-section section" id="showroom">
-    <div class="showroom-left reveal">
-        <p class="eyebrow">Showroom</p>
-        <h2>Produktet kryesore në spotlight</h2>
-        <p>
-            Shiko produktet më të forta të iShop Mobile me një prezantim më modern,
-            më premium dhe më tërheqës për klientin.
-        </p>
+            <div class="showroom-left reveal">
+                <p class="eyebrow">Showroom</p>
+                <h2>Produktet kryesore në spotlight</h2>
+                <p>
+                    Shiko produktet më të forta të iShop Mobile me një prezantim modern,
+                    premium dhe më tërheqës për klientin.
+                </p>
 
-        <div class="showroom-controls">
-            <button class="showroom-btn active" data-showroom-index="0">iPhone</button>
-            <button class="showroom-btn" data-showroom-index="1">Samsung</button>
-            <button class="showroom-btn" data-showroom-index="2">Skuter</button>
-            <button class="showroom-btn" data-showroom-index="3">E-Bike</button>
-        </div>
-    </div>
-
-    <div class="showroom-card reveal" id="showroomCard">
-        <div class="showroom-glow"></div>
-
-        <div class="showroom-image-wrap">
-            <img src="images/products/iphone15promax.png" alt="iPhone 15 Pro Max" id="showroomImage">
-        </div>
-
-        <div class="showroom-info">
-            <span id="showroomBadge">Apple</span>
-            <h3 id="showroomTitle">iPhone 15 Pro Max</h3>
-            <p id="showroomText">Model premium, shumë i kërkuar dhe ideal për përdorim të përditshëm.</p>
-
-            <div class="showroom-specs">
-                <div>
-                    <strong id="showroomSpec1">Premium</strong>
-                    <small>Kategori</small>
-                </div>
-                <div>
-                    <strong id="showroomSpec2">Në gjendje</strong>
-                    <small>Status</small>
-                </div>
-                <div>
-                    <strong>WhatsApp</strong>
-                    <small>Pyet për çmim</small>
+                <div class="showroom-controls">
+                    <button class="showroom-btn active" data-showroom-index="0">iPhone</button>
+                    <button class="showroom-btn" data-showroom-index="1">Samsung</button>
+                    <button class="showroom-btn" data-showroom-index="2">Skuter</button>
+                    <button class="showroom-btn" data-showroom-index="3">E-Bike</button>
                 </div>
             </div>
 
-            <button class="showroom-whatsapp" id="showroomWhatsapp">
-                Pyet për këtë produkt
-            </button>
-        </div>
-    </div>
-</section>
+            <div class="showroom-card reveal" id="showroomCard">
+                <div class="showroom-glow"></div>
+
+                <div class="showroom-image-wrap">
+                    <img src="images/products/iphone15promax.png" alt="iPhone 15 Pro Max" id="showroomImage">
+                </div>
+
+                <div class="showroom-info">
+                    <span id="showroomBadge">Apple</span>
+                    <h3 id="showroomTitle">iPhone 15 Pro Max</h3>
+                    <p id="showroomText">Model premium, shumë i kërkuar dhe ideal për përdorim të përditshëm.</p>
+
+                    <div class="showroom-specs">
+                        <div>
+                            <strong id="showroomSpec1">Premium</strong>
+                            <small>Kategori</small>
+                        </div>
+                        <div>
+                            <strong id="showroomSpec2">Në gjendje</strong>
+                            <small>Status</small>
+                        </div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <small>Pyet për çmim</small>
+                        </div>
+                    </div>
+
+                    <button class="showroom-whatsapp" id="showroomWhatsapp">
+                        Pyet për këtë produkt
+                    </button>
+                </div>
+            </div>
+        </section>
 
         <section class="why-section section" id="why-us">
             <div class="why-panel always-visible">
@@ -126,7 +129,7 @@
                 <h2>iShop Mobile sjell cilësi, zgjedhje dhe shërbim të shpejtë</h2>
                 <p>
                     Te iShop Mobile gjen produkte të përzgjedhura me kujdes: iPhone, Samsung,
-                    Xiaomi, skutera KuKirin/Kugoo/Segway, biçikleta elektrike dhe aksesorë.
+                    Xiaomi, skutera KuKirin/Segway, biçikleta elektrike dhe aksesorë.
                     Ne fokusohemi te komunikimi i shpejtë, ndihma para blerjes, transparenca
                     me klientin dhe produkte që përditësohen vazhdimisht sipas gjendjes.
                 </p>
@@ -155,8 +158,7 @@
                 <p>
                     iShop Mobile është vendi i duhur sepse të ofron shumë kategori produktesh në një vend:
                     telefona, tableta, skutera, biçikleta elektrike dhe aksesorë. Ne të ndihmojmë të zgjedhësh
-                    produktin që të përshtatet më mirë, përgjigjemi shpejt në WhatsApp dhe e bëjmë blerjen më
-                    të thjeshtë, më të qartë dhe më të sigurt.
+                    produktin që të përshtatet më mirë dhe përgjigjemi shpejt në WhatsApp.
                 </p>
             </div>
 
@@ -173,9 +175,9 @@
 
                 <a href="skuterat.html" class="category-card reveal">
                     <img src="images/products/kukiring2pro.png" onerror="this.src='images/logo.svg'" alt="Skuterat">
-                    <span>KuKirin • Kugoo • Segway</span>
+                    <span>KuKirin • Segway</span>
                     <h3>Skuterat</h3>
-                    <p>KuKirin, Kugoo dhe Segway Ninebot.</p>
+                    <p>Skutera elektrikë KuKirin dhe Segway Ninebot.</p>
                 </a>
 
                 <a href="bicikletat.html" class="category-card reveal">
@@ -259,9 +261,7 @@
                 <p class="eyebrow">Lokacioni</p>
                 <h2>Na gjej në hartë</h2>
                 <p class="section-lead">
-                    Na vizito te iShop Mobile, Myslym Shyri, Tiranë. Nëse do të pyesësh për
-                    produkte, disponueshmëri ose çmime, mund të na kontaktosh direkt ose
-                    të na ndjekësh në rrjetet sociale.
+                    Na vizito te iShop Mobile, Myslym Shyri, Tiranë.
                 </p>
             </div>
 
@@ -304,7 +304,7 @@
                 <h2>Qëndro afër me iShop Mobile</h2>
                 <p class="section-lead">
                     Për modele të reja, postime të përditshme, produkte në gjendje dhe oferta,
-                    na ndiq në TikTok, Instagram dhe Facebook. Mund të na shkruash edhe direkt në WhatsApp.
+                    na ndiq në TikTok, Instagram dhe Facebook.
                 </p>
             </div>
 
@@ -358,6 +358,6 @@
     <a href="https://wa.me/355696666601" target="_blank" class="floating-whatsapp">☏</a>
     <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">↑</button>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

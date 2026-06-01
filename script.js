@@ -46,6 +46,8 @@ const PRODUCTS = {
     ],
 
     skuterat: [
+        makeProduct("KuKirin", "KuKirin S1 Max", "KuKirin", "kukirins1max", "Në gjendje"),
+        makeProduct("KuKirin", "KuKirin M4", "KuKirin", "kukirinm4", "Pyet për gjendjen"),
         makeProduct("KuKirin", "KuKirin M4 Max", "KuKirin", "kukirinm4max", "Me porosi"),
         makeProduct("KuKirin", "KuKirin G2", "KuKirin", "kukiring2", "Në gjendje"),
         makeProduct("KuKirin", "KuKirin G2 Pro", "KuKirin", "kukiring2pro", "Në gjendje"),
@@ -58,14 +60,10 @@ const PRODUCTS = {
         makeProduct("KuKirin", "KuKirin G4 Max", "KuKirin", "kukiring4max", "Me porosi"),
         makeProduct("KuKirin", "KuKirin T3", "KuKirin", "kukirint3", "Pyet për gjendjen"),
 
-        makeProduct("Kugoo", "Kugoo G2 Pro", "Kugoo", "kugoog2pro", "Në gjendje"),
-        makeProduct("Kugoo", "Kugoo G-Booster", "Kugoo", "kugoogbooster", "Me porosi"),
-
         makeProduct("Segway", "Segway Ninebot ZT3 Pro", "Segway", "segwayninebotzt3pro", "Në gjendje"),
         makeProduct("Segway", "Segway Ninebot Max G2", "Segway", "segwayninebotmaxg2", "Në gjendje"),
         makeProduct("Segway", "Segway Ninebot E3 Pro", "Segway", "segwayninebote3pro", "Me porosi"),
         makeProduct("Segway", "Segway Ninebot E3", "Segway", "segwayninebote3", "Pyet për gjendjen"),
-        makeProduct("Segway", "Segway Ninebot F3", "Segway", "segwayninebotf3", "Pyet për gjendjen"),
         makeProduct("Segway", "Segway Ninebot F3 Pro", "Segway", "segwayninebotf3pro", "Me porosi")
     ],
 
@@ -75,7 +73,7 @@ const PRODUCTS = {
         makeProduct("OUXI", "OUXI V8 Ultra", "E-Bike", "ouxiv8ultra", "Me porosi"),
         makeProduct("OUXI", "OUXI V8 Max", "E-Bike", "ouxiv8max", "Me porosi"),
         makeProduct("OUXI", "OUXI V10", "E-Bike", "ouxiv10", "Pyet për gjendjen"),
-        makeProduct("Mangosteen", "Mangosteen FT03", "E-Bike", "mangosteenft03", "Në gjendje")
+        makeProduct("Mangosteen", "Mangosteen FT08", "E-Bike", "mangosteenft08", "Në gjendje")
     ],
 
     aksesoret: [
@@ -641,6 +639,8 @@ function setupBackToTop() {
         } else {
             button.classList.remove("show");
         }
+
+        updateScrollProgress();
     });
 
     button.addEventListener("click", () => {
@@ -649,6 +649,20 @@ function setupBackToTop() {
             behavior: "smooth"
         });
     });
+}
+
+function updateScrollProgress() {
+    const progress = document.getElementById("scrollProgress");
+
+    if (!progress) {
+        return;
+    }
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    progress.style.width = `${percent}%`;
 }
 
 function setupPreloader() {
@@ -759,4 +773,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setupLightbox();
     setupBackToTop();
     setupRockstarParallax();
+    updateScrollProgress();
 });
