@@ -47,9 +47,7 @@ const PRODUCTS = {
 
     skuterat: [
         makeProduct("KuKirin", "KuKirin S1 Max", "KuKirin", "kukirins1max", "Në gjendje"),
-        makeProduct("KuKirin", "KuKirin S3 Pro", "KuKirin", "kukirins3pro", "Në gjendje"),
         makeProduct("KuKirin", "KuKirin M4", "KuKirin", "kukirinm4", "Pyet për gjendjen"),
-        makeProduct("KuKirin", "KuKirin M4 Pro", "KuKirin", "kukirinm4pro", "Në gjendje"),
         makeProduct("KuKirin", "KuKirin M4 Max", "KuKirin", "kukirinm4max", "Me porosi"),
         makeProduct("KuKirin", "KuKirin G2", "KuKirin", "kukiring2", "Në gjendje"),
         makeProduct("KuKirin", "KuKirin G2 Pro", "KuKirin", "kukiring2pro", "Në gjendje"),
@@ -62,12 +60,6 @@ const PRODUCTS = {
         makeProduct("KuKirin", "KuKirin G4 Max", "KuKirin", "kukiring4max", "Me porosi"),
         makeProduct("KuKirin", "KuKirin T3", "KuKirin", "kukirint3", "Pyet për gjendjen"),
 
-        makeProduct("Kugoo", "Kugoo Kirin S1 Pro", "Kugoo", "kugookirins1pro", "Pyet për gjendjen"),
-        makeProduct("Kugoo", "Kugoo Kirin S2 Pro", "Kugoo", "kugookirins2pro", "Pyet për gjendjen"),
-        makeProduct("Kugoo", "Kugoo Kirin M2 Pro", "Kugoo", "kugookirinm2pro", "Pyet për gjendjen"),
-        makeProduct("Kugoo", "Kugoo Kirin M3", "Kugoo", "kugookirinm3", "Pyet për gjendjen"),
-        makeProduct("Kugoo", "Kugoo Kirin M4", "Kugoo", "kugookirinm4", "Në gjendje"),
-        makeProduct("Kugoo", "Kugoo M4 Pro", "Kugoo", "kugoom4pro", "Në gjendje"),
         makeProduct("Kugoo", "Kugoo G2 Pro", "Kugoo", "kugoog2pro", "Në gjendje"),
         makeProduct("Kugoo", "Kugoo G-Booster", "Kugoo", "kugoogbooster", "Me porosi"),
 
@@ -160,7 +152,7 @@ const BEST_SELLERS = [
 const WEEKLY_OFFERS = [
     makeProduct("Apple", "iPhone 14 Pro Max", "Ofertë", "iphone14promax", "Në gjendje"),
     makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "Ofertë", "samsunggalaxya56", "Në gjendje"),
-    makeProduct("Kugoo", "Kugoo M4 Pro", "Ofertë", "kugoom4pro", "Në gjendje"),
+    makeProduct("KuKirin", "KuKirin G2 Max", "Ofertë", "kukiring2max", "Në gjendje"),
     makeProduct("Segway", "Segway Ninebot Max G2", "Ofertë", "segwayninebotmaxg2", "Në gjendje"),
     makeProduct("Mangosteen", "Mangosteen FT08", "Ofertë", "mangosteenft08", "Në gjendje"),
     makeProduct("Samsung", "Samsung Buds 3 Pro", "Ofertë", "samsungbuds3pro", "Në gjendje")
