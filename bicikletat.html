@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biçikletat | iShop Mobile</title>
+    <meta name="description" content="Biçikletat elektrike në iShop Mobile.">
+
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta name="description" content="Biçikletat në iShop Mobile.">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
     <header class="site-header">
         <a href="index.html" class="brand">
             <img src="images/logo.svg" alt="iShop Mobile" class="logo-img">
@@ -32,33 +34,33 @@
     </header>
 
     <main class="page-container">
-        <section class="page-hero">
-            <p class="eyebrow">OUXI • Mangosteen</p>
+        <section class="page-hero reveal">
+            <p class="eyebrow">Kategoria</p>
             <h1>Biçikletat</h1>
-            <p>Katalogu i biçikletave elektrike OUXI dhe Mangosteen.</p>
+            <p>
+                Biçikleta elektrike OUXI dhe Mangosteen. Zgjidh modelin dhe pyet për gjendjen.
+            </p>
 
             <div class="catalog-tools">
-                <input type="text" id="productSearch" placeholder="Kërko p.sh. OUXI V8, V8 Pro, Mangosteen FT08...">
+                <input type="text" id="productSearch" placeholder="Kërko biçikletë...">
                 <select id="brandFilter">
                     <option value="all">Të gjitha markat</option>
                 </select>
             </div>
         </section>
 
-        <section id="catalogSummary" class="catalog-summary"></section>
+        <div class="catalog-summary reveal" id="catalogSummary"></div>
+
         <section class="products-grid" id="catalogGrid" data-category="bicikletat"></section>
     </main>
 
-    <footer class="site-footer">
-        <p>© iShop Mobile. Të gjitha të drejtat e rezervuara.</p>
-        <div>
-            <a href="https://www.instagram.com/ishop_myslym.shyri/" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@ishopmyslymshyri" target="_blank">TikTok</a>
-            <a href="https://www.facebook.com/ishopmshyri/" target="_blank">Facebook</a>
-        </div>
-    </footer>
+    <div class="lightbox" id="imageLightbox">
+        <button class="lightbox-close" id="lightboxClose">×</button>
+        <img src="" alt="Produkt" id="lightboxImage">
+    </div>
 
     <a href="https://wa.me/355696666601" target="_blank" class="floating-whatsapp">☏</a>
+    <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">↑</button>
 
     <script src="script.js"></script>
 </body>
