@@ -1,11 +1,13 @@
 :root {
     --red: #ff003c;
     --blue: #00e5ff;
+    --yellow: #ffd166;
     --black: #030303;
     --card: #0b0b11;
     --text: #ffffff;
     --muted: #bfc1cf;
     --line: rgba(255, 255, 255, 0.12);
+    --glass: rgba(255, 255, 255, 0.075);
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Rajdhani', sans-serif;
 }
@@ -22,8 +24,9 @@ html {
 
 body {
     background:
-        radial-gradient(circle at top left, rgba(255, 0, 60, 0.16), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(0, 229, 255, 0.08), transparent 30%),
+        radial-gradient(circle at top left, rgba(255, 0, 60, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(0, 229, 255, 0.10), transparent 30%),
+        radial-gradient(circle at center, rgba(255, 209, 102, 0.035), transparent 36%),
         var(--black);
     color: var(--text);
     font-family: var(--font-body);
@@ -50,14 +53,14 @@ img {
     width: 0%;
     height: 3px;
     z-index: 6000;
-    background: linear-gradient(90deg, var(--red), var(--blue), var(--red));
+    background: linear-gradient(90deg, var(--red), var(--blue), var(--yellow), var(--red));
     box-shadow:
         0 0 14px rgba(255, 0, 60, 0.75),
         0 0 24px rgba(0, 229, 255, 0.35);
     transition: width 0.08s linear;
 }
 
-/* PRELOADER */
+/* BACKGROUND EFFECTS */
 
 .preloader {
     position: fixed;
@@ -104,8 +107,6 @@ img {
         filter: drop-shadow(0 0 34px rgba(255, 0, 60, 0.9));
     }
 }
-
-/* BACKGROUND EFFECTS */
 
 .cursor-glow {
     position: fixed;
@@ -166,7 +167,7 @@ body:hover .cursor-glow {
     }
 }
 
-/* GTA OVERLAY */
+/* GTA / TECH OVERLAYS */
 
 .rockstar-vignette {
     position: fixed;
@@ -226,7 +227,7 @@ body:hover .cursor-glow {
     }
 }
 
-/* LAYER FIX */
+/* LAYERS */
 
 .site-header,
 main,
@@ -266,7 +267,7 @@ main,
     border-bottom: 1px solid rgba(255, 0, 60, 0.18);
     background:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.58), transparent);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -317,6 +318,8 @@ main,
     font-size: 0.75rem;
     transition: 0.25s;
     transform: skewX(-6deg);
+    position: relative;
+    overflow: hidden;
 }
 
 .header-cta:hover {
@@ -390,7 +393,7 @@ main,
     line-height: 0.78;
     text-transform: uppercase;
     letter-spacing: 8px;
-    background: linear-gradient(45deg, var(--red), #fff 68%);
+    background: linear-gradient(45deg, var(--red), #fff 55%, var(--blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 32px rgba(255, 0, 60, 0.55));
@@ -454,6 +457,61 @@ main,
     z-index: 3;
 }
 
+/* GLITCH TITLE */
+
+.glitch-title {
+    position: relative;
+}
+
+.glitch-title::before,
+.glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.glitch-title::before {
+    color: var(--blue);
+    transform: translate(3px, -2px);
+    clip-path: inset(0 0 55% 0);
+    animation: glitchTop 2.1s infinite linear alternate-reverse;
+}
+
+.glitch-title::after {
+    color: var(--red);
+    transform: translate(-3px, 2px);
+    clip-path: inset(55% 0 0 0);
+    animation: glitchBottom 1.7s infinite linear alternate-reverse;
+}
+
+.small-glitch {
+    display: inline-block;
+}
+
+.small-glitch::before,
+.small-glitch::after {
+    -webkit-text-fill-color: initial;
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(2px, -2px); }
+    20% { transform: translate(-2px, -1px); }
+    40% { transform: translate(4px, -3px); }
+    60% { transform: translate(-3px, 1px); }
+    80% { transform: translate(2px, -1px); }
+    100% { transform: translate(-1px, -2px); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(-2px, 2px); }
+    25% { transform: translate(3px, 1px); }
+    50% { transform: translate(-4px, 3px); }
+    75% { transform: translate(2px, -1px); }
+    100% { transform: translate(-2px, 2px); }
+}
+
 /* TYPING */
 
 #typingText::after {
@@ -464,13 +522,8 @@ main,
 }
 
 @keyframes typingBlink {
-    0%, 50% {
-        opacity: 1;
-    }
-
-    51%, 100% {
-        opacity: 0;
-    }
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 /* BUTTONS */
@@ -599,28 +652,175 @@ main,
     max-width: 850px;
 }
 
-/* PANELS */
+/* GLASS PANEL */
 
+.glass-panel,
 .why-panel,
 .category-intro,
 .page-hero,
-.map-box {
-    border-radius: 18px;
-    border: 1px solid rgba(255, 0, 60, 0.24);
+.map-box,
+.bento-card,
+.product-card,
+.category-card,
+.social-card,
+.step-card,
+.showroom-card,
+.catalog-summary {
     background:
-        linear-gradient(135deg, rgba(255, 0, 60, 0.14), rgba(255, 255, 255, 0.035)),
-        linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.04) 48%, transparent 52%),
-        rgba(8, 8, 12, 0.96);
+        linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.025)),
+        rgba(8, 8, 12, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.13);
     box-shadow:
-        0 0 36px rgba(255, 0, 60, 0.12),
-        inset 0 0 28px rgba(255, 255, 255, 0.025);
+        0 24px 70px rgba(0, 0, 0, 0.45),
+        inset 0 0 30px rgba(255, 255, 255, 0.025);
 }
+
+/* BENTO GRID */
+
+.bento-section {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 0, 60, 0.18), transparent 32%),
+        radial-gradient(circle at 80% 55%, rgba(0, 229, 255, 0.12), transparent 28%),
+        #030303;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 230px;
+    gap: 22px;
+}
+
+.bento-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    isolation: isolate;
+    transition: 0.35s ease;
+}
+
+.bento-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.16), transparent 24%),
+        linear-gradient(135deg, rgba(255, 0, 60, 0.10), rgba(0, 229, 255, 0.07));
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+.bento-card span {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.bento-card h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: clamp(1.45rem, 3vw, 2.4rem);
+    margin-bottom: 8px;
+}
+
+.bento-card p {
+    color: var(--muted);
+    line-height: 1.45;
+    max-width: 360px;
+}
+
+.bento-card img {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 48%;
+    max-height: 72%;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 0 30px rgba(255, 0, 60, 0.38))
+        drop-shadow(0 28px 32px rgba(0, 0, 0, 0.65));
+    transform: rotate(-5deg);
+    transition: 0.35s ease;
+    z-index: -1;
+}
+
+.bento-card:hover {
+    border-color: rgba(255, 0, 60, 0.48);
+    box-shadow:
+        0 0 38px rgba(255, 0, 60, 0.24),
+        0 0 70px rgba(0, 229, 255, 0.12),
+        0 35px 80px rgba(0, 0, 0, 0.55);
+}
+
+.bento-card:hover img {
+    transform: rotate(0deg) scale(1.08) translateY(-8px);
+}
+
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-large img {
+    width: 58%;
+    max-height: 78%;
+}
+
+.bento-wide {
+    grid-column: span 2;
+    background:
+        linear-gradient(135deg, rgba(255, 0, 60, 0.24), rgba(0, 229, 255, 0.08)),
+        rgba(8, 8, 12, 0.72);
+}
+
+.bento-bg-glow {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    right: -80px;
+    top: -60px;
+    background:
+        radial-gradient(circle, rgba(255, 0, 60, 0.30), transparent 66%),
+        radial-gradient(circle, rgba(0, 229, 255, 0.14), transparent 70%);
+    filter: blur(6px);
+    z-index: -2;
+    animation: bentoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes bentoGlow {
+    from {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* PANELS */
 
 .why-panel,
 .category-intro {
     max-width: 1100px;
     margin: 0 auto;
     padding: clamp(28px, 6vw, 70px);
+    border-radius: 26px;
 }
 
 .why-panel h2,
@@ -647,7 +847,7 @@ main,
 
 .why-stats div {
     border: 1px solid var(--line);
-    border-radius: 14px;
+    border-radius: 18px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.28);
 }
@@ -662,18 +862,6 @@ main,
 
 .why-stats span {
     color: var(--muted);
-}
-
-.category-intro {
-    margin-bottom: 55px;
-}
-
-.always-visible,
-.why-panel,
-.category-intro {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
 }
 
 /* SHOWROOM */
@@ -741,14 +929,6 @@ main,
     display: grid;
     align-content: space-between;
     overflow: hidden;
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.025)),
-        rgba(7, 7, 12, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-        0 0 60px rgba(255, 0, 60, 0.18),
-        0 0 90px rgba(0, 229, 255, 0.08),
-        inset 0 0 40px rgba(255, 255, 255, 0.035);
     transform-style: preserve-3d;
 }
 
@@ -888,7 +1068,7 @@ main,
     box-shadow: 0 0 38px rgba(37, 211, 102, 0.45);
 }
 
-/* CATEGORY CARDS */
+/* PRODUCTS / CARDS */
 
 .category-grid {
     display: grid;
@@ -900,17 +1080,31 @@ main,
 .product-card,
 .social-card,
 .step-card {
-    background:
-        linear-gradient(150deg, rgba(16, 16, 22, 0.98), rgba(3, 3, 6, 0.98));
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 16px;
+    border-radius: 22px;
     padding: 24px;
     transition: 0.25s;
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.42),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.025);
     position: relative;
     overflow: hidden;
+}
+
+.category-card::before,
+.product-card::before,
+.social-card::before,
+.step-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.13), transparent 26%);
+    opacity: 0;
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+.category-card:hover::before,
+.product-card:hover::before,
+.social-card:hover::before,
+.step-card:hover::before {
+    opacity: 1;
 }
 
 .category-card img {
@@ -948,8 +1142,6 @@ main,
     color: var(--muted);
     line-height: 1.55;
 }
-
-/* PRODUCTS */
 
 .featured-grid,
 .products-grid {
@@ -1016,7 +1208,7 @@ main,
 .product-image-wrapper {
     position: relative;
     height: 235px;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     margin-bottom: 18px;
     display: grid;
@@ -1091,7 +1283,7 @@ main,
     border: 1px solid var(--line);
     background: transparent;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 12px 16px;
     cursor: pointer;
     font-family: var(--font-heading);
@@ -1154,7 +1346,7 @@ main,
     line-height: 1.6;
 }
 
-/* MAP / CONTACT */
+/* MAP / CONTACT / SOCIAL */
 
 .contact-grid {
     display: grid;
@@ -1187,6 +1379,7 @@ main,
 
 .map-box {
     overflow: hidden;
+    border-radius: 22px;
 }
 
 .map-box iframe {
@@ -1203,8 +1396,6 @@ main,
     border-top: 1px solid var(--line);
     background: rgba(0, 0, 0, 0.32);
 }
-
-/* SOCIAL */
 
 .social-grid {
     display: grid;
@@ -1278,6 +1469,7 @@ main,
     overflow: hidden;
     padding: clamp(30px, 6vw, 64px);
     margin-bottom: 26px;
+    border-radius: 26px;
 }
 
 .page-hero h1 {
@@ -1333,9 +1525,7 @@ main,
     justify-content: space-between;
     gap: 15px;
     flex-wrap: wrap;
-    border: 1px solid rgba(255, 0, 60, 0.18);
-    background: linear-gradient(90deg, rgba(255, 0, 60, 0.09), rgba(255, 255, 255, 0.035));
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 18px;
     color: var(--muted);
     margin-bottom: 26px;
@@ -1505,7 +1695,8 @@ main,
 .showroom-card,
 .page-hero,
 .why-panel,
-.category-intro {
+.category-intro,
+.bento-card {
     clip-path: polygon(
         0 0,
         calc(100% - 18px) 0,
@@ -1525,6 +1716,15 @@ main,
 
     .main-nav a {
         font-size: 0.6rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bento-large,
+    .bento-wide {
+        grid-column: span 2;
     }
 }
 
@@ -1654,8 +1854,28 @@ main,
     }
 
     .products-grid,
-    .featured-grid {
+    .featured-grid,
+    .bento-grid {
         grid-template-columns: 1fr;
+    }
+
+    .bento-grid {
+        grid-auto-rows: minmax(230px, auto);
+    }
+
+    .bento-large,
+    .bento-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .bento-card {
+        min-height: 250px;
+    }
+
+    .bento-card img {
+        width: 52%;
+        opacity: 0.75;
     }
 
     .catalog-tools input,

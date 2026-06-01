@@ -522,7 +522,7 @@ let scrollObserver = null;
 
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left"
+        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left, .bento-card"
     );
 
     if (scrollObserver) {
@@ -559,7 +559,7 @@ function setupScrollAnimations() {
 }
 
 function setupInteractiveCards() {
-    const cards = document.querySelectorAll(".category-card, .product-card, .social-card, .step-card, .showroom-card");
+    const cards = document.querySelectorAll(".category-card, .product-card, .social-card, .step-card, .showroom-card, .bento-card");
 
     cards.forEach(card => {
         card.onmousemove = event => {
