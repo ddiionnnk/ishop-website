@@ -1472,3 +1472,33 @@ main,
         font-size: 0.72rem;
     }
 }
+/* FIX WHATSAPP + BACK TO TOP POSITION */
+
+.floating-whatsapp {
+    position: fixed !important;
+    right: 22px !important;
+    bottom: 22px !important;
+    left: auto !important;
+    z-index: 1200 !important;
+}
+
+.back-to-top {
+    position: fixed !important;
+    right: 22px !important;
+    bottom: 96px !important;
+    left: auto !important;
+    z-index: 1201 !important;
+}
+
+/* MOBILE FIX */
+@media (max-width: 620px) {
+    .floating-whatsapp {
+        right: 14px !important;
+        bottom: 14px !important;
+    }
+
+    .back-to-top {
+        right: 14px !important;
+        bottom: 82px !important;
+    }
+}
