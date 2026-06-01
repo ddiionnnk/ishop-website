@@ -75,7 +75,7 @@ const PRODUCTS = {
         makeProduct("OUXI", "OUXI V8 Ultra", "E-Bike", "ouxiv8ultra", "Me porosi"),
         makeProduct("OUXI", "OUXI V8 Max", "E-Bike", "ouxiv8max", "Me porosi"),
         makeProduct("OUXI", "OUXI V10", "E-Bike", "ouxiv10", "Pyet për gjendjen"),
-        makeProduct("Mangosteen", "Mangosteen FT08", "E-Bike", "mangosteenft08", "Në gjendje")
+        makeProduct("Mangosteen", "Mangosteen FT03", "E-Bike", "mangosteenft03", "Në gjendje")
     ],
 
     aksesoret: [
