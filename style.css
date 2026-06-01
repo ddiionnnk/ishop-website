@@ -1708,3 +1708,289 @@ main,
         filter: none !important;
     }
 }
+/* HOLOGRAM PRODUCT SHOWROOM */
+
+.showroom-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 44px;
+    min-height: 90vh;
+    background:
+        radial-gradient(circle at 72% 50%, rgba(255, 0, 60, 0.22), transparent 34%),
+        radial-gradient(circle at 90% 20%, rgba(0, 229, 255, 0.16), transparent 28%),
+        #030303;
+}
+
+.showroom-left h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.3rem, 5vw, 5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.showroom-left p {
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.65;
+    font-size: 1.2rem;
+}
+
+.showroom-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.showroom-btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.055);
+    color: #fff;
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.showroom-btn:hover,
+.showroom-btn.active {
+    border-color: rgba(255, 0, 60, 0.7);
+    background: rgba(255, 0, 60, 0.16);
+    box-shadow: 0 0 22px rgba(255, 0, 60, 0.24);
+}
+
+.showroom-card {
+    position: relative;
+    min-height: 660px;
+    border-radius: 34px;
+    padding: 34px;
+    display: grid;
+    align-content: space-between;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.025)),
+        rgba(7, 7, 12, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 0 60px rgba(255, 0, 60, 0.18),
+        0 0 90px rgba(0, 229, 255, 0.08),
+        inset 0 0 40px rgba(255, 255, 255, 0.035);
+    transform-style: preserve-3d;
+}
+
+.showroom-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background:
+        conic-gradient(
+            from var(--showroom-angle, 0deg),
+            transparent,
+            rgba(255, 0, 60, 0.9),
+            rgba(0, 229, 255, 0.75),
+            transparent
+        );
+    opacity: 0.32;
+    animation: showroomSpin 5s linear infinite;
+    z-index: -1;
+}
+
+@keyframes showroomSpin {
+    to {
+        --showroom-angle: 360deg;
+    }
+}
+
+.showroom-glow {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(circle, rgba(255, 0, 60, 0.34), transparent 60%),
+        radial-gradient(circle, rgba(0, 229, 255, 0.18), transparent 70%);
+    filter: blur(20px);
+    opacity: 0.85;
+    animation: showroomGlow 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes showroomGlow {
+    from {
+        transform: translateX(-50%) scale(0.92);
+        opacity: 0.55;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.08);
+        opacity: 0.95;
+    }
+}
+
+.showroom-image-wrap {
+    position: relative;
+    z-index: 2;
+    height: 360px;
+    display: grid;
+    place-items: center;
+}
+
+.showroom-image-wrap img {
+    max-height: 350px;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 0 28px rgba(255, 0, 60, 0.42))
+        drop-shadow(0 30px 45px rgba(0, 0, 0, 0.65));
+    animation: showroomFloat 3s ease-in-out infinite;
+    transition: 0.45s ease;
+}
+
+@keyframes showroomFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(2deg);
+    }
+}
+
+.showroom-info {
+    position: relative;
+    z-index: 3;
+    border-radius: 24px;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.showroom-info span {
+    display: inline-flex;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: rgba(255, 0, 60, 0.16);
+    border: 1px solid rgba(255, 0, 60, 0.45);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.showroom-info h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.showroom-info p {
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.showroom-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.showroom-specs div {
+    border-radius: 16px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.showroom-specs strong {
+    display: block;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.86rem;
+    margin-bottom: 5px;
+}
+
+.showroom-specs small {
+    color: var(--muted);
+}
+
+.showroom-whatsapp {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 18px;
+    background:
+        linear-gradient(135deg, #25d366, #0fb957);
+    color: #04120a;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 0 28px rgba(37, 211, 102, 0.28);
+}
+
+.showroom-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 38px rgba(37, 211, 102, 0.45);
+}
+
+/* Premium section separator */
+
+.showroom-section::before {
+    height: 2px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 0, 60, 1),
+            rgba(0, 229, 255, 1),
+            transparent
+        );
+    box-shadow: 0 0 24px rgba(255, 0, 60, 0.45);
+}
+
+/* Mobile showroom */
+
+@media (max-width: 900px) {
+    .showroom-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .showroom-card {
+        min-height: 610px;
+    }
+}
+
+@media (max-width: 620px) {
+    .showroom-card {
+        min-height: auto;
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .showroom-image-wrap {
+        height: 280px;
+    }
+
+    .showroom-image-wrap img {
+        max-height: 270px;
+    }
+
+    .showroom-specs {
+        grid-template-columns: 1fr;
+    }
+}

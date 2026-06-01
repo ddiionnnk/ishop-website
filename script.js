@@ -26,19 +26,14 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 15 Pro Max", "Apple", "iphone15promax", "Në gjendje"),
         makeProduct("Apple", "iPhone 16 Pro", "Apple", "iphone16pro", "Me porosi"),
         makeProduct("Apple", "iPhone 16 Pro Max", "Apple", "iphone16promax", "Me porosi"),
-        makeProduct("Apple", "iPhone 17 Pro", "Apple", "iphone17pro", "Me porosi"),
-        makeProduct("Apple", "iPhone 17 Pro Max", "Apple", "iphone17promax", "Me porosi"),
 
         makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16", "Në gjendje"),
-        makeProduct("Samsung", "Samsung Galaxy A17 4/64GB", "A Series", "samsunggalaxya17", "Pyet për gjendjen"),
-        makeProduct("Samsung", "Samsung Galaxy A17 4/128GB", "A Series", "samsunggalaxya17", "Pyet për gjendjen"),
         makeProduct("Samsung", "Samsung Galaxy A26 6/128GB", "A Series", "samsunggalaxya26", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A36 8/128GB", "A Series", "samsunggalaxya36", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "A Series", "samsunggalaxya56", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy S24 8/256GB", "S Series", "samsunggalaxys24", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy S24 FE 8/128GB", "FE", "samsunggalaxys24fe", "Pyet për gjendjen"),
-        makeProduct("Samsung", "Samsung Galaxy S25 FE 8/256GB", "FE", "samsunggalaxys25fe", "Me porosi"),
         makeProduct("Samsung", "Samsung Galaxy S25 Plus 12/256GB", "S Series", "samsunggalaxys25plus", "Me porosi"),
         makeProduct("Samsung", "Samsung Galaxy S25 Ultra 12/256GB", "Ultra", "samsunggalaxys25ultra", "Në gjendje"),
 
@@ -75,10 +70,6 @@ const PRODUCTS = {
         makeProduct("Kugoo", "Kugoo M4 Pro", "Kugoo", "kugoom4pro", "Në gjendje"),
         makeProduct("Kugoo", "Kugoo G2 Pro", "Kugoo", "kugoog2pro", "Në gjendje"),
         makeProduct("Kugoo", "Kugoo G-Booster", "Kugoo", "kugoogbooster", "Me porosi"),
-        makeProduct("Kugoo", "Kugoo Kirin G1", "Kugoo", "kugookiring1", "Pyet për gjendjen"),
-        makeProduct("Kugoo", "Kugoo Kirin G2 Max", "Kugoo", "kugookiring2max", "Me porosi"),
-        makeProduct("Kugoo", "Kugoo Kirin G3", "Kugoo", "kugookiring3", "Me porosi"),
-        makeProduct("Kugoo", "Kugoo Kirin G3 Pro", "Kugoo", "kugookiring3pro", "Me porosi"),
 
         makeProduct("Segway", "Segway Ninebot ZT3 Pro", "Segway", "segwayninebotzt3pro", "Në gjendje"),
         makeProduct("Segway", "Segway Ninebot Max G2", "Segway", "segwayninebotmaxg2", "Në gjendje"),
@@ -101,61 +92,36 @@ const PRODUCTS = {
         makeProduct("Apple", "AirPods Pro 2 Type-C", "Kufje", "airpodspro2typec", "Në gjendje"),
         makeProduct("Apple", "AirPods 4 No ANC", "Kufje", "airpods4noanc", "Në gjendje"),
         makeProduct("Apple", "AirPods 4 ANC", "Kufje", "airpods4anc", "Në gjendje"),
-        makeProduct("Apple", "AirPods Pro 3 Type-C", "Kufje", "airpodspro3typec", "Me porosi"),
         makeProduct("Apple", "AirPods Max 2", "Kufje", "airpodsmax2", "Me porosi"),
         makeProduct("Samsung", "Samsung Buds 3", "Kufje", "samsungbuds3", "Në gjendje"),
         makeProduct("Samsung", "Samsung Buds 3 Pro", "Kufje", "samsungbuds3pro", "Në gjendje"),
-        makeProduct("Samsung", "Samsung Buds 4 Pro", "Kufje", "samsungbuds4pro", "Me porosi"),
         makeProduct("Generic", "Kufje Bluetooth", "Kufje", "kufjebluetooth", "Në gjendje"),
         makeProduct("Generic", "Kufje Type-C", "Kufje", "kufjetypec", "Në gjendje"),
         makeProduct("Generic", "Kufje Lightning", "Kufje", "kufjelightning", "Në gjendje"),
 
         makeProduct("Apple", "Kasa iPhone 11 Pro", "Kasa", "kasaiphone11pro", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 11 Pro Max", "Kasa", "kasaiphone11promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 12 Pro", "Kasa", "kasaiphone12pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 12 Pro Max", "Kasa", "kasaiphone12promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 13 Pro", "Kasa", "kasaiphone13pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 13 Pro Max", "Kasa", "kasaiphone13promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 14 Pro", "Kasa", "kasaiphone14pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 14 Pro Max", "Kasa", "kasaiphone14promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 15 Pro", "Kasa", "kasaiphone15pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 15 Pro Max", "Kasa", "kasaiphone15promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 16 Pro", "Kasa", "kasaiphone16pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 16 Pro Max", "Kasa", "kasaiphone16promax", "Në gjendje"),
-        makeProduct("Apple", "Kasa iPhone 17 Pro", "Kasa", "kasaiphone17pro", "Me porosi"),
-        makeProduct("Apple", "Kasa iPhone 17 Pro Max", "Kasa", "kasaiphone17promax", "Me porosi"),
 
         makeProduct("Samsung", "Kasa Samsung Galaxy A16", "Kasa", "kasasamsunggalaxya16", "Në gjendje"),
-        makeProduct("Samsung", "Kasa Samsung Galaxy A17", "Kasa", "kasasamsunggalaxya17", "Në gjendje"),
-        makeProduct("Samsung", "Kasa Samsung Galaxy A26", "Kasa", "kasasamsunggalaxya26", "Në gjendje"),
-        makeProduct("Samsung", "Kasa Samsung Galaxy A36", "Kasa", "kasasamsunggalaxya36", "Në gjendje"),
         makeProduct("Samsung", "Kasa Samsung Galaxy A56", "Kasa", "kasasamsunggalaxya56", "Në gjendje"),
-        makeProduct("Samsung", "Kasa Samsung Galaxy S24", "Kasa", "kasasamsunggalaxys24", "Në gjendje"),
         makeProduct("Samsung", "Kasa Samsung Galaxy S25 Ultra", "Kasa", "kasasamsunggalaxys25ultra", "Në gjendje"),
 
         makeProduct("Apple", "Xham Mbrojtës iPhone", "Xham", "xhammbrojtesiphone", "Në gjendje"),
         makeProduct("Samsung", "Xham Mbrojtës Samsung", "Xham", "xhammbrojtessamsung", "Në gjendje"),
         makeProduct("Generic", "Xham Privacy", "Xham", "xhamprivacy", "Në gjendje"),
-        makeProduct("Generic", "Xham Ceramic", "Xham", "xhamceramic", "Në gjendje"),
         makeProduct("Generic", "Xham Kamera iPhone", "Xham", "xhamkameraiphone", "Në gjendje"),
-        makeProduct("Generic", "Xham Kamera Samsung", "Xham", "xhamkamerasamsung", "Në gjendje"),
 
         makeProduct("Apple", "Karikues iPhone USB-C 20W", "Karikues", "karikuesiphoneusbc20w", "Në gjendje"),
         makeProduct("Samsung", "Karikues Samsung Type-C 25W", "Karikues", "karikuessamsungtypec25w", "Në gjendje"),
         makeProduct("Generic", "Karikues Fast Charger 30W", "Karikues", "karikuesfastcharger30w", "Në gjendje"),
-        makeProduct("Generic", "Karikues Makine", "Karikues", "karikuesmakine", "Në gjendje"),
         makeProduct("Generic", "Kabllo Type-C", "Kabllo", "kabllotypec", "Në gjendje"),
         makeProduct("Generic", "Kabllo Lightning", "Kabllo", "kabllolightning", "Në gjendje"),
-        makeProduct("Generic", "Kabllo USB-C to USB-C", "Kabllo", "kabllousbctousbc", "Në gjendje"),
         makeProduct("Generic", "Wireless Charger", "Karikues", "wirelesscharger", "Pyet për gjendjen"),
         makeProduct("Generic", "Power Bank", "Power Bank", "powerbank", "Pyet për gjendjen"),
-
-        makeProduct("Generic", "Mbajtëse Telefoni Makine", "Aksesor", "mbajtesetelefonimakine", "Në gjendje"),
-        makeProduct("Generic", "Mbajtëse Telefoni Tavoline", "Aksesor", "mbajtesetelefonitavoline", "Në gjendje"),
-        makeProduct("Generic", "Pop Socket", "Aksesor", "popsocket", "Në gjendje"),
-        makeProduct("Generic", "Adapter Type-C to AUX", "Adapter", "adaptertypectoaux", "Në gjendje"),
-        makeProduct("Generic", "Adapter Lightning to AUX", "Adapter", "adapterlightningtoaux", "Në gjendje"),
-        makeProduct("Generic", "Adapter Type-C to Lightning", "Adapter", "adaptertypectolightning", "Në gjendje"),
 
         makeProduct("Skuter", "Kaskë për Skuter", "Skuter", "kaskepperskuter", "Në gjendje"),
         makeProduct("Skuter", "Drita për Skuter", "Skuter", "dritaperskuter", "Në gjendje"),
@@ -164,21 +130,12 @@ const PRODUCTS = {
         makeProduct("Skuter", "Dry për Skuter", "Skuter", "dryperskuter", "Në gjendje"),
         makeProduct("Skuter", "Gomë për Skuter", "Skuter", "gomeperskuter", "Pyet për gjendjen"),
         makeProduct("Skuter", "Frena për Skuter", "Skuter", "frenaperskuter", "Pyet për gjendjen"),
-        makeProduct("Skuter", "Disk Frene për Skuter", "Skuter", "diskfreneperskuter", "Pyet për gjendjen"),
-        makeProduct("Skuter", "Kavo Frene për Skuter", "Skuter", "kavofreneperskuter", "Pyet për gjendjen"),
-        makeProduct("Skuter", "Zile për Skuter", "Skuter", "zileperskuter", "Në gjendje"),
-        makeProduct("Skuter", "Pasqyrë për Skuter", "Skuter", "pasqyreperskuter", "Në gjendje"),
-        makeProduct("Skuter", "Karikues për Skuter", "Skuter", "karikuesperskuter", "Me porosi"),
 
         makeProduct("Biçikletë", "Kaskë për Biçikletë", "Biçikletë", "kaskeperbiciklete", "Në gjendje"),
         makeProduct("Biçikletë", "Drita për Biçikletë", "Biçikletë", "dritaperbiciklete", "Në gjendje"),
         makeProduct("Biçikletë", "Dry për Biçikletë", "Biçikletë", "dryperbiciklete", "Në gjendje"),
         makeProduct("Biçikletë", "Mbajtëse Telefoni për Biçikletë", "Biçikletë", "mbajtesetelefoniperbiciklete", "Në gjendje"),
-        makeProduct("Biçikletë", "Çantë për Biçikletë", "Biçikletë", "canteperbiciklete", "Në gjendje"),
-        makeProduct("Biçikletë", "Gomë për Biçikletë", "Biçikletë", "gomeperbiciklete", "Pyet për gjendjen"),
-        makeProduct("Biçikletë", "Frena për Biçikletë", "Biçikletë", "frenaperbiciklete", "Pyet për gjendjen"),
-        makeProduct("Biçikletë", "Kavo Frene për Biçikletë", "Biçikletë", "kavofreneperbiciklete", "Pyet për gjendjen"),
-        makeProduct("Biçikletë", "Pedale për Biçikletë", "Biçikletë", "pedaleperbiciklete", "Pyet për gjendjen")
+        makeProduct("Biçikletë", "Çantë për Biçikletë", "Biçikletë", "canteperbiciklete", "Në gjendje")
     ],
 
     tableta: [
@@ -207,6 +164,41 @@ const WEEKLY_OFFERS = [
     makeProduct("Segway", "Segway Ninebot Max G2", "Ofertë", "segwayninebotmaxg2", "Në gjendje"),
     makeProduct("Mangosteen", "Mangosteen FT08", "Ofertë", "mangosteenft08", "Në gjendje"),
     makeProduct("Samsung", "Samsung Buds 3 Pro", "Ofertë", "samsungbuds3pro", "Në gjendje")
+];
+
+const SHOWROOM_PRODUCTS = [
+    {
+        badge: "Apple",
+        title: "iPhone 15 Pro Max",
+        text: "Model premium, shumë i kërkuar dhe ideal për përdorim të përditshëm.",
+        image: "images/products/iphone15promax.png",
+        spec1: "Premium",
+        spec2: "Në gjendje"
+    },
+    {
+        badge: "Samsung",
+        title: "Samsung Galaxy S25 Ultra",
+        text: "Performancë e lartë, ekran fantastik dhe dizajn flagship.",
+        image: "images/products/samsunggalaxys25ultra.png",
+        spec1: "Flagship",
+        spec2: "Në gjendje"
+    },
+    {
+        badge: "KuKirin",
+        title: "KuKirin G2 Pro",
+        text: "Skuter elektrik i fortë për përdorim urban dhe lëvizje të shpejtë.",
+        image: "images/products/kukiring2pro.png",
+        spec1: "Electric",
+        spec2: "Në gjendje"
+    },
+    {
+        badge: "OUXI",
+        title: "OUXI V8",
+        text: "Biçikletë elektrike shumë e kërkuar, me look sportiv dhe praktik.",
+        image: "images/products/ouxiv8.png",
+        spec1: "E-Bike",
+        spec2: "Në gjendje"
+    }
 ];
 
 function normalizeText(value) {
@@ -312,21 +304,10 @@ function renderCatalog(productsToRender = null) {
     const allProducts = getCurrentProducts();
     const products = productsToRender || allProducts;
 
-    if (allProducts.length === 0) {
+    if (allProducts.length === 0 || products.length === 0) {
         grid.innerHTML = createEmptyState();
-        updateCatalogSummary(0, 0);
+        updateCatalogSummary(products.length, allProducts.length);
         setupScrollAnimations();
-        setupInteractiveCards();
-        setupLightbox();
-        return;
-    }
-
-    if (products.length === 0) {
-        grid.innerHTML = createEmptyState();
-        updateCatalogSummary(0, allProducts.length);
-        setupScrollAnimations();
-        setupInteractiveCards();
-        setupLightbox();
         return;
     }
 
@@ -394,6 +375,88 @@ function renderFeaturedProducts() {
     setupLightbox();
 }
 
+function setupShowroom() {
+    const card = document.getElementById("showroomCard");
+    const image = document.getElementById("showroomImage");
+    const badge = document.getElementById("showroomBadge");
+    const title = document.getElementById("showroomTitle");
+    const text = document.getElementById("showroomText");
+    const spec1 = document.getElementById("showroomSpec1");
+    const spec2 = document.getElementById("showroomSpec2");
+    const whatsapp = document.getElementById("showroomWhatsapp");
+    const buttons = document.querySelectorAll(".showroom-btn");
+
+    if (!card || !image || !badge || !title || !text || !spec1 || !spec2 || !whatsapp) {
+        return;
+    }
+
+    let activeIndex = 0;
+    let intervalId = null;
+
+    function updateShowroom(index) {
+        const product = SHOWROOM_PRODUCTS[index];
+
+        activeIndex = index;
+
+        card.style.transform = "scale(0.97)";
+        image.style.opacity = "0";
+        image.style.transform = "translateY(25px) scale(0.9)";
+
+        setTimeout(() => {
+            image.src = product.image;
+            image.alt = product.title;
+            badge.textContent = product.badge;
+            title.textContent = product.title;
+            text.textContent = product.text;
+            spec1.textContent = product.spec1;
+            spec2.textContent = product.spec2;
+
+            buttons.forEach(button => {
+                button.classList.toggle(
+                    "active",
+                    Number(button.dataset.showroomIndex) === index
+                );
+            });
+
+            image.style.opacity = "1";
+            image.style.transform = "";
+            card.style.transform = "";
+        }, 220);
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const index = Number(button.dataset.showroomIndex);
+
+            updateShowroom(index);
+
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+
+            intervalId = setInterval(() => {
+                const nextIndex = (activeIndex + 1) % SHOWROOM_PRODUCTS.length;
+                updateShowroom(nextIndex);
+            }, 4200);
+        });
+    });
+
+    whatsapp.addEventListener("click", () => {
+        const product = SHOWROOM_PRODUCTS[activeIndex];
+
+        const message = encodeURIComponent(
+            `Pershendetje iShop Mobile, jam i interesuar per: ${product.title}. A eshte i disponueshem dhe sa kushton?`
+        );
+
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    });
+
+    intervalId = setInterval(() => {
+        const nextIndex = (activeIndex + 1) % SHOWROOM_PRODUCTS.length;
+        updateShowroom(nextIndex);
+    }, 4200);
+}
+
 function setupWhatsAppButtons() {
     document.querySelectorAll(".buy-btn[data-product]").forEach(button => {
         button.onclick = () => {
@@ -442,11 +505,10 @@ function setupCinematicScroll() {
 
     function update() {
         sections.forEach(section => {
-            const sticky = section.querySelector(".cinematic-sticky");
             const bg = section.querySelector(".cinematic-bg");
             const content = section.querySelector(".cinematic-content");
 
-            if (!sticky || !bg || !content) {
+            if (!bg || !content) {
                 return;
             }
 
@@ -455,18 +517,11 @@ function setupCinematicScroll() {
             const total = rect.height - windowHeight;
             const progress = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
 
-            const bgScale = 1.12 + progress * 0.18;
-            const bgMove = progress * -65;
-            const contentMove = progress * -80;
-            const contentScale = 1 - progress * 0.08;
-
-            bg.style.transform = `scale(${bgScale}) translateY(${bgMove}px)`;
+            bg.style.transform = `scale(${1.12 + progress * 0.18}) translateY(${progress * -65}px)`;
             bg.style.opacity = 0.68 + progress * 0.12;
-            bg.style.filter = `contrast(${1.08 + progress * 0.08}) saturate(${1.1 + progress * 0.2})`;
-
             content.style.opacity = 1;
             content.style.visibility = "visible";
-            content.style.transform = `translateY(${contentMove}px) scale(${contentScale})`;
+            content.style.transform = `translateY(${progress * -80}px) scale(${1 - progress * 0.08})`;
         });
 
         requestAnimationFrame(update);
@@ -479,7 +534,7 @@ let scrollObserver = null;
 
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card"
+        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left"
     );
 
     if (scrollObserver) {
@@ -493,9 +548,7 @@ function setupScrollAnimations() {
     });
 
     if (!("IntersectionObserver" in window)) {
-        animatedElements.forEach(element => {
-            element.classList.add("is-visible");
-        });
+        animatedElements.forEach(element => element.classList.add("is-visible"));
         return;
     }
 
@@ -509,19 +562,16 @@ function setupScrollAnimations() {
             });
         },
         {
-            root: null,
             threshold: 0.08,
             rootMargin: "0px 0px -25px 0px"
         }
     );
 
-    animatedElements.forEach(element => {
-        scrollObserver.observe(element);
-    });
+    animatedElements.forEach(element => scrollObserver.observe(element));
 }
 
 function setupInteractiveCards() {
-    const cards = document.querySelectorAll(".category-card, .product-card, .social-card, .step-card");
+    const cards = document.querySelectorAll(".category-card, .product-card, .social-card, .step-card, .showroom-card");
 
     cards.forEach(card => {
         card.onmousemove = event => {
@@ -560,11 +610,8 @@ function setupLightbox() {
 
     document.querySelectorAll("[data-lightbox-src]").forEach(wrapper => {
         wrapper.onclick = () => {
-            const imageSrc = wrapper.dataset.lightboxSrc;
-            const imageAlt = wrapper.dataset.lightboxAlt || "Produkt";
-
-            lightboxImage.src = imageSrc;
-            lightboxImage.alt = imageAlt;
+            lightboxImage.src = wrapper.dataset.lightboxSrc;
+            lightboxImage.alt = wrapper.dataset.lightboxAlt || "Produkt";
             lightbox.classList.add("open");
             document.body.style.overflow = "hidden";
         };
@@ -644,11 +691,7 @@ function setupCursorGlow() {
 function setupParticles() {
     const container = document.getElementById("particlesBg");
 
-    if (!container) {
-        return;
-    }
-
-    if (container.children.length > 0) {
+    if (!container || container.children.length > 0) {
         return;
     }
 
@@ -718,6 +761,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
     setupCatalog();
     renderFeaturedProducts();
+    setupShowroom();
     setupScrollAnimations();
     setupCinematicScroll();
     setupInteractiveCards();
