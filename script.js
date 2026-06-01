@@ -110,27 +110,75 @@ const PRODUCTS = {
         makeProduct("Generic", "Kufje Type-C", "Kufje", "kufjetypec", "Në gjendje"),
         makeProduct("Generic", "Kufje Lightning", "Kufje", "kufjelightning", "Në gjendje"),
 
+        makeProduct("Apple", "Kasa iPhone 11 Pro", "Kasa", "kasaiphone11pro", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 11 Pro Max", "Kasa", "kasaiphone11promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 12 Pro", "Kasa", "kasaiphone12pro", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 12 Pro Max", "Kasa", "kasaiphone12promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 13 Pro", "Kasa", "kasaiphone13pro", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 13 Pro Max", "Kasa", "kasaiphone13promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 14 Pro", "Kasa", "kasaiphone14pro", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 14 Pro Max", "Kasa", "kasaiphone14promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 15 Pro", "Kasa", "kasaiphone15pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 15 Pro Max", "Kasa", "kasaiphone15promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 16 Pro", "Kasa", "kasaiphone16pro", "Në gjendje"),
         makeProduct("Apple", "Kasa iPhone 16 Pro Max", "Kasa", "kasaiphone16promax", "Në gjendje"),
+        makeProduct("Apple", "Kasa iPhone 17 Pro", "Kasa", "kasaiphone17pro", "Me porosi"),
+        makeProduct("Apple", "Kasa iPhone 17 Pro Max", "Kasa", "kasaiphone17promax", "Me porosi"),
+
+        makeProduct("Samsung", "Kasa Samsung Galaxy A16", "Kasa", "kasasamsunggalaxya16", "Në gjendje"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A17", "Kasa", "kasasamsunggalaxya17", "Në gjendje"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A26", "Kasa", "kasasamsunggalaxya26", "Në gjendje"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A36", "Kasa", "kasasamsunggalaxya36", "Në gjendje"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy A56", "Kasa", "kasasamsunggalaxya56", "Në gjendje"),
+        makeProduct("Samsung", "Kasa Samsung Galaxy S24", "Kasa", "kasasamsunggalaxys24", "Në gjendje"),
         makeProduct("Samsung", "Kasa Samsung Galaxy S25 Ultra", "Kasa", "kasasamsunggalaxys25ultra", "Në gjendje"),
+
         makeProduct("Apple", "Xham Mbrojtës iPhone", "Xham", "xhammbrojtesiphone", "Në gjendje"),
         makeProduct("Samsung", "Xham Mbrojtës Samsung", "Xham", "xhammbrojtessamsung", "Në gjendje"),
+        makeProduct("Generic", "Xham Privacy", "Xham", "xhamprivacy", "Në gjendje"),
+        makeProduct("Generic", "Xham Ceramic", "Xham", "xhamceramic", "Në gjendje"),
+        makeProduct("Generic", "Xham Kamera iPhone", "Xham", "xhamkameraiphone", "Në gjendje"),
+        makeProduct("Generic", "Xham Kamera Samsung", "Xham", "xhamkamerasamsung", "Në gjendje"),
+
+        makeProduct("Apple", "Karikues iPhone USB-C 20W", "Karikues", "karikuesiphoneusbc20w", "Në gjendje"),
+        makeProduct("Samsung", "Karikues Samsung Type-C 25W", "Karikues", "karikuessamsungtypec25w", "Në gjendje"),
         makeProduct("Generic", "Karikues Fast Charger 30W", "Karikues", "karikuesfastcharger30w", "Në gjendje"),
+        makeProduct("Generic", "Karikues Makine", "Karikues", "karikuesmakine", "Në gjendje"),
         makeProduct("Generic", "Kabllo Type-C", "Kabllo", "kabllotypec", "Në gjendje"),
         makeProduct("Generic", "Kabllo Lightning", "Kabllo", "kabllolightning", "Në gjendje"),
+        makeProduct("Generic", "Kabllo USB-C to USB-C", "Kabllo", "kabllousbctousbc", "Në gjendje"),
+        makeProduct("Generic", "Wireless Charger", "Karikues", "wirelesscharger", "Pyet për gjendjen"),
         makeProduct("Generic", "Power Bank", "Power Bank", "powerbank", "Pyet për gjendjen"),
+
+        makeProduct("Generic", "Mbajtëse Telefoni Makine", "Aksesor", "mbajtesetelefonimakine", "Në gjendje"),
+        makeProduct("Generic", "Mbajtëse Telefoni Tavoline", "Aksesor", "mbajtesetelefonitavoline", "Në gjendje"),
+        makeProduct("Generic", "Pop Socket", "Aksesor", "popsocket", "Në gjendje"),
+        makeProduct("Generic", "Adapter Type-C to AUX", "Adapter", "adaptertypectoaux", "Në gjendje"),
+        makeProduct("Generic", "Adapter Lightning to AUX", "Adapter", "adapterlightningtoaux", "Në gjendje"),
+        makeProduct("Generic", "Adapter Type-C to Lightning", "Adapter", "adaptertypectolightning", "Në gjendje"),
 
         makeProduct("Skuter", "Kaskë për Skuter", "Skuter", "kaskepperskuter", "Në gjendje"),
         makeProduct("Skuter", "Drita për Skuter", "Skuter", "dritaperskuter", "Në gjendje"),
         makeProduct("Skuter", "Mbajtëse Telefoni për Skuter", "Skuter", "mbajtesetelefoniperskuter", "Në gjendje"),
         makeProduct("Skuter", "Çantë për Skuter", "Skuter", "canteperskuter", "Në gjendje"),
+        makeProduct("Skuter", "Dry për Skuter", "Skuter", "dryperskuter", "Në gjendje"),
         makeProduct("Skuter", "Gomë për Skuter", "Skuter", "gomeperskuter", "Pyet për gjendjen"),
+        makeProduct("Skuter", "Frena për Skuter", "Skuter", "frenaperskuter", "Pyet për gjendjen"),
+        makeProduct("Skuter", "Disk Frene për Skuter", "Skuter", "diskfreneperskuter", "Pyet për gjendjen"),
+        makeProduct("Skuter", "Kavo Frene për Skuter", "Skuter", "kavofreneperskuter", "Pyet për gjendjen"),
+        makeProduct("Skuter", "Zile për Skuter", "Skuter", "zileperskuter", "Në gjendje"),
+        makeProduct("Skuter", "Pasqyrë për Skuter", "Skuter", "pasqyreperskuter", "Në gjendje"),
         makeProduct("Skuter", "Karikues për Skuter", "Skuter", "karikuesperskuter", "Me porosi"),
 
         makeProduct("Biçikletë", "Kaskë për Biçikletë", "Biçikletë", "kaskeperbiciklete", "Në gjendje"),
         makeProduct("Biçikletë", "Drita për Biçikletë", "Biçikletë", "dritaperbiciklete", "Në gjendje"),
         makeProduct("Biçikletë", "Dry për Biçikletë", "Biçikletë", "dryperbiciklete", "Në gjendje"),
-        makeProduct("Biçikletë", "Mbajtëse Telefoni për Biçikletë", "Biçikletë", "mbajtesetelefoniperbiciklete", "Në gjendje")
+        makeProduct("Biçikletë", "Mbajtëse Telefoni për Biçikletë", "Biçikletë", "mbajtesetelefoniperbiciklete", "Në gjendje"),
+        makeProduct("Biçikletë", "Çantë për Biçikletë", "Biçikletë", "canteperbiciklete", "Në gjendje"),
+        makeProduct("Biçikletë", "Gomë për Biçikletë", "Biçikletë", "gomeperbiciklete", "Pyet për gjendjen"),
+        makeProduct("Biçikletë", "Frena për Biçikletë", "Biçikletë", "frenaperbiciklete", "Pyet për gjendjen"),
+        makeProduct("Biçikletë", "Kavo Frene për Biçikletë", "Biçikletë", "kavofreneperbiciklete", "Pyet për gjendjen"),
+        makeProduct("Biçikletë", "Pedale për Biçikletë", "Biçikletë", "pedaleperbiciklete", "Pyet për gjendjen")
     ],
 
     tableta: [
@@ -565,6 +613,7 @@ function setupBackToTop() {
         });
     });
 }
+
 function setupPreloader() {
     const preloader = document.getElementById("preloader");
 
@@ -637,6 +686,29 @@ function setupTypingText() {
     type();
 }
 
+function setupRockstarParallax() {
+    const hero = document.querySelector(".hero-cinematic");
+    const title = document.querySelector(".cinematic-content h1");
+    const bg = document.querySelector(".cinematic-bg");
+
+    if (!hero || !title || !bg) {
+        return;
+    }
+
+    window.addEventListener("mousemove", event => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 2;
+        const y = (event.clientY / window.innerHeight - 0.5) * 2;
+
+        title.style.textShadow = `
+            ${8 + x * 6}px ${8 + y * 6}px 0 rgba(255, 0, 60, 0.12),
+            0 0 18px rgba(255, 0, 60, 0.75),
+            0 0 48px rgba(255, 0, 60, 0.34)
+        `;
+
+        bg.style.backgroundPosition = `${50 + x * 2}% ${50 + y * 2}%`;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     setupPreloader();
     setupCursorGlow();
@@ -652,4 +724,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setupWhatsAppButtons();
     setupLightbox();
     setupBackToTop();
+    setupRockstarParallax();
 });
