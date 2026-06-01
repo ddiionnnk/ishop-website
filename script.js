@@ -565,8 +565,84 @@ function setupBackToTop() {
         });
     });
 }
+function setupPreloader() {
+    const preloader = document.getElementById("preloader");
+
+    if (!preloader) {
+        return;
+    }
+
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            preloader.classList.add("hide");
+        }, 500);
+    });
+}
+
+function setupCursorGlow() {
+    const glow = document.getElementById("cursorGlow");
+
+    if (!glow) {
+        return;
+    }
+
+    window.addEventListener("mousemove", event => {
+        glow.style.left = event.clientX + "px";
+        glow.style.top = event.clientY + "px";
+    });
+}
+
+function setupParticles() {
+    const container = document.getElementById("particlesBg");
+
+    if (!container) {
+        return;
+    }
+
+    if (container.children.length > 0) {
+        return;
+    }
+
+    for (let i = 0; i < 34; i++) {
+        const particle = document.createElement("span");
+
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDuration = 5 + Math.random() * 8 + "s";
+        particle.style.animationDelay = Math.random() * 5 + "s";
+        particle.style.opacity = 0.35 + Math.random() * 0.65;
+
+        container.appendChild(particle);
+    }
+}
+
+function setupTypingText() {
+    const typingText = document.getElementById("typingText");
+
+    if (!typingText) {
+        return;
+    }
+
+    const text = "Telefona, skutera elektrikë, biçikleta elektrike, tableta dhe aksesorë me shërbim të shpejtë.";
+    let index = 0;
+
+    function type() {
+        if (index <= text.length) {
+            typingText.textContent = text.slice(0, index);
+            index++;
+            setTimeout(type, 32);
+        }
+    }
+
+    type();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+    setupPreloader();
+    setupCursorGlow();
+    setupParticles();
+    setupTypingText();
+
     setupMenu();
     setupCatalog();
     renderFeaturedProducts();
