@@ -1,10 +1,11 @@
 const WHATSAPP_NUMBER = "355696666601";
 
-function makeProduct(brand, name, badge, imageName, status = "Pyet për gjendjen") {
+function makeProduct(brand, name, badge, imageName, status = "Pyet për gjendjen", price = "Pyet për çmim") {
     return {
         brand: brand,
         name: name,
-        price: "Pyet për çmim",
+        slug: imageName,
+        price: price,
         badge: badge,
         status: status,
         desc: name + ".",
@@ -28,7 +29,7 @@ const PRODUCTS = {
         makeProduct("Apple", "iPhone 16 Pro Max", "Apple", "iphone16promax", "Me porosi"),
 
         makeProduct("Samsung", "Samsung Galaxy A16 4/64GB", "A Series", "samsunggalaxya16", "Në gjendje"),
-        makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16", "Në gjendje"),
+        makeProduct("Samsung", "Samsung Galaxy A16 4/128GB", "A Series", "samsunggalaxya16-128", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A26 6/128GB", "A Series", "samsunggalaxya26", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A36 8/128GB", "A Series", "samsunggalaxya36", "Në gjendje"),
         makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "A Series", "samsunggalaxya56", "Në gjendje"),
@@ -138,7 +139,7 @@ const PRODUCTS = {
 
 const BEST_SELLERS = [
     makeProduct("Apple", "iPhone 15 Pro Max", "Best Seller", "iphone15promax", "Në gjendje"),
-    makeProduct("Samsung", "Samsung Galaxy S25 Ultra", "Best Seller", "samsunggalaxys25ultra", "Në gjendje"),
+    makeProduct("Samsung", "Samsung Galaxy S25 Ultra 12/256GB", "Best Seller", "samsunggalaxys25ultra", "Në gjendje"),
     makeProduct("KuKirin", "KuKirin G2 Pro", "Best Seller", "kukiring2pro", "Në gjendje"),
     makeProduct("OUXI", "OUXI V8", "Best Seller", "ouxiv8", "Në gjendje"),
     makeProduct("Apple", "AirPods Pro 2 Type-C", "Best Seller", "airpodspro2typec", "Në gjendje"),
@@ -165,7 +166,7 @@ const SHOWROOM_PRODUCTS = [
     },
     {
         badge: "Samsung",
-        title: "Samsung Galaxy S25 Ultra",
+        title: "Samsung Galaxy S25 Ultra 12/256GB",
         text: "Performancë e lartë, ekran fantastik dhe dizajn flagship.",
         image: "images/products/samsunggalaxys25ultra.png",
         spec1: "Flagship",
@@ -208,24 +209,207 @@ function getStatusClass(status) {
     return "stock-ask";
 }
 
+function getAllProducts() {
+    const allProducts = [];
+
+    Object.keys(PRODUCTS).forEach(category => {
+        PRODUCTS[category].forEach(product => {
+            allProducts.push({
+                ...product,
+                category: category
+            });
+        });
+    });
+
+    return allProducts;
+}
+
+function getCategoryLabel(category) {
+    const labels = {
+        telefonat: "Telefon",
+        skuterat: "Skuter elektrik",
+        bicikletat: "Biçikletë elektrike",
+        aksesoret: "Aksesor",
+        tableta: "Tablet"
+    };
+
+    return labels[category] || "Produkt";
+}
+
+function getMemoryFromName(name) {
+    const match = name.match(/(\d+\/\d+GB|\d+GB|\d+\/\d+|\d+TB)/i);
+    return match ? match[0] : "Sipas modelit";
+}
+
+function getProductDescription(product) {
+    const category = product.category;
+
+    if (category === "telefonat") {
+        return `${product.name} është model telefoni i disponueshëm te iShop Mobile. Për ngjyrën, memorien, gjendjen dhe çmimin final, klienti mund të na shkruajë direkt në WhatsApp.`;
+    }
+
+    if (category === "skuterat") {
+        return `${product.name} është skuter elektrik për lëvizje urbane dhe përdorim të përditshëm. Për autonominë, gjendjen, garancinë dhe çmimin final, na shkruaj në WhatsApp.`;
+    }
+
+    if (category === "bicikletat") {
+        return `${product.name} është biçikletë elektrike praktike për qytet dhe përdorim të përditshëm. Për gjendjen, ngjyrën dhe çmimin final, porosia bëhet direkt në WhatsApp.`;
+    }
+
+    if (category === "aksesoret") {
+        return `${product.name} është aksesor i disponueshëm te iShop Mobile. Për përputhshmërinë me pajisjen tënde dhe çmimin final, na shkruaj në WhatsApp.`;
+    }
+
+    if (category === "tableta") {
+        return `${product.name} është tablet për punë, shkollë, video dhe përdorim të përditshëm. Për gjendjen, memorien dhe çmimin final, na kontakto në WhatsApp.`;
+    }
+
+    return `${product.name} është produkt i disponueshëm te iShop Mobile.`;
+}
+function getProductSpecs(product) {
+    const category = product.category;
+
+    if (category === "telefonat") {
+        return [
+            ["Marka", product.brand],
+            ["Modeli", product.name],
+            ["Memoria", getMemoryFromName(product.name)],
+            ["Gjendja", product.status],
+            ["Përdorimi", "Telefon për përdorim të përditshëm"],
+            ["Çmimi", product.price]
+        ];
+    }
+
+    if (category === "skuterat") {
+        return [
+            ["Marka", product.brand],
+            ["Modeli", product.name],
+            ["Tipi", "Skuter elektrik"],
+            ["Përdorimi", "Lëvizje urbane"],
+            ["Gjendja", product.status],
+            ["Çmimi", product.price]
+        ];
+    }
+
+    if (category === "bicikletat") {
+        return [
+            ["Marka", product.brand],
+            ["Modeli", product.name],
+            ["Tipi", "Biçikletë elektrike"],
+            ["Përdorimi", "Qytet / përditshëm"],
+            ["Gjendja", product.status],
+            ["Çmimi", product.price]
+        ];
+    }
+
+    if (category === "aksesoret") {
+        return [
+            ["Marka", product.brand],
+            ["Produkti", product.name],
+            ["Tipi", product.badge],
+            ["Përdorimi", "Aksesor telefoni/skuteri/biçiklete"],
+            ["Gjendja", product.status],
+            ["Çmimi", product.price]
+        ];
+    }
+
+    if (category === "tableta") {
+        return [
+            ["Marka", product.brand],
+            ["Modeli", product.name],
+            ["Memoria", getMemoryFromName(product.name)],
+            ["Tipi", "Tablet"],
+            ["Gjendja", product.status],
+            ["Çmimi", product.price]
+        ];
+    }
+
+    return [
+        ["Marka", product.brand],
+        ["Modeli", product.name],
+        ["Kategoria", getCategoryLabel(category)],
+        ["Statusi", product.status],
+        ["Çmimi", product.price]
+    ];
+}
+
+function getProductHighlights(product) {
+    const category = product.category;
+
+    if (category === "telefonat") {
+        return [
+            "I përshtatshëm për përdorim të përditshëm, rrjete sociale, foto dhe video.",
+            "Mund të pyesësh për ngjyrën, memorien dhe gjendjen reale në WhatsApp.",
+            "Porosia bëhet shpejt pa pagesë online, direkt me komunikim në WhatsApp."
+        ];
+    }
+
+    if (category === "skuterat") {
+        return [
+            "Zgjidhje praktike për lëvizje në qytet.",
+            "Mund të pyesësh për baterinë, gjendjen dhe disponueshmërinë.",
+            "Porosia dërgohet direkt në WhatsApp pa pagesë online."
+        ];
+    }
+
+    if (category === "bicikletat") {
+        return [
+            "E përshtatshme për qytet dhe lëvizje të përditshme.",
+            "Mund të pyesësh për ngjyrën, gjendjen dhe modelin e disponueshëm.",
+            "Komunikim i shpejtë direkt me iShop Mobile."
+        ];
+    }
+
+    if (category === "aksesoret") {
+        return [
+            "Aksesor praktik për pajisjen ose mjetin tënd.",
+            "Mund të pyesësh në WhatsApp nëse përshtatet me modelin tënd.",
+            "Porosi e shpejtë pa pagesë online."
+        ];
+    }
+
+    if (category === "tableta") {
+        return [
+            "I përshtatshëm për punë, shkollë dhe argëtim.",
+            "Mund të pyesësh për memorien, gjendjen dhe disponueshmërinë.",
+            "Porosi direkte në WhatsApp pa pagesë online."
+        ];
+    }
+
+    return [
+        "Produkt i disponueshëm te iShop Mobile.",
+        "Pyet direkt në WhatsApp për gjendjen.",
+        "Komunikim i shpejtë dhe i thjeshtë."
+    ];
+}
+
 function createProductCard(product) {
+    const productUrl = `product.html?id=${encodeURIComponent(product.slug)}`;
+
     return `
         <article class="product-card reveal" data-brand="${product.brand}">
             <span class="product-badge">${product.badge}</span>
             <span class="stock-status ${getStatusClass(product.status)}">${product.status}</span>
 
-            <div class="product-image-wrapper" data-lightbox-src="${product.image}" data-lightbox-alt="${product.name}">
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='images/logo.svg'; this.classList.add('fallback-logo');"
-                >
-            </div>
+            <a href="${productUrl}" class="product-card-click">
+                <div class="product-image-wrapper">
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        loading="lazy"
+                        onerror="this.onerror=null; this.src='images/logo.svg'; this.classList.add('fallback-logo');"
+                    >
+                </div>
 
-            <h3>${product.name}</h3>
+                <h3>${product.name}</h3>
+            </a>
+
             <p class="product-desc">${product.desc}</p>
             <p class="price">${product.price}</p>
+
+            <a href="${productUrl}" class="details-btn">
+                Shiko detajet
+            </a>
 
             <button class="buy-btn" data-product="${product.name}">
                 Pyet në WhatsApp
@@ -250,7 +434,12 @@ function getCurrentProducts() {
         return [];
     }
 
-    return PRODUCTS[grid.dataset.category] || [];
+    const category = grid.dataset.category;
+
+    return (PRODUCTS[category] || []).map(product => ({
+        ...product,
+        category: category
+    }));
 }
 
 function renderBrandFilter(products) {
@@ -305,7 +494,6 @@ function renderCatalog(productsToRender = null) {
     setupWhatsAppButtons();
     setupScrollAnimations();
     setupInteractiveCards();
-    setupLightbox();
 }
 
 function applyCatalogFilters() {
@@ -345,22 +533,141 @@ function setupCatalog() {
     }
 }
 
+function findProductCategory(slug) {
+    const category = Object.keys(PRODUCTS).find(key => {
+        return PRODUCTS[key].some(product => product.slug === slug);
+    });
+
+    return category || "telefonat";
+}
+
 function renderFeaturedProducts() {
     const bestSellersGrid = document.getElementById("bestSellersGrid");
     const weeklyOffersGrid = document.getElementById("weeklyOffersGrid");
 
+    const bestSellers = BEST_SELLERS.map(product => ({
+        ...product,
+        category: findProductCategory(product.slug)
+    }));
+
+    const weeklyOffers = WEEKLY_OFFERS.map(product => ({
+        ...product,
+        category: findProductCategory(product.slug)
+    }));
+
     if (bestSellersGrid) {
-        bestSellersGrid.innerHTML = BEST_SELLERS.map(createProductCard).join("");
+        bestSellersGrid.innerHTML = bestSellers.map(createProductCard).join("");
     }
 
     if (weeklyOffersGrid) {
-        weeklyOffersGrid.innerHTML = WEEKLY_OFFERS.map(createProductCard).join("");
+        weeklyOffersGrid.innerHTML = weeklyOffers.map(createProductCard).join("");
     }
 
     setupWhatsAppButtons();
     setupScrollAnimations();
     setupInteractiveCards();
-    setupLightbox();
+}
+
+function findProductBySlug(slug) {
+    return getAllProducts().find(product => product.slug === slug);
+}
+
+function renderProductDetailPage() {
+    const detailPage = document.getElementById("productDetailPage");
+
+    if (!detailPage) {
+        return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("id");
+    const product = findProductBySlug(slug);
+
+    if (!product) {
+        detailPage.innerHTML = `
+            <div class="not-found-box glass-panel">
+                <div>
+                    <h1>Produkti nuk u gjet</h1>
+                    <p>Produkti që kërkove nuk ekziston ose është hequr nga katalogu.</p>
+                    <a href="index.html" class="primary-btn">Kthehu në faqe</a>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    const title = document.getElementById("detailTitle");
+    const image = document.getElementById("detailImage");
+    const brand = document.getElementById("detailBrand");
+    const category = document.getElementById("detailCategory");
+    const status = document.getElementById("detailStatus");
+    const description = document.getElementById("detailDescription");
+    const price = document.getElementById("detailPrice");
+    const specs = document.getElementById("detailSpecs");
+    const highlights = document.getElementById("detailHighlights");
+    const whatsappBtn = document.getElementById("detailWhatsAppBtn");
+
+    document.title = `${product.name} | iShop Mobile`;
+
+    document.body.classList.add(`product-category-${product.category}`);
+
+    setTimeout(() => {
+        document.body.classList.add("product-scene-finished");
+    }, 1650);
+
+    title.textContent = product.name;
+    title.setAttribute("data-text", product.name);
+
+    image.src = product.image;
+    image.alt = product.name;
+    image.onerror = () => {
+        image.src = "images/logo.svg";
+    };
+
+    brand.textContent = product.brand;
+    category.textContent = getCategoryLabel(product.category);
+    status.textContent = product.status;
+    price.textContent = product.price;
+    description.textContent = getProductDescription(product);
+
+    specs.innerHTML = getProductSpecs(product).map(([label, value]) => `
+        <div class="detail-spec-item">
+            <span>${label}</span>
+            <strong>${value}</strong>
+        </div>
+    `).join("");
+
+    highlights.innerHTML = getProductHighlights(product).map(item => `
+        <li>${item}</li>
+    `).join("");
+
+    whatsappBtn.addEventListener("click", () => {
+        const message = encodeURIComponent(
+            `Pershendetje iShop Mobile, dua te porosis kete produkt:\n\n${product.name}\nKategoria: ${getCategoryLabel(product.category)}\nStatusi: ${product.status}\nCmimi: ${product.price}\n\nA eshte i disponueshem?`
+        );
+
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    });
+
+    renderRelatedProducts(product);
+}
+
+function renderRelatedProducts(currentProduct) {
+    const grid = document.getElementById("relatedProductsGrid");
+
+    if (!grid) {
+        return;
+    }
+
+    const related = getAllProducts()
+        .filter(product => product.category === currentProduct.category && product.slug !== currentProduct.slug)
+        .slice(0, 4);
+
+    grid.innerHTML = related.map(createProductCard).join("");
+
+    setupWhatsAppButtons();
+    setupScrollAnimations();
+    setupInteractiveCards();
 }
 
 function setupShowroom() {
@@ -522,7 +829,7 @@ let scrollObserver = null;
 
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left, .bento-card"
+        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left, .bento-card, .product-detail-layout"
     );
 
     if (scrollObserver) {
@@ -597,7 +904,11 @@ function setupLightbox() {
     }
 
     document.querySelectorAll("[data-lightbox-src]").forEach(wrapper => {
-        wrapper.onclick = () => {
+        wrapper.onclick = event => {
+            if (event.target.closest("a")) {
+                return;
+            }
+
             lightboxImage.src = wrapper.dataset.lightboxSrc;
             lightboxImage.alt = wrapper.dataset.lightboxAlt || "Produkt";
             lightbox.classList.add("open");
@@ -765,6 +1076,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
     setupCatalog();
     renderFeaturedProducts();
+    renderProductDetailPage();
     setupShowroom();
     setupScrollAnimations();
     setupCinematicScroll();
