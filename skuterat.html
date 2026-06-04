@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skuterat | iShop Mobile</title>
-    <meta name="description" content="Skuterat elektrikë në iShop Mobile.">
+    <meta name="description" content="Skutera elektrikë KuKirin dhe Segway te iShop Mobile.">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body id="top" class="catalog-page catalog-skuterat">
+    <div class="site-noise"></div>
+    <div class="site-vignette"></div>
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <div class="rockstar-vignette"></div>
-    <div class="scan-lines"></div>
-    <div class="diagonal-noise"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <div class="preloader" id="preloader">
         <img src="images/logo.svg" alt="iShop Mobile">
-        <span>iShop Mobile</span>
+        <span>Skuterat</span>
     </div>
 
-    <div class="particles-bg" id="particlesBg"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <header class="site-header">
-        <a href="index.html" class="brand">
-            <img src="images/logo.svg" alt="iShop Mobile" class="logo-img">
+    <header class="trailer-header">
+        <a href="index.html" class="brand-lockup">
+            <img src="images/logo.svg" alt="iShop Mobile">
             <span>iShop Mobile</span>
         </a>
 
-        <button class="menu-toggle" aria-label="Hap menunë">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Hap menunë">☰</button>
 
-        <nav class="main-nav">
+        <nav class="trailer-nav" id="trailerNav">
             <a href="index.html">Kreu</a>
             <a href="telefonat.html">Telefonat</a>
             <a href="skuterat.html">Skuterat</a>
@@ -43,38 +39,49 @@
             <a href="tableta.html">Tableta</a>
         </nav>
 
-        <a href="https://wa.me/355696666601" target="_blank" class="header-cta">WhatsApp</a>
+        <a href="https://wa.me/355696666601" target="_blank" class="nav-whatsapp">WhatsApp</a>
     </header>
 
-    <main class="page-container">
-        <section class="page-hero reveal glass-panel">
-            <p class="eyebrow">Kategoria</p>
-            <h1 class="glitch-title small-glitch" data-text="Skuterat">Skuterat</h1>
-            <p>
-                Skutera elektrikë KuKirin dhe Segway. Kliko produktin për të parë detajet dhe për ta porositur në WhatsApp.
-            </p>
+    <main>
+        <section class="catalog-hero">
+            <div class="catalog-hero-bg">
+                <img src="images/story/scooters.jpg" alt="Skuterat">
+            </div>
 
-            <div class="catalog-tools">
-                <input type="text" id="productSearch" placeholder="Kërko skuter...">
-                <select id="brandFilter">
-                    <option value="all">Të gjitha markat</option>
-                </select>
+            <div class="catalog-hero-content">
+                <p class="hero-kicker">KuKirin • Segway • Electric Ride</p>
+                <h1 class="mega-title small" data-text="SKUTERAT">SKUTERAT</h1>
+                <p>
+                    Hape çdo skuter si trailer: produkti hyn në ekran, frenon,
+                    ndizen dritat dhe specs dalin me animacion.
+                </p>
+
+                <div class="catalog-tools">
+                    <input type="text" id="productSearch" placeholder="Kërko skuter...">
+                    <select id="brandFilter">
+                        <option value="all">Të gjitha markat</option>
+                    </select>
+                </div>
             </div>
         </section>
 
-        <div class="catalog-summary reveal" id="catalogSummary"></div>
-
-        <section class="products-grid" id="catalogGrid" data-category="skuterat"></section>
+        <section class="catalog-body">
+            <div class="catalog-summary" id="catalogSummary"></div>
+            <div class="products-grid cinematic-grid" id="catalogGrid" data-category="skuterat"></div>
+        </section>
     </main>
 
-    <div class="lightbox" id="imageLightbox">
-        <button class="lightbox-close" id="lightboxClose">×</button>
-        <img src="" alt="Produkt" id="lightboxImage">
-    </div>
+    <footer class="trailer-footer">
+        <p>© iShop Mobile</p>
+        <div>
+            <a href="https://wa.me/355696666601" target="_blank">WhatsApp</a>
+            <a href="index.html">Kreu</a>
+        </div>
+    </footer>
 
     <a href="https://wa.me/355696666601" target="_blank" class="floating-whatsapp">☏</a>
-    <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">↑</button>
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>

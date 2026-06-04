@@ -3,320 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreu | iShop Mobile</title>
-    <meta name="description" content="iShop Mobile - telefona, skutera, biçikleta, tableta dhe aksesorë.">
+    <title>iShop Mobile | Tech Store</title>
+    <meta name="description" content="iShop Mobile - Telefona, skutera elektrikë, biçikleta elektrike, tableta dhe aksesorë në Tiranë.">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body id="top" class="home-page">
+    <div class="site-noise"></div>
+    <div class="site-vignette"></div>
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <div class="rockstar-vignette"></div>
-    <div class="scan-lines"></div>
-    <div class="diagonal-noise"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <div class="preloader" id="preloader">
         <img src="images/logo.svg" alt="iShop Mobile">
         <span>iShop Mobile</span>
     </div>
 
-    <div class="particles-bg" id="particlesBg"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <header class="site-header">
-        <a href="index.html" class="brand">
-            <img src="images/logo.svg" alt="iShop Mobile" class="logo-img">
+    <header class="trailer-header">
+        <a href="index.html" class="brand-lockup">
+            <img src="images/logo.svg" alt="iShop Mobile">
             <span>iShop Mobile</span>
         </a>
 
-        <button class="menu-toggle" aria-label="Hap menunë">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Hap menunë">☰</button>
 
-        <nav class="main-nav">
+        <nav class="trailer-nav" id="trailerNav">
             <a href="index.html">Kreu</a>
             <a href="telefonat.html">Telefonat</a>
             <a href="skuterat.html">Skuterat</a>
             <a href="bicikletat.html">Biçikletat</a>
             <a href="aksesoret.html">Aksesorët</a>
             <a href="tableta.html">Tableta</a>
-            <a href="#bento">Kategoritë</a>
             <a href="#location">Lokacioni</a>
         </nav>
 
-        <a href="https://wa.me/355696666601" target="_blank" class="header-cta">WhatsApp</a>
+        <a href="https://wa.me/355696666601" target="_blank" class="nav-whatsapp">WhatsApp</a>
     </header>
 
     <main>
-        <section class="cinematic-section hero-cinematic">
-            <div class="cinematic-sticky">
-                <div class="cinematic-bg" style="background-image: url('images/hero.jpg');"></div>
-                <div class="cinematic-overlay"></div>
+        <section class="trailer-hero" id="hero">
+            <div class="hero-bg">
+                <img src="images/hero.jpg" alt="iShop Mobile showroom">
+            </div>
 
-                <div class="cinematic-content">
-                    <span class="cinematic-kicker">Tech Store • Electric Mobility</span>
-                    <h1 class="glitch-title" data-text="iSHOP MOBILE">iSHOP MOBILE</h1>
-                    <p>
-                        <span id="typingText"></span>
+            <div class="hero-shade"></div>
+
+            <div class="hero-center">
+                <p class="hero-kicker">Tech Store • Electric Mobility • Tirana</p>
+                <h1 class="mega-title" data-text="iSHOP MOBILE">iSHOP MOBILE</h1>
+                <p class="hero-subtitle">
+                    Telefona, skutera elektrikë, biçikleta, tableta dhe aksesorë.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#trailerStory" class="cinematic-btn primary">Shiko Trailer</a>
+                    <a href="skuterat.html" class="cinematic-btn ghost">Shiko Produktet</a>
+                </div>
+            </div>
+
+            <div class="hero-bottom-text">
+                <span>Scroll</span>
+                <span>Explore</span>
+                <span>iShop</span>
+            </div>
+        </section>
+
+        <section class="scroll-trailer" id="trailerStory">
+            <div class="trailer-sticky">
+                <div class="story-bg active" data-story-bg="0">
+                    <img src="images/story/phones.jpg" alt="Telefonat">
+                </div>
+
+                <div class="story-bg" data-story-bg="1">
+                    <img src="images/story/scooters.jpg" alt="Skuterat">
+                </div>
+
+                <div class="story-bg" data-story-bg="2">
+                    <img src="images/story/bikes.jpg" alt="Biçikletat">
+                </div>
+
+                <div class="story-bg" data-story-bg="3">
+                    <img src="images/story/accessories.jpg" alt="Aksesorët">
+                </div>
+
+                <div class="story-overlay"></div>
+
+                <div class="story-product-frame">
+                    <img src="images/products/iphone15promax.png" alt="Produkt" id="storyProduct">
+                    <div class="story-product-glow"></div>
+                    <div class="story-product-shadow"></div>
+                </div>
+
+                <div class="story-copy">
+                    <p class="story-label" id="storyLabel">New Arrivals</p>
+                    <h2 class="story-title" id="storyTitle" data-text="TELEFONAT">TELEFONAT</h2>
+                    <p class="story-text" id="storyText">
+                        Modele Apple, Samsung, Redmi, Poco dhe Pixel.
                     </p>
 
-                    <div class="hero-buttons">
-                        <a href="#bento" class="primary-btn">Shiko Kategoritë</a>
-                        <a href="#showroom" class="secondary-btn">Spotlight</a>
+                    <div class="story-specs" id="storySpecs">
+                        <span>Premium</span>
+                        <span>Në gjendje</span>
+                        <span>WhatsApp Order</span>
                     </div>
                 </div>
 
-                <div class="gta-fade-mask"></div>
-            </div>
-        </section>
-
-        <section class="section bento-section" id="bento">
-            <div class="section-top reveal">
-                <p class="eyebrow">Bento Grid</p>
-                <h2>Zgjidh kategorinë që të duhet</h2>
-                <p class="section-lead">
-                    Një pamje moderne, premium dhe e lehtë për klientin.
-                    Çdo kategori të çon direkt te produktet.
-                </p>
-            </div>
-
-            <div class="bento-grid">
-                <a href="telefonat.html" class="bento-card bento-large reveal">
-                    <div class="bento-bg-glow"></div>
-                    <span>Apple • Samsung • Xiaomi</span>
-                    <h3>Telefonat</h3>
-                    <p>iPhone, Samsung Galaxy, Redmi, Poco dhe Pixel.</p>
-                    <img src="images/products/iphone15promax.png" onerror="this.src='images/logo.svg'" alt="Telefonat">
-                </a>
-
-                <a href="skuterat.html" class="bento-card reveal">
-                    <span>Electric Ride</span>
-                    <h3>Skuterat</h3>
-                    <p>KuKirin dhe Segway.</p>
-                    <img src="images/products/kukirin.png" onerror="this.src='images/logo.svg'" alt="Skuterat">
-                </a>
-
-                <a href="bicikletat.html" class="bento-card reveal">
-                    <span>E-Bike</span>
-                    <h3>Biçikletat</h3>
-                    <p>OUXI dhe Mangosteen.</p>
-                    <img src="images/products/ouxi.png" onerror="this.src='images/logo.svg'" alt="Biçikletat">
-                </a>
-
-                <a href="aksesoret.html" class="bento-card reveal">
-                    <span>Accessories</span>
-                    <h3>Aksesorët</h3>
-                    <p>Kufje, kasa, xhama, karikues.</p>
-                    <img src="images/products/acces.png" onerror="this.src='images/logo.svg'" alt="Aksesorët">
-                </a>
-
-                <a href="tableta.html" class="bento-card reveal">
-                    <span>iPad • Galaxy Tab</span>
-                    <h3>Tableta</h3>
-                    <p>Tableta për punë, shkollë dhe argëtim.</p>
-                    <img src="images/products/ipad11a16128gbwifi.png" onerror="this.src='images/logo.svg'" alt="Tableta">
-                </a>
-
-                <a href="#weekly-offers" class="bento-card bento-wide reveal">
-                    <span>Hot Deals</span>
-                    <h3>Oferta të javës</h3>
-                    <p>Produkte që ia vlejnë t’i pyesësh sot në WhatsApp.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="showroom-section section" id="showroom">
-            <div class="showroom-left reveal">
-                <p class="eyebrow">Showroom</p>
-                <h2>Produktet kryesore në spotlight</h2>
-                <p>
-                    Shiko produktet më të forta të iShop Mobile me prezantim hologram,
-                    animacion modern dhe buton direkt për WhatsApp.
-                </p>
-
-                <div class="showroom-controls">
-                    <button class="showroom-btn active" data-showroom-index="0">iPhone</button>
-                    <button class="showroom-btn" data-showroom-index="1">Samsung</button>
-                    <button class="showroom-btn" data-showroom-index="2">Skuter</button>
-                    <button class="showroom-btn" data-showroom-index="3">E-Bike</button>
+                <div class="story-progress-dots" id="storyDots">
+                    <button class="active" data-story-dot="0"></button>
+                    <button data-story-dot="1"></button>
+                    <button data-story-dot="2"></button>
+                    <button data-story-dot="3"></button>
                 </div>
             </div>
 
-            <div class="showroom-card reveal" id="showroomCard">
-                <div class="showroom-glow"></div>
-
-                <div class="showroom-image-wrap">
-                    <img src="images/products/iphone15promax.png" alt="iPhone 15 Pro Max" id="showroomImage">
-                </div>
-
-                <div class="showroom-info">
-                    <span id="showroomBadge">Apple</span>
-                    <h3 id="showroomTitle">iPhone 15 Pro Max</h3>
-                    <p id="showroomText">Model premium, shumë i kërkuar dhe ideal për përdorim të përditshëm.</p>
-
-                    <div class="showroom-specs">
-                        <div>
-                            <strong id="showroomSpec1">Premium</strong>
-                            <small>Kategori</small>
-                        </div>
-                        <div>
-                            <strong id="showroomSpec2">Në gjendje</strong>
-                            <small>Status</small>
-                        </div>
-                        <div>
-                            <strong>WhatsApp</strong>
-                            <small>Pyet për çmim</small>
-                        </div>
-                    </div>
-
-                    <button class="showroom-whatsapp" id="showroomWhatsapp">
-                        Pyet për këtë produkt
-                    </button>
-                </div>
-            </div>
+            <div class="story-step" data-story-index="0"></div>
+            <div class="story-step" data-story-index="1"></div>
+            <div class="story-step" data-story-index="2"></div>
+            <div class="story-step" data-story-index="3"></div>
         </section>
 
-        <section class="why-section section" id="why-us">
-            <div class="why-panel reveal">
-                <p class="eyebrow">Pse ne jemi më të mirët</p>
-                <h2>iShop Mobile sjell cilësi, zgjedhje dhe shërbim të shpejtë</h2>
-                <p>
-                    Te iShop Mobile gjen produkte të përzgjedhura me kujdes: telefona,
-                    tableta, skutera, biçikleta elektrike dhe aksesorë. Ne fokusohemi
-                    te komunikimi i shpejtë, ndihma para blerjes dhe transparenca me klientin.
-                </p>
+        <section class="poster-section">
+            <div class="poster-heading reveal">
+                <p class="eyebrow">Categories</p>
+                <h2 class="section-mega">Zgjidh botën tënde</h2>
+            </div>
 
-                <div class="why-stats">
+            <div class="poster-grid">
+                <a href="telefonat.html" class="poster-card poster-large reveal">
+                    <img src="images/products/iphone15promax.png" alt="Telefonat">
                     <div>
-                        <strong>100%</strong>
-                        <span>komunikim direkt</span>
+                        <span>Apple • Samsung • Xiaomi</span>
+                        <h3>Telefonat</h3>
+                        <p>Smartphones premium dhe modele për çdo buxhet.</p>
                     </div>
+                </a>
+
+                <a href="skuterat.html" class="poster-card reveal">
+                    <img src="images/products/kukiring2pro.png" alt="Skuterat">
                     <div>
-                        <strong>24/7</strong>
-                        <span>pyetje në WhatsApp</span>
+                        <span>Electric Ride</span>
+                        <h3>Skuterat</h3>
+                        <p>KuKirin dhe Segway për lëvizje urbane.</p>
                     </div>
+                </a>
+
+                <a href="bicikletat.html" class="poster-card reveal">
+                    <img src="images/products/ouxiv8.png" alt="Biçikletat">
                     <div>
-                        <strong>069 666 6601</strong>
-                        <span>numri i kontaktit</span>
+                        <span>E-Bike</span>
+                        <h3>Biçikletat</h3>
+                        <p>OUXI dhe Mangosteen.</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="aksesoret.html" class="poster-card reveal">
+                    <img src="images/products/airpodspro2typec.png" alt="Aksesorët">
+                    <div>
+                        <span>Accessories</span>
+                        <h3>Aksesorët</h3>
+                        <p>Kufje, kasa, karikues, xhama dhe më shumë.</p>
+                    </div>
+                </a>
+
+                <a href="tableta.html" class="poster-card reveal">
+                    <img src="images/products/ipad11a16128gbwifi.png" alt="Tableta">
+                    <div>
+                        <span>iPad • Galaxy Tab</span>
+                        <h3>Tableta</h3>
+                        <p>Për punë, shkollë dhe entertainment.</p>
+                    </div>
+                </a>
             </div>
         </section>
 
-        <section class="section best-sellers-section" id="best-sellers">
-            <div class="section-top">
-                <p class="eyebrow">Best Sellers</p>
-                <h2>Produktet më të kërkuara</h2>
-                <p class="section-lead">
-                    Kliko produktin për të parë detajet, karakteristikat dhe porosinë në WhatsApp.
-                </p>
+        <section class="cinematic-products">
+            <div class="section-split">
+                <div class="split-copy reveal">
+                    <p class="eyebrow">Spotlight</p>
+                    <h2 class="section-mega">Produktet më të kërkuara</h2>
+                    <p>
+                        Kliko produktin për ta hapur në faqe cinematic me animacion,
+                        drita, specs dhe porosi direkte në WhatsApp.
+                    </p>
+                </div>
+
+                <div class="split-action reveal">
+                    <a href="skuterat.html" class="cinematic-btn primary">Shiko të gjitha</a>
+                </div>
             </div>
 
             <div class="featured-grid" id="bestSellersGrid"></div>
         </section>
 
-        <section class="section weekly-section" id="weekly-offers">
-            <div class="section-top">
-                <p class="eyebrow">Oferta të javës</p>
-                <h2>Produkte që ia vlejnë t’i pyesësh sot</h2>
-                <p class="section-lead">
-                    Oferta ndryshojnë sipas gjendjes. Për çmimin final dhe disponueshmërinë,
-                    na shkruaj direkt në WhatsApp.
-                </p>
-            </div>
-
-            <div class="featured-grid" id="weeklyOffersGrid"></div>
-        </section>
-
-        <section class="section steps-section">
-            <div class="section-top">
-                <p class="eyebrow">Si funksionon</p>
-                <h2>Blerja në 3 hapa</h2>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card reveal">
-                    <strong>01</strong>
-                    <h3>Zgjidh produktin</h3>
-                    <p>Hap kategorinë dhe kliko modelin që të intereson.</p>
-                </div>
-
-                <div class="step-card reveal">
-                    <strong>02</strong>
-                    <h3>Shiko detajet</h3>
-                    <p>Lexo karakteristikat, statusin dhe çmimin e produktit.</p>
-                </div>
-
-                <div class="step-card reveal">
-                    <strong>03</strong>
-                    <h3>Porosit në WhatsApp</h3>
-                    <p>Butoni të çon direkt te WhatsApp-i ynë për porosi.</p>
-                </div>
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <span>iShop Mobile</span>
+                <span>Phones</span>
+                <span>Scooters</span>
+                <span>E-Bikes</span>
+                <span>Accessories</span>
+                <span>Tablets</span>
+                <span>WhatsApp Order</span>
             </div>
         </section>
 
-        <section class="section map-section" id="location">
-            <div class="section-top">
-                <p class="eyebrow">Lokacioni</p>
-                <h2>Na gjej në hartë</h2>
-                <p class="section-lead">
-                    Na vizito te iShop Mobile, Myslym Shyri, Tiranë.
+        <section class="location-section" id="location">
+            <div class="location-content reveal">
+                <p class="eyebrow">Location</p>
+                <h2 class="section-mega">Na gjej në Tiranë</h2>
+                <p>
+                    iShop Mobile, Myslym Shyri. Për çdo produkt, na shkruaj direkt
+                    në WhatsApp ose telefono në numrin tonë.
                 </p>
+
+                <div class="location-info">
+                    <div>
+                        <strong>Adresa</strong>
+                        <span>Myslym Shyri, Tiranë</span>
+                    </div>
+
+                    <div>
+                        <strong>Telefon</strong>
+                        <span>069 666 6601</span>
+                    </div>
+
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>069 666 6601</span>
+                    </div>
+                </div>
+
+                <div class="location-actions">
+                    <a href="https://wa.me/355696666601" target="_blank" class="cinematic-btn primary">Na shkruaj</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=iShop+Mobile+Myslym+Shyri+Tirana" target="_blank" class="cinematic-btn ghost">Hape në hartë</a>
+                </div>
             </div>
 
-            <div class="contact-grid social-contact-grid">
-                <div>
-                    <strong>Adresa</strong>
-                    <span>iShop Mobile, Myslym Shyri, Tiranë</span>
-                </div>
-                <div>
-                    <strong>Telefon</strong>
-                    <span>069 666 6601</span>
-                </div>
-                <div>
-                    <strong>WhatsApp</strong>
-                    <span>069 666 6601</span>
-                </div>
-            </div>
-
-            <div class="map-box reveal">
+            <div class="map-frame reveal">
                 <iframe
                     src="https://www.google.com/maps?q=iShop%20Mobile%20Myslym%20Shyri%20Tirana&output=embed"
                     width="100%"
-                    height="420"
+                    height="460"
                     style="border:0;"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-
-                <div class="map-actions">
-                    <a href="https://www.google.com/maps/search/?api=1&query=iShop+Mobile+Myslym+Shyri+Tirana" target="_blank" class="primary-btn">Hape në Hartë</a>
-                    <a href="https://wa.me/355696666601" target="_blank" class="secondary-btn">Na shkruaj</a>
-                </div>
             </div>
         </section>
     </main>
 
-    <div class="lightbox" id="imageLightbox">
-        <button class="lightbox-close" id="lightboxClose">×</button>
-        <img src="" alt="Produkt" id="lightboxImage">
-    </div>
-
-    <footer class="site-footer">
+    <footer class="trailer-footer">
         <p>© iShop Mobile. Të gjitha të drejtat e rezervuara.</p>
         <div>
             <a href="https://wa.me/355696666601" target="_blank">WhatsApp</a>
-            <a href="#" target="_blank">TikTok</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Facebook</a>
+            <a href="#">TikTok</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
         </div>
     </footer>
 
     <a href="https://wa.me/355696666601" target="_blank" class="floating-whatsapp">☏</a>
-    <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">↑</button>
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>

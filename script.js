@@ -2,12 +2,12 @@ const WHATSAPP_NUMBER = "355696666601";
 
 function makeProduct(brand, name, badge, imageName, status = "Pyet për gjendjen", price = "Pyet për çmim") {
     return {
-        brand: brand,
-        name: name,
+        brand,
+        name,
         slug: imageName,
-        price: price,
-        badge: badge,
-        status: status,
+        price,
+        badge,
+        status,
         desc: name + ".",
         image: "images/products/" + imageName + ".png"
     };
@@ -146,47 +146,38 @@ const BEST_SELLERS = [
     makeProduct("Apple", "iPad 11 A16 128GB WiFi", "Best Seller", "ipad11a16128gbwifi", "Në gjendje")
 ];
 
-const WEEKLY_OFFERS = [
-    makeProduct("Apple", "iPhone 14 Pro Max", "Ofertë", "iphone14promax", "Në gjendje"),
-    makeProduct("Samsung", "Samsung Galaxy A56 8/256GB", "Ofertë", "samsunggalaxya56", "Në gjendje"),
-    makeProduct("KuKirin", "KuKirin G2 Max", "Ofertë", "kukiring2max", "Në gjendje"),
-    makeProduct("Segway", "Segway Ninebot Max G2", "Ofertë", "segwayninebotmaxg2", "Në gjendje"),
-    makeProduct("Mangosteen", "Mangosteen FT08", "Ofertë", "mangosteenft08", "Në gjendje"),
-    makeProduct("Samsung", "Samsung Buds 3 Pro", "Ofertë", "samsungbuds3pro", "Në gjendje")
-];
-
-const SHOWROOM_PRODUCTS = [
+const STORY_SLIDES = [
     {
-        badge: "Apple",
-        title: "iPhone 15 Pro Max",
-        text: "Model premium, shumë i kërkuar dhe ideal për përdorim të përditshëm.",
-        image: "images/products/iphone15promax.png",
-        spec1: "Premium",
-        spec2: "Në gjendje"
+        label: "New Arrivals",
+        title: "TELEFONAT",
+        text: "Modele Apple, Samsung, Redmi, Poco dhe Pixel.",
+        product: "images/products/iphone15promax.png",
+        specs: ["Apple", "Samsung", "WhatsApp Order"],
+        bg: 0
     },
     {
-        badge: "Samsung",
-        title: "Samsung Galaxy S25 Ultra 12/256GB",
-        text: "Performancë e lartë, ekran fantastik dhe dizajn flagship.",
-        image: "images/products/samsunggalaxys25ultra.png",
-        spec1: "Flagship",
-        spec2: "Në gjendje"
+        label: "Electric Ride",
+        title: "SKUTERAT",
+        text: "KuKirin dhe Segway për lëvizje urbane me stil cinematic.",
+        product: "images/products/kukiring2pro.png",
+        specs: ["KuKirin", "Segway", "Electric"],
+        bg: 1
     },
     {
-        badge: "KuKirin",
-        title: "KuKirin G2 Pro",
-        text: "Skuter elektrik i fortë për përdorim urban dhe lëvizje të shpejtë.",
-        image: "images/products/kukiring2pro.png",
-        spec1: "Electric",
-        spec2: "Në gjendje"
+        label: "E-Bike Zone",
+        title: "BIÇIKLETAT",
+        text: "OUXI dhe Mangosteen për lëvizje të përditshme në qytet.",
+        product: "images/products/ouxiv8.png",
+        specs: ["OUXI", "Mangosteen", "E-Bike"],
+        bg: 2
     },
     {
-        badge: "OUXI",
-        title: "OUXI V8",
-        text: "Biçikletë elektrike shumë e kërkuar, me look sportiv dhe praktik.",
-        image: "images/products/ouxiv8.png",
-        spec1: "E-Bike",
-        spec2: "Në gjendje"
+        label: "Accessories",
+        title: "AKSESORËT",
+        text: "Kufje, kasa, karikues, xhama dhe aksesorë për skuter/biçikletë.",
+        product: "images/products/airpodspro2typec.png",
+        specs: ["AirPods", "Kasa", "Karikues"],
+        bg: 3
     }
 ];
 
@@ -198,14 +189,8 @@ function normalizeText(value) {
 }
 
 function getStatusClass(status) {
-    if (status === "Në gjendje") {
-        return "stock-in";
-    }
-
-    if (status === "Me porosi") {
-        return "stock-order";
-    }
-
+    if (status === "Në gjendje") return "stock-in";
+    if (status === "Me porosi") return "stock-order";
     return "stock-ask";
 }
 
@@ -216,12 +201,20 @@ function getAllProducts() {
         PRODUCTS[category].forEach(product => {
             allProducts.push({
                 ...product,
-                category: category
+                category
             });
         });
     });
 
     return allProducts;
+}
+
+function findProductCategory(slug) {
+    const category = Object.keys(PRODUCTS).find(key => {
+        return PRODUCTS[key].some(product => product.slug === slug);
+    });
+
+    return category || "telefonat";
 }
 
 function getCategoryLabel(category) {
@@ -242,34 +235,31 @@ function getMemoryFromName(name) {
 }
 
 function getProductDescription(product) {
-    const category = product.category;
-
-    if (category === "telefonat") {
-        return `${product.name} është model telefoni i disponueshëm te iShop Mobile. Për ngjyrën, memorien, gjendjen dhe çmimin final, klienti mund të na shkruajë direkt në WhatsApp.`;
+    if (product.category === "telefonat") {
+        return `${product.name} është model telefoni te iShop Mobile. Pyet në WhatsApp për ngjyrën, memorien, gjendjen dhe çmimin final.`;
     }
 
-    if (category === "skuterat") {
-        return `${product.name} është skuter elektrik për lëvizje urbane dhe përdorim të përditshëm. Për autonominë, gjendjen, garancinë dhe çmimin final, na shkruaj në WhatsApp.`;
+    if (product.category === "skuterat") {
+        return `${product.name} është skuter elektrik për lëvizje urbane. Pyet në WhatsApp për gjendjen, baterinë dhe çmimin final.`;
     }
 
-    if (category === "bicikletat") {
-        return `${product.name} është biçikletë elektrike praktike për qytet dhe përdorim të përditshëm. Për gjendjen, ngjyrën dhe çmimin final, porosia bëhet direkt në WhatsApp.`;
+    if (product.category === "bicikletat") {
+        return `${product.name} është biçikletë elektrike praktike për qytet dhe përdorim të përditshëm.`;
     }
 
-    if (category === "aksesoret") {
-        return `${product.name} është aksesor i disponueshëm te iShop Mobile. Për përputhshmërinë me pajisjen tënde dhe çmimin final, na shkruaj në WhatsApp.`;
+    if (product.category === "aksesoret") {
+        return `${product.name} është aksesor i disponueshëm te iShop Mobile. Pyet në WhatsApp për përputhshmërinë me pajisjen tënde.`;
     }
 
-    if (category === "tableta") {
-        return `${product.name} është tablet për punë, shkollë, video dhe përdorim të përditshëm. Për gjendjen, memorien dhe çmimin final, na kontakto në WhatsApp.`;
+    if (product.category === "tableta") {
+        return `${product.name} është tablet për punë, shkollë dhe argëtim. Pyet në WhatsApp për gjendjen dhe çmimin final.`;
     }
 
-    return `${product.name} është produkt i disponueshëm te iShop Mobile.`;
+    return `${product.name} është produkt te iShop Mobile.`;
 }
-function getProductSpecs(product) {
-    const category = product.category;
 
-    if (category === "telefonat") {
+function getProductSpecs(product) {
+    if (product.category === "telefonat") {
         return [
             ["Marka", product.brand],
             ["Modeli", product.name],
@@ -280,7 +270,7 @@ function getProductSpecs(product) {
         ];
     }
 
-    if (category === "skuterat") {
+    if (product.category === "skuterat") {
         return [
             ["Marka", product.brand],
             ["Modeli", product.name],
@@ -291,7 +281,7 @@ function getProductSpecs(product) {
         ];
     }
 
-    if (category === "bicikletat") {
+    if (product.category === "bicikletat") {
         return [
             ["Marka", product.brand],
             ["Modeli", product.name],
@@ -302,7 +292,7 @@ function getProductSpecs(product) {
         ];
     }
 
-    if (category === "aksesoret") {
+    if (product.category === "aksesoret") {
         return [
             ["Marka", product.brand],
             ["Produkti", product.name],
@@ -313,7 +303,7 @@ function getProductSpecs(product) {
         ];
     }
 
-    if (category === "tableta") {
+    if (product.category === "tableta") {
         return [
             ["Marka", product.brand],
             ["Modeli", product.name],
@@ -327,24 +317,20 @@ function getProductSpecs(product) {
     return [
         ["Marka", product.brand],
         ["Modeli", product.name],
-        ["Kategoria", getCategoryLabel(category)],
         ["Statusi", product.status],
         ["Çmimi", product.price]
     ];
 }
-
 function getProductHighlights(product) {
-    const category = product.category;
-
-    if (category === "telefonat") {
+    if (product.category === "telefonat") {
         return [
             "I përshtatshëm për përdorim të përditshëm, rrjete sociale, foto dhe video.",
-            "Mund të pyesësh për ngjyrën, memorien dhe gjendjen reale në WhatsApp.",
-            "Porosia bëhet shpejt pa pagesë online, direkt me komunikim në WhatsApp."
+            "Pyet direkt në WhatsApp për ngjyrën, memorien dhe gjendjen reale.",
+            "Porosia bëhet shpejt pa pagesë online, direkt me komunikim."
         ];
     }
 
-    if (category === "skuterat") {
+    if (product.category === "skuterat") {
         return [
             "Zgjidhje praktike për lëvizje në qytet.",
             "Mund të pyesësh për baterinë, gjendjen dhe disponueshmërinë.",
@@ -352,15 +338,15 @@ function getProductHighlights(product) {
         ];
     }
 
-    if (category === "bicikletat") {
+    if (product.category === "bicikletat") {
         return [
             "E përshtatshme për qytet dhe lëvizje të përditshme.",
-            "Mund të pyesësh për ngjyrën, gjendjen dhe modelin e disponueshëm.",
+            "Pyet për ngjyrën, gjendjen dhe modelin e disponueshëm.",
             "Komunikim i shpejtë direkt me iShop Mobile."
         ];
     }
 
-    if (category === "aksesoret") {
+    if (product.category === "aksesoret") {
         return [
             "Aksesor praktik për pajisjen ose mjetin tënd.",
             "Mund të pyesësh në WhatsApp nëse përshtatet me modelin tënd.",
@@ -368,10 +354,10 @@ function getProductHighlights(product) {
         ];
     }
 
-    if (category === "tableta") {
+    if (product.category === "tableta") {
         return [
             "I përshtatshëm për punë, shkollë dhe argëtim.",
-            "Mund të pyesësh për memorien, gjendjen dhe disponueshmërinë.",
+            "Pyet për memorien, gjendjen dhe disponueshmërinë.",
             "Porosi direkte në WhatsApp pa pagesë online."
         ];
     }
@@ -407,9 +393,7 @@ function createProductCard(product) {
             <p class="product-desc">${product.desc}</p>
             <p class="price">${product.price}</p>
 
-            <a href="${productUrl}" class="details-btn">
-                Shiko detajet
-            </a>
+            <a href="${productUrl}" class="details-btn">Shiko Trailer</a>
 
             <button class="buy-btn" data-product="${product.name}">
                 Pyet në WhatsApp
@@ -430,24 +414,20 @@ function createEmptyState() {
 function getCurrentProducts() {
     const grid = document.getElementById("catalogGrid");
 
-    if (!grid) {
-        return [];
-    }
+    if (!grid) return [];
 
     const category = grid.dataset.category;
 
     return (PRODUCTS[category] || []).map(product => ({
         ...product,
-        category: category
+        category
     }));
 }
 
 function renderBrandFilter(products) {
     const filter = document.getElementById("brandFilter");
 
-    if (!filter) {
-        return;
-    }
+    if (!filter) return;
 
     const brands = [...new Set(products.map(product => product.brand))].sort();
 
@@ -461,9 +441,7 @@ function renderBrandFilter(products) {
 function updateCatalogSummary(visibleCount, totalCount) {
     const summary = document.getElementById("catalogSummary");
 
-    if (!summary) {
-        return;
-    }
+    if (!summary) return;
 
     summary.innerHTML = `
         <span><strong>${visibleCount}</strong> produkte të shfaqura</span>
@@ -474,17 +452,15 @@ function updateCatalogSummary(visibleCount, totalCount) {
 function renderCatalog(productsToRender = null) {
     const grid = document.getElementById("catalogGrid");
 
-    if (!grid) {
-        return;
-    }
+    if (!grid) return;
 
     const allProducts = getCurrentProducts();
     const products = productsToRender || allProducts;
 
-    if (allProducts.length === 0 || products.length === 0) {
+    if (!products.length) {
         grid.innerHTML = createEmptyState();
-        updateCatalogSummary(products.length, allProducts.length);
-        setupScrollAnimations();
+        updateCatalogSummary(0, allProducts.length);
+        setupRevealAnimations();
         return;
     }
 
@@ -492,7 +468,7 @@ function renderCatalog(productsToRender = null) {
 
     updateCatalogSummary(products.length, allProducts.length);
     setupWhatsAppButtons();
-    setupScrollAnimations();
+    setupRevealAnimations();
     setupInteractiveCards();
 }
 
@@ -524,47 +500,24 @@ function setupCatalog() {
     const search = document.getElementById("productSearch");
     const filter = document.getElementById("brandFilter");
 
-    if (search) {
-        search.addEventListener("input", applyCatalogFilters);
-    }
-
-    if (filter) {
-        filter.addEventListener("change", applyCatalogFilters);
-    }
-}
-
-function findProductCategory(slug) {
-    const category = Object.keys(PRODUCTS).find(key => {
-        return PRODUCTS[key].some(product => product.slug === slug);
-    });
-
-    return category || "telefonat";
+    if (search) search.addEventListener("input", applyCatalogFilters);
+    if (filter) filter.addEventListener("change", applyCatalogFilters);
 }
 
 function renderFeaturedProducts() {
-    const bestSellersGrid = document.getElementById("bestSellersGrid");
-    const weeklyOffersGrid = document.getElementById("weeklyOffersGrid");
+    const grid = document.getElementById("bestSellersGrid");
 
-    const bestSellers = BEST_SELLERS.map(product => ({
+    if (!grid) return;
+
+    const products = BEST_SELLERS.map(product => ({
         ...product,
         category: findProductCategory(product.slug)
     }));
 
-    const weeklyOffers = WEEKLY_OFFERS.map(product => ({
-        ...product,
-        category: findProductCategory(product.slug)
-    }));
-
-    if (bestSellersGrid) {
-        bestSellersGrid.innerHTML = bestSellers.map(createProductCard).join("");
-    }
-
-    if (weeklyOffersGrid) {
-        weeklyOffersGrid.innerHTML = weeklyOffers.map(createProductCard).join("");
-    }
+    grid.innerHTML = products.map(createProductCard).join("");
 
     setupWhatsAppButtons();
-    setupScrollAnimations();
+    setupRevealAnimations();
     setupInteractiveCards();
 }
 
@@ -575,9 +528,7 @@ function findProductBySlug(slug) {
 function renderProductDetailPage() {
     const detailPage = document.getElementById("productDetailPage");
 
-    if (!detailPage) {
-        return;
-    }
+    if (!detailPage) return;
 
     const params = new URLSearchParams(window.location.search);
     const slug = params.get("id");
@@ -585,79 +536,104 @@ function renderProductDetailPage() {
 
     if (!product) {
         detailPage.innerHTML = `
-            <div class="not-found-box glass-panel">
-                <div>
-                    <h1>Produkti nuk u gjet</h1>
-                    <p>Produkti që kërkove nuk ekziston ose është hequr nga katalogu.</p>
-                    <a href="index.html" class="primary-btn">Kthehu në faqe</a>
+            <section class="product-final-cta">
+                <div class="final-product-card">
+                    <div class="final-product-info">
+                        <p class="eyebrow">Error</p>
+                        <h2>Produkti nuk u gjet</h2>
+                        <p>Produkti që kërkove nuk ekziston ose është hequr nga katalogu.</p>
+                        <br>
+                        <a href="index.html" class="cinematic-btn primary">Kthehu në faqe</a>
+                    </div>
                 </div>
-            </div>
+            </section>
         `;
         return;
     }
 
-    const title = document.getElementById("detailTitle");
-    const image = document.getElementById("detailImage");
-    const brand = document.getElementById("detailBrand");
-    const category = document.getElementById("detailCategory");
-    const status = document.getElementById("detailStatus");
-    const description = document.getElementById("detailDescription");
-    const price = document.getElementById("detailPrice");
-    const specs = document.getElementById("detailSpecs");
-    const highlights = document.getElementById("detailHighlights");
-    const whatsappBtn = document.getElementById("detailWhatsAppBtn");
-
     document.title = `${product.name} | iShop Mobile`;
-
     document.body.classList.add(`product-category-${product.category}`);
 
-    setTimeout(() => {
-        document.body.classList.add("product-scene-finished");
-    }, 1650);
+    const productBgLayer = document.getElementById("productBgLayer");
+    const detailImage = document.getElementById("detailImage");
+    const finalProductImage = document.getElementById("finalProductImage");
+    const detailBrand = document.getElementById("detailBrand");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailDescription = document.getElementById("detailDescription");
+    const detailCategory = document.getElementById("detailCategory");
+    const detailSpecs = document.getElementById("detailSpecs");
+    const detailStatus = document.getElementById("detailStatus");
+    const finalProductTitle = document.getElementById("finalProductTitle");
+    const detailPrice = document.getElementById("detailPrice");
+    const detailHighlights = document.getElementById("detailHighlights");
+    const detailWhatsAppBtn = document.getElementById("detailWhatsAppBtn");
 
-    title.textContent = product.name;
-    title.setAttribute("data-text", product.name);
+    if (productBgLayer) {
+        productBgLayer.style.setProperty("--product-bg-image", `url("${product.image}")`);
+    }
 
-    image.src = product.image;
-    image.alt = product.name;
-    image.onerror = () => {
-        image.src = "images/logo.svg";
-    };
+    if (detailImage) {
+        detailImage.src = product.image;
+        detailImage.alt = product.name;
+        detailImage.onerror = () => {
+            detailImage.src = "images/logo.svg";
+        };
+    }
 
-    brand.textContent = product.brand;
-    category.textContent = getCategoryLabel(product.category);
-    status.textContent = product.status;
-    price.textContent = product.price;
-    description.textContent = getProductDescription(product);
+    if (finalProductImage) {
+        finalProductImage.src = product.image;
+        finalProductImage.alt = product.name;
+        finalProductImage.onerror = () => {
+            finalProductImage.src = "images/logo.svg";
+        };
+    }
 
-    specs.innerHTML = getProductSpecs(product).map(([label, value]) => `
-        <div class="detail-spec-item">
-            <span>${label}</span>
-            <strong>${value}</strong>
-        </div>
-    `).join("");
+    if (detailBrand) detailBrand.textContent = product.brand;
 
-    highlights.innerHTML = getProductHighlights(product).map(item => `
-        <li>${item}</li>
-    `).join("");
+    if (detailTitle) {
+        detailTitle.textContent = product.name;
+        detailTitle.setAttribute("data-text", product.name);
+    }
 
-    whatsappBtn.addEventListener("click", () => {
-        const message = encodeURIComponent(
-            `Pershendetje iShop Mobile, dua te porosis kete produkt:\n\n${product.name}\nKategoria: ${getCategoryLabel(product.category)}\nStatusi: ${product.status}\nCmimi: ${product.price}\n\nA eshte i disponueshem?`
-        );
+    if (detailDescription) detailDescription.textContent = getProductDescription(product);
+    if (detailCategory) detailCategory.textContent = getCategoryLabel(product.category);
+    if (detailStatus) detailStatus.textContent = product.status;
+    if (finalProductTitle) finalProductTitle.textContent = product.name;
+    if (detailPrice) detailPrice.textContent = product.price;
 
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
-    });
+    if (detailSpecs) {
+        detailSpecs.innerHTML = getProductSpecs(product).map(([label, value]) => `
+            <div class="detail-spec-item">
+                <span>${label}</span>
+                <strong>${value}</strong>
+            </div>
+        `).join("");
+    }
+
+    if (detailHighlights) {
+        detailHighlights.innerHTML = getProductHighlights(product).map(item => `
+            <li>${item}</li>
+        `).join("");
+    }
+
+    if (detailWhatsAppBtn) {
+        detailWhatsAppBtn.addEventListener("click", () => {
+            const message = encodeURIComponent(
+                `Pershendetje iShop Mobile, dua te porosis kete produkt:\n\n${product.name}\nKategoria: ${getCategoryLabel(product.category)}\nStatusi: ${product.status}\nCmimi: ${product.price}\n\nA eshte i disponueshem?`
+            );
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+        });
+    }
 
     renderRelatedProducts(product);
+    setupProductSpecsReveal();
 }
 
 function renderRelatedProducts(currentProduct) {
     const grid = document.getElementById("relatedProductsGrid");
 
-    if (!grid) {
-        return;
-    }
+    if (!grid) return;
 
     const related = getAllProducts()
         .filter(product => product.category === currentProduct.category && product.slug !== currentProduct.slug)
@@ -666,97 +642,112 @@ function renderRelatedProducts(currentProduct) {
     grid.innerHTML = related.map(createProductCard).join("");
 
     setupWhatsAppButtons();
-    setupScrollAnimations();
+    setupRevealAnimations();
     setupInteractiveCards();
 }
 
-function setupShowroom() {
-    const card = document.getElementById("showroomCard");
-    const image = document.getElementById("showroomImage");
-    const badge = document.getElementById("showroomBadge");
-    const title = document.getElementById("showroomTitle");
-    const text = document.getElementById("showroomText");
-    const spec1 = document.getElementById("showroomSpec1");
-    const spec2 = document.getElementById("showroomSpec2");
-    const whatsapp = document.getElementById("showroomWhatsapp");
-    const buttons = document.querySelectorAll(".showroom-btn");
+function setupStoryTrailer() {
+    const section = document.getElementById("trailerStory");
+    const productFrame = document.querySelector(".story-product-frame");
+    const productImage = document.getElementById("storyProduct");
+    const label = document.getElementById("storyLabel");
+    const title = document.getElementById("storyTitle");
+    const text = document.getElementById("storyText");
+    const specs = document.getElementById("storySpecs");
+    const dots = document.querySelectorAll("[data-story-dot]");
+    const backgrounds = document.querySelectorAll("[data-story-bg]");
 
-    if (!card || !image || !badge || !title || !text || !spec1 || !spec2 || !whatsapp) {
-        return;
-    }
+    if (!section || !productImage || !label || !title || !text || !specs) return;
 
     let activeIndex = 0;
-    let intervalId = null;
 
-    function updateShowroom(index) {
-        const product = SHOWROOM_PRODUCTS[index];
+    function setSlide(index) {
+        if (index === activeIndex) return;
 
         activeIndex = index;
+        const slide = STORY_SLIDES[index];
 
-        card.style.transform = "scale(0.97)";
-        image.style.opacity = "0";
-        image.style.transform = "translateY(25px) scale(0.9)";
+        productFrame.classList.add("switching");
 
         setTimeout(() => {
-            image.src = product.image;
-            image.alt = product.title;
-            badge.textContent = product.badge;
-            title.textContent = product.title;
-            text.textContent = product.text;
-            spec1.textContent = product.spec1;
-            spec2.textContent = product.spec2;
+            productImage.src = slide.product;
+            productImage.alt = slide.title;
+            productImage.onerror = () => {
+                productImage.src = "images/logo.svg";
+            };
 
-            buttons.forEach(button => {
-                button.classList.toggle(
-                    "active",
-                    Number(button.dataset.showroomIndex) === index
-                );
+            label.textContent = slide.label;
+            title.textContent = slide.title;
+            title.setAttribute("data-text", slide.title);
+            text.textContent = slide.text;
+
+            specs.innerHTML = slide.specs.map(item => `<span>${item}</span>`).join("");
+
+            backgrounds.forEach(bg => {
+                bg.classList.toggle("active", Number(bg.dataset.storyBg) === slide.bg);
             });
 
-            image.style.opacity = "1";
-            image.style.transform = "";
-            card.style.transform = "";
+            dots.forEach(dot => {
+                dot.classList.toggle("active", Number(dot.dataset.storyDot) === index);
+            });
+
+            productFrame.classList.remove("switching");
         }, 220);
     }
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const index = Number(button.dataset.showroomIndex);
+    function updateOnScroll() {
+        const rect = section.getBoundingClientRect();
+        const total = section.offsetHeight - window.innerHeight;
+        const progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 0.999) : 0;
+        const index = Math.floor(progress * STORY_SLIDES.length);
 
-            updateShowroom(index);
+        setSlide(Math.min(index, STORY_SLIDES.length - 1));
+    }
 
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
+    dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+            const index = Number(dot.dataset.storyDot);
+            const targetY = section.offsetTop + index * window.innerHeight;
 
-            intervalId = setInterval(() => {
-                const nextIndex = (activeIndex + 1) % SHOWROOM_PRODUCTS.length;
-                updateShowroom(nextIndex);
-            }, 4200);
+            window.scrollTo({
+                top: targetY,
+                behavior: "smooth"
+            });
         });
     });
 
-    whatsapp.addEventListener("click", () => {
-        const product = SHOWROOM_PRODUCTS[activeIndex];
+    window.addEventListener("scroll", updateOnScroll);
+    updateOnScroll();
+}
 
-        const message = encodeURIComponent(
-            `Pershendetje iShop Mobile, jam i interesuar per: ${product.title}. A eshte i disponueshem dhe sa kushton?`
-        );
+function setupProductSpecsReveal() {
+    const section = document.querySelector(".product-specs-story");
+    const cards = document.querySelectorAll(".detail-spec-item");
 
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
-    });
+    if (!section || !cards.length) return;
 
-    intervalId = setInterval(() => {
-        const nextIndex = (activeIndex + 1) % SHOWROOM_PRODUCTS.length;
-        updateShowroom(nextIndex);
-    }, 4200);
+    function updateSpecs() {
+        const rect = section.getBoundingClientRect();
+        const total = section.offsetHeight - window.innerHeight;
+        const progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 1;
+
+        cards.forEach((card, index) => {
+            const trigger = (index + 1) / (cards.length + 1);
+
+            if (progress >= trigger || window.innerWidth <= 980) {
+                card.classList.add("is-visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateSpecs);
+    setTimeout(updateSpecs, 300);
 }
 
 function setupWhatsAppButtons() {
     document.querySelectorAll(".buy-btn[data-product]").forEach(button => {
         button.onclick = () => {
             const product = button.dataset.product;
-
             const message = encodeURIComponent(
                 `Pershendetje iShop Mobile, jam i interesuar per: ${product}. A eshte i disponueshem dhe sa kushton?`
             );
@@ -767,12 +758,10 @@ function setupWhatsAppButtons() {
 }
 
 function setupMenu() {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
+    const menuToggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("trailerNav");
 
-    if (!menuToggle || !nav) {
-        return;
-    }
+    if (!menuToggle || !nav) return;
 
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("open");
@@ -787,170 +776,106 @@ function setupMenu() {
     });
 }
 
-function setupCinematicScroll() {
-    const sections = document.querySelectorAll(".cinematic-section");
+let revealObserver = null;
 
-    if (!sections.length) {
-        return;
+function setupRevealAnimations() {
+    const elements = document.querySelectorAll(".reveal, .product-card, .poster-card, .map-frame, .catalog-summary");
+
+    if (revealObserver) {
+        revealObserver.disconnect();
     }
-
-    function clamp(value, min, max) {
-        return Math.min(Math.max(value, min), max);
-    }
-
-    function update() {
-        sections.forEach(section => {
-            const bg = section.querySelector(".cinematic-bg");
-            const content = section.querySelector(".cinematic-content");
-
-            if (!bg || !content) {
-                return;
-            }
-
-            const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const total = rect.height - windowHeight;
-            const progress = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
-
-            bg.style.transform = `scale(${1.12 + progress * 0.18}) translateY(${progress * -65}px)`;
-            bg.style.opacity = 0.68 + progress * 0.12;
-            content.style.opacity = 1;
-            content.style.visibility = "visible";
-            content.style.transform = `translateY(${progress * -80}px) scale(${1 - progress * 0.08})`;
-        });
-
-        requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-}
-
-let scrollObserver = null;
-
-function setupScrollAnimations() {
-    const animatedElements = document.querySelectorAll(
-        ".reveal, .rockstar-reveal, .page-hero, .catalog-summary, .product-card, .category-card, .map-box, .social-card, .step-card, .showroom-card, .showroom-left, .bento-card, .product-detail-layout"
-    );
-
-    if (scrollObserver) {
-        scrollObserver.disconnect();
-    }
-
-    animatedElements.forEach((element, index) => {
-        if (!element.classList.contains("is-visible")) {
-            element.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
-        }
-    });
 
     if (!("IntersectionObserver" in window)) {
-        animatedElements.forEach(element => element.classList.add("is-visible"));
+        elements.forEach(element => element.classList.add("is-visible"));
         return;
     }
 
-    scrollObserver = new IntersectionObserver(
+    revealObserver = new IntersectionObserver(
         entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-visible");
-                    scrollObserver.unobserve(entry.target);
+                    revealObserver.unobserve(entry.target);
                 }
             });
         },
         {
             threshold: 0.08,
-            rootMargin: "0px 0px -25px 0px"
+            rootMargin: "0px 0px -30px 0px"
         }
     );
 
-    animatedElements.forEach(element => scrollObserver.observe(element));
+    elements.forEach((element, index) => {
+        if (!element.classList.contains("is-visible")) {
+            element.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
+        }
+
+        revealObserver.observe(element);
+    });
 }
 
 function setupInteractiveCards() {
-    const cards = document.querySelectorAll(".category-card, .product-card, .social-card, .step-card, .showroom-card, .bento-card");
+    const cards = document.querySelectorAll(".poster-card, .product-card, .final-product-card, .map-frame");
 
     cards.forEach(card => {
         card.onmousemove = event => {
             const rect = card.getBoundingClientRect();
-
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -7;
-            const rotateY = ((x - centerX) / centerX) * 7;
-
             card.style.setProperty("--mouse-x", `${x}px`);
             card.style.setProperty("--mouse-y", `${y}px`);
-            card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.025)`;
         };
 
         card.onmouseleave = () => {
             card.style.setProperty("--mouse-x", "50%");
             card.style.setProperty("--mouse-y", "50%");
-            card.style.transform = "";
         };
     });
 }
 
-function setupLightbox() {
-    const lightbox = document.getElementById("imageLightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const closeButton = document.getElementById("lightboxClose");
+function setupPreloader() {
+    const preloader = document.getElementById("preloader");
 
-    if (!lightbox || !lightboxImage || !closeButton) {
-        return;
-    }
+    if (!preloader) return;
 
-    document.querySelectorAll("[data-lightbox-src]").forEach(wrapper => {
-        wrapper.onclick = event => {
-            if (event.target.closest("a")) {
-                return;
-            }
-
-            lightboxImage.src = wrapper.dataset.lightboxSrc;
-            lightboxImage.alt = wrapper.dataset.lightboxAlt || "Produkt";
-            lightbox.classList.add("open");
-            document.body.style.overflow = "hidden";
-        };
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            preloader.classList.add("hide");
+        }, 450);
     });
+}
 
-    function closeLightbox() {
-        lightbox.classList.remove("open");
-        lightboxImage.src = "";
-        document.body.style.overflow = "";
-    }
+function setupCursorGlow() {
+    const glow = document.getElementById("cursorGlow");
 
-    closeButton.onclick = closeLightbox;
+    if (!glow) return;
 
-    lightbox.onclick = event => {
-        if (event.target === lightbox) {
-            closeLightbox();
-        }
-    };
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && lightbox.classList.contains("open")) {
-            closeLightbox();
-        }
+    window.addEventListener("mousemove", event => {
+        glow.style.left = event.clientX + "px";
+        glow.style.top = event.clientY + "px";
     });
+}
+
+function updateScrollProgress() {
+    const progress = document.getElementById("scrollProgress");
+
+    if (!progress) return;
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    progress.style.width = `${percent}%`;
 }
 
 function setupBackToTop() {
     const button = document.getElementById("backToTop");
 
-    if (!button) {
-        return;
-    }
+    if (!button) return;
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 550) {
-            button.classList.add("show");
-        } else {
-            button.classList.remove("show");
-        }
-
+        button.classList.toggle("show", window.scrollY > 560);
         updateScrollProgress();
     });
 
@@ -962,128 +887,49 @@ function setupBackToTop() {
     });
 }
 
-function updateScrollProgress() {
-    const progress = document.getElementById("scrollProgress");
+function setupHeroParallax() {
+    const hero = document.querySelector(".trailer-hero");
+    const bg = document.querySelector(".hero-bg img");
+    const title = document.querySelector(".mega-title");
 
-    if (!progress) {
-        return;
-    }
-
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-    progress.style.width = `${percent}%`;
-}
-
-function setupPreloader() {
-    const preloader = document.getElementById("preloader");
-
-    if (!preloader) {
-        return;
-    }
-
-    window.addEventListener("load", () => {
-        setTimeout(() => {
-            preloader.classList.add("hide");
-        }, 500);
-    });
-}
-
-function setupCursorGlow() {
-    const glow = document.getElementById("cursorGlow");
-
-    if (!glow) {
-        return;
-    }
-
-    window.addEventListener("mousemove", event => {
-        glow.style.left = event.clientX + "px";
-        glow.style.top = event.clientY + "px";
-    });
-}
-
-function setupParticles() {
-    const container = document.getElementById("particlesBg");
-
-    if (!container || container.children.length > 0) {
-        return;
-    }
-
-    for (let i = 0; i < 34; i++) {
-        const particle = document.createElement("span");
-
-        particle.className = "particle";
-        particle.style.left = Math.random() * 100 + "%";
-        particle.style.animationDuration = 5 + Math.random() * 8 + "s";
-        particle.style.animationDelay = Math.random() * 5 + "s";
-        particle.style.opacity = 0.35 + Math.random() * 0.65;
-
-        container.appendChild(particle);
-    }
-}
-
-function setupTypingText() {
-    const typingText = document.getElementById("typingText");
-
-    if (!typingText) {
-        return;
-    }
-
-    const text = "Telefona, skutera elektrikë, biçikleta elektrike, tableta dhe aksesorë me shërbim të shpejtë.";
-    let index = 0;
-
-    function type() {
-        if (index <= text.length) {
-            typingText.textContent = text.slice(0, index);
-            index++;
-            setTimeout(type, 32);
-        }
-    }
-
-    type();
-}
-
-function setupRockstarParallax() {
-    const hero = document.querySelector(".hero-cinematic");
-    const title = document.querySelector(".cinematic-content h1");
-    const bg = document.querySelector(".cinematic-bg");
-
-    if (!hero || !title || !bg) {
-        return;
-    }
+    if (!hero || !bg || !title) return;
 
     window.addEventListener("mousemove", event => {
         const x = (event.clientX / window.innerWidth - 0.5) * 2;
         const y = (event.clientY / window.innerHeight - 0.5) * 2;
 
-        title.style.textShadow = `
-            ${8 + x * 6}px ${8 + y * 6}px 0 rgba(255, 0, 60, 0.12),
-            0 0 18px rgba(255, 0, 60, 0.75),
-            0 0 48px rgba(255, 0, 60, 0.34)
-        `;
-
-        bg.style.backgroundPosition = `${50 + x * 2}% ${50 + y * 2}%`;
+        bg.style.transform = `scale(1.12) translate(${x * 12}px, ${y * 8}px)`;
+        title.style.transform = `translate(${x * 8}px, ${y * 5}px)`;
     });
+}
+
+function setupMarqueeDuplicate() {
+    const track = document.querySelector(".marquee-track");
+
+    if (!track || track.dataset.duplicated === "true") return;
+
+    track.innerHTML += track.innerHTML;
+    track.dataset.duplicated = "true";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     setupPreloader();
     setupCursorGlow();
-    setupParticles();
-    setupTypingText();
-
     setupMenu();
+
     setupCatalog();
     renderFeaturedProducts();
     renderProductDetailPage();
-    setupShowroom();
-    setupScrollAnimations();
-    setupCinematicScroll();
+
+    setupStoryTrailer();
+    setupProductSpecsReveal();
+
+    setupRevealAnimations();
     setupInteractiveCards();
     setupWhatsAppButtons();
-    setupLightbox();
+
     setupBackToTop();
-    setupRockstarParallax();
+    setupHeroParallax();
+    setupMarqueeDuplicate();
     updateScrollProgress();
 });

@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produkti | iShop Mobile</title>
-    <meta name="description" content="Detaje produkti në iShop Mobile.">
+    <meta name="description" content="Detaje produkti te iShop Mobile.">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body id="top" class="product-page">
+    <div class="site-noise"></div>
+    <div class="site-vignette"></div>
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <div class="rockstar-vignette"></div>
-    <div class="scan-lines"></div>
-    <div class="diagonal-noise"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <div class="preloader" id="preloader">
         <img src="images/logo.svg" alt="iShop Mobile">
-        <span>iShop Mobile</span>
+        <span>Product Trailer</span>
     </div>
 
-    <div class="particles-bg" id="particlesBg"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <header class="site-header">
-        <a href="index.html" class="brand">
-            <img src="images/logo.svg" alt="iShop Mobile" class="logo-img">
+    <header class="trailer-header">
+        <a href="index.html" class="brand-lockup">
+            <img src="images/logo.svg" alt="iShop Mobile">
             <span>iShop Mobile</span>
         </a>
 
-        <button class="menu-toggle" aria-label="Hap menunë">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Hap menunë">☰</button>
 
-        <nav class="main-nav">
+        <nav class="trailer-nav" id="trailerNav">
             <a href="index.html">Kreu</a>
             <a href="telefonat.html">Telefonat</a>
             <a href="skuterat.html">Skuterat</a>
@@ -43,85 +39,118 @@
             <a href="tableta.html">Tableta</a>
         </nav>
 
-        <a href="https://wa.me/355696666601" target="_blank" class="header-cta">WhatsApp</a>
+        <a href="https://wa.me/355696666601" target="_blank" class="nav-whatsapp">WhatsApp</a>
     </header>
 
-    <main class="page-container">
-        <section class="product-detail-layout reveal" id="productDetailPage">
-            <div class="product-detail-media glass-panel">
-                <a href="javascript:history.back()" class="back-link">← Kthehu mbrapa</a>
+    <main id="productDetailPage">
+        <section class="product-trailer-hero">
+            <div class="product-bg-layer" id="productBgLayer"></div>
+            <div class="product-hero-shade"></div>
 
-                <div class="detail-image-box product-cinematic-stage" id="productCinematicStage">
-                    <div class="cinematic-road"></div>
-                    <div class="brake-smoke smoke-one"></div>
-                    <div class="brake-smoke smoke-two"></div>
-                    <div class="product-light light-left"></div>
-                    <div class="product-light light-right"></div>
-                    <div class="spec-light-beam"></div>
+            <a href="javascript:history.back()" class="product-back">← Kthehu mbrapa</a>
 
-                    <img src="images/logo.svg" alt="Produkt" id="detailImage" class="detail-product-animated">
+            <div class="product-stage">
+                <div class="motion-road"></div>
+                <div class="speed-lines"></div>
+                <div class="brake-smoke smoke-left"></div>
+                <div class="brake-smoke smoke-right"></div>
+                <div class="headlight-beam beam-left"></div>
+                <div class="headlight-beam beam-right"></div>
+                <div class="spec-reflection"></div>
 
-                    <div class="product-reflection"></div>
-                </div>
+                <img src="images/logo.svg" alt="Produkt" id="detailImage" class="product-main-image">
 
-                <div class="detail-mini-info">
-                    <span id="detailCategory">Kategori</span>
-                    <span id="detailStatus">Status</span>
-                </div>
+                <div class="product-floor-shadow"></div>
             </div>
 
-            <div class="product-detail-info glass-panel">
-                <p class="eyebrow" id="detailBrand">iShop Mobile</p>
-                <h1 class="glitch-title small-glitch" id="detailTitle" data-text="Produkti">Produkti</h1>
-                <p class="detail-description" id="detailDescription">
+            <div class="product-title-block">
+                <p class="hero-kicker" id="detailBrand">iShop Mobile</p>
+                <h1 class="mega-title product-title" id="detailTitle" data-text="PRODUKTI">PRODUKTI</h1>
+                <p class="product-hero-desc" id="detailDescription">
                     Detajet e produktit do të shfaqen këtu.
                 </p>
+            </div>
 
-                <div class="detail-price-card">
-                    <span>Çmimi</span>
-                    <strong id="detailPrice">Pyet për çmim</strong>
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <small>Specs Reveal</small>
+            </div>
+        </section>
+
+        <section class="product-specs-story">
+            <div class="specs-sticky">
+                <div class="specs-copy">
+                    <p class="eyebrow" id="detailCategory">Kategori</p>
+                    <h2 class="section-mega">Specs</h2>
+                    <p>
+                        Karakteristikat dalin me animacion cinematic, sikur ndriçohen nga dritat e produktit.
+                    </p>
                 </div>
 
-                <div class="detail-actions">
-                    <button class="primary-detail-btn" id="detailWhatsAppBtn">
-                        Porosit në WhatsApp
-                    </button>
+                <div class="specs-list" id="detailSpecs"></div>
+            </div>
 
-                    <a href="tel:0696666601" class="secondary-detail-btn">
-                        Telefono 069 666 6601
-                    </a>
+            <div class="spec-step"></div>
+            <div class="spec-step"></div>
+            <div class="spec-step"></div>
+        </section>
+
+        <section class="product-final-cta">
+            <div class="final-product-card reveal">
+                <div class="final-product-image">
+                    <img src="images/logo.svg" alt="Produkt" id="finalProductImage">
                 </div>
 
-                <div class="detail-specs-box">
-                    <h2>Karakteristikat</h2>
-                    <div class="detail-specs-grid" id="detailSpecs"></div>
-                </div>
+                <div class="final-product-info">
+                    <p class="eyebrow" id="detailStatus">Status</p>
+                    <h2 id="finalProductTitle">Produkti</h2>
 
-                <div class="detail-highlights">
-                    <h2>Pse ta zgjedhësh?</h2>
-                    <ul id="detailHighlights"></ul>
+                    <div class="price-panel">
+                        <span>Çmimi</span>
+                        <strong id="detailPrice">Pyet për çmim</strong>
+                    </div>
+
+                    <div class="detail-highlights">
+                        <h3>Pse ta zgjedhësh?</h3>
+                        <ul id="detailHighlights"></ul>
+                    </div>
+
+                    <div class="final-actions">
+                        <button class="cinematic-btn primary" id="detailWhatsAppBtn">
+                            Porosit në WhatsApp
+                        </button>
+
+                        <a href="tel:0696666601" class="cinematic-btn ghost">
+                            Telefono 069 666 6601
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section related-section">
-            <div class="section-top">
-                <p class="eyebrow">Të ngjashme</p>
-                <h2>Produkte të tjera</h2>
+        <section class="related-products-section">
+            <div class="section-split">
+                <div>
+                    <p class="eyebrow">Të ngjashme</p>
+                    <h2 class="section-mega">Produkte të tjera</h2>
+                </div>
             </div>
 
             <div class="featured-grid" id="relatedProductsGrid"></div>
         </section>
     </main>
 
-    <div class="lightbox" id="imageLightbox">
-        <button class="lightbox-close" id="lightboxClose">×</button>
-        <img src="" alt="Produkt" id="lightboxImage">
-    </div>
+    <footer class="trailer-footer">
+        <p>© iShop Mobile</p>
+        <div>
+            <a href="https://wa.me/355696666601" target="_blank">WhatsApp</a>
+            <a href="index.html">Kreu</a>
+        </div>
+    </footer>
 
     <a href="https://wa.me/355696666601" target="_blank" class="floating-whatsapp">☏</a>
-    <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">↑</button>
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>
